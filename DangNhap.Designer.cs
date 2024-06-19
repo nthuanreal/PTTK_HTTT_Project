@@ -36,6 +36,7 @@
             // 
             // panelLogin
             // 
+            panelLogin.BackColor = Color.FromArgb(217, 217, 217);
             panelLogin.BorderStyle = BorderStyle.FixedSingle;
             panelLogin.Controls.Add(btnTogglePassword);
             panelLogin.Controls.Add(lblLogin);
@@ -109,11 +110,15 @@
             // 
             // btnLogin
             // 
+            btnLogin.BackColor = Color.FromArgb(250, 135, 135);
+            btnLogin.FlatAppearance.BorderColor = Color.Black;
             btnLogin.Location = new Point(240, 272);
+            btnLogin.Margin = new Padding(0);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(132, 33);
             btnLogin.TabIndex = 4;
             btnLogin.Text = "Đăng Nhập";
+            btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
             // 
             // linkForgotPassword
@@ -168,6 +173,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DangNhap";
             Load += DangNhap_Load;
+            Resize += DangNhap_Resize;
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();
             ResumeLayout(false);

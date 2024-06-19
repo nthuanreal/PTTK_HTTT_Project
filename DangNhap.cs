@@ -22,7 +22,18 @@ namespace UI_winform
 
         private void DangNhap_Load(object sender, EventArgs e)
         {
+             CenterPanel();
+        }
 
+        private void DangNhap_Resize(object sender, EventArgs e)
+        {
+            CenterPanel();
+        }
+
+        private void CenterPanel()
+        {
+            panelLogin.Left = (this.ClientSize.Width - panelLogin.Width) / 2;
+            panelLogin.Top = (this.ClientSize.Height - panelLogin.Height) / 2;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
