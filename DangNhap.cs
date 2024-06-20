@@ -80,7 +80,10 @@ namespace UI_winform
 
         private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.Hide();
+            QuenMatKhau forgotPasswordForm = new QuenMatKhau();
+            forgotPasswordForm.FormClosed += (s, args) => this.Close();
+            forgotPasswordForm.Show();
         }
 
 

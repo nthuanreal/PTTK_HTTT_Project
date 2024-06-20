@@ -22,13 +22,15 @@ namespace UI_winform
             CenterPanel();
         }
 
-        private void QuenMatKhau_Resize(object sender, EventArgs e) 
+        private void QuenMatKhau_Resize(object sender, EventArgs e)
         {
             CenterPanel();
         }
 
         private void CenterPanel()
         {
+            this.lblFooterMessage.Left = (this.ClientSize.Width - this.lblFooterMessage.Width) / 2;
+            this.lblFooterMessage.Top = this.ClientSize.Height - this.lblFooterMessage.Height - 10;
             this.panelForgotPassword.Left = (this.ClientSize.Width - this.panelForgotPassword.Width) / 2;
             this.panelForgotPassword.Top = (this.ClientSize.Height - this.panelForgotPassword.Height) / 2;
         }
@@ -61,5 +63,30 @@ namespace UI_winform
                 return false;
             }
         }
+
+        private void linkBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            DangNhap loginForm = new DangNhap();
+            loginForm.FormClosed += (s, args) => this.Close();
+            loginForm.Show();
+        }
+
+        private void linkNotReceivedEmail_LinkClicked(object sender, EventArgs e)
+        {
+            // Validation and submission logic here
+            if (string.IsNullOrEmpty(this.txtEmail.Text) || !IsValidEmail(this.txtEmail.Text))
+            {
+                this.lblEmailValidation.Text = "Email không hợp lệ!";
+                this.lblEmailValidation.Visible = true;
+            }
+            else
+            {
+                this.lblEmailValidation.Text = "Mật khẩu đã được gửi lại qua email!";
+                this.lblEmailValidation.Visible = true;
+                // Code to handle email submission
+            }
+        }
+
     }
 }
