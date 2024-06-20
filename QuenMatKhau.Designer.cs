@@ -36,6 +36,7 @@
             // 
             // panelForgotPassword
             // 
+            panelForgotPassword.BackColor = Color.FromArgb(217, 217, 217);
             panelForgotPassword.BorderStyle = BorderStyle.FixedSingle;
             panelForgotPassword.Controls.Add(lblTitle);
             panelForgotPassword.Controls.Add(lblEmail);
@@ -103,11 +104,13 @@
             // 
             // btnSubmit
             // 
+            btnSubmit.BackColor = Color.FromArgb(250, 135, 135);
             btnSubmit.Location = new Point(211, 227);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(126, 39);
             btnSubmit.TabIndex = 5;
             btnSubmit.Text = "Xác nhận";
+            btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
             // 
             // linkBack
