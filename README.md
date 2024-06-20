@@ -3,9 +3,10 @@ Giai đoạn 3
 Thiết kế giao diện Winform UI
 
 To do list:
-  - [ ] Đăng nhập
+  - [x] Đăng nhập
     + [x] Đăng nhập
-    + [ ] Quên mật khẩu
+    + [x] Quên mật khẩu
   - [ ] Đăng ký tài khoản Doanh nghiệp Thành Viên
   - [ ] Đăng ký đăng tuyển
+  
   - [x] Đăng ký Tài khoản Ứng viên
