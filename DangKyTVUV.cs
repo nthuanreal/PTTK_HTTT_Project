@@ -26,5 +26,13 @@ namespace UI_winform
         {
 
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DangNhap loginForm = new DangNhap();
+            loginForm.FormClosed += (s, args) => this.Close();
+            loginForm.Show();
+        }
     }
 }

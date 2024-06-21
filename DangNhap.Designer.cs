@@ -172,6 +172,7 @@
             Name = "DangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DangNhap";
+            WindowState = FormWindowState.Maximized;
             Load += DangNhap_Load;
             Resize += DangNhap_Resize;
             panelLogin.ResumeLayout(false);

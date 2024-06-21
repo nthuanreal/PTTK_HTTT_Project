@@ -144,6 +144,7 @@
             Name = "QuenMatKhau";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QuenMatKhau";
+            WindowState = FormWindowState.Maximized;
             Load += QuenMatKhau_Load;
             Resize += QuenMatKhau_Resize;
             panelForgotPassword.ResumeLayout(false);

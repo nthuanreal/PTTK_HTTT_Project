@@ -68,14 +68,21 @@ namespace UI_winform
             // Hide the password
             txtPassword.UseSystemPasswordChar = true;
         }
+
         private void linkRegisterEmployer_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.Hide();
+            DangKyTVDN registerForm = new DangKyTVDN();
+            registerForm.FormClosed += (s, args) => this.Close();
+            registerForm.Show();
         }
 
         private void linkRegisterApplicant_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            this.Hide();
+            DangKyTVUV registerForm = new DangKyTVUV();
+            registerForm.FormClosed += (s, args) => this.Close();
+            registerForm.Show();
         }
 
         private void linkForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
