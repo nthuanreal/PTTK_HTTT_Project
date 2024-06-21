@@ -50,6 +50,10 @@ namespace UI_winform
             // modify this line for login method. Ẽ: if(login(txtUsername.Text, txtPassword.Text)
             {
                 MessageBox.Show("Đăng nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Hide();
+                HomePage homepage = new HomePage();
+                homepage.FormClosed += (s, args) => this.Close();
+                homepage.Show();
             }
             else
             {
