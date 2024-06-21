@@ -6,8 +6,8 @@ To do list:
   - [x] Đăng nhập
     + [x] Đăng nhập
     + [x] Quên mật khẩu
-  - [ ] Đăng ký tài khoản Doanh nghiệp Thành Viên
-  - [ ] Đăng ký đăng tuyển
-  - [ ] Lập phiếu đăng ký đăng tuyển
+  - [x] Đăng ký tài khoản Doanh nghiệp Thành Viên
+  - [] Đăng ký đăng tuyển
+  - [] Lập phiếu đăng ký đăng tuyển
   
   - [x] Đăng ký Tài khoản Ứng viên
