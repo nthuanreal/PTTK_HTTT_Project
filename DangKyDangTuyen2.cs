@@ -47,5 +47,13 @@ namespace UI_winform
             dkDangTuyenForm.FormClosed += (s, args) => this.Close();
             dkDangTuyenForm.Show();
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            PhieuDKDangTuyen dkDangTuyenForm = new PhieuDKDangTuyen();
+            dkDangTuyenForm.FormClosed += (s, args) => this.Close();
+            dkDangTuyenForm.Show();
+        }
     }
 }

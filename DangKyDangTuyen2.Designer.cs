@@ -40,7 +40,9 @@
             label1 = new Label();
             label2 = new Label();
             dateTimePicker1 = new DateTimePicker();
-            checkedListBox1 = new CheckedListBox();
+            checkBox1 = new CheckBox();
+            checkBox4 = new CheckBox();
+            checkBox5 = new CheckBox();
             panelNavbar.SuspendLayout();
             panelRegister.SuspendLayout();
             SuspendLayout();
@@ -69,17 +71,18 @@
             // btnRegister
             // 
             btnRegister.BackColor = Color.FromArgb(250, 135, 135);
-            btnRegister.Location = new Point(407, 349);
+            btnRegister.Location = new Point(406, 421);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(107, 38);
             btnRegister.TabIndex = 14;
             btnRegister.Text = "ĐĂNG KÝ";
             btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click;
             // 
             // btnCancel
             // 
             btnCancel.BackColor = Color.FromArgb(250, 135, 135);
-            btnCancel.Location = new Point(257, 349);
+            btnCancel.Location = new Point(256, 421);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(107, 38);
             btnCancel.TabIndex = 13;
@@ -101,19 +104,21 @@
             // 
             panelRegister.BackColor = Color.FromArgb(217, 217, 217);
             panelRegister.BorderStyle = BorderStyle.FixedSingle;
+            panelRegister.Controls.Add(checkBox5);
+            panelRegister.Controls.Add(checkBox4);
             panelRegister.Controls.Add(label4);
             panelRegister.Controls.Add(dateTimePicker2);
             panelRegister.Controls.Add(label3);
             panelRegister.Controls.Add(label1);
             panelRegister.Controls.Add(label2);
             panelRegister.Controls.Add(dateTimePicker1);
-            panelRegister.Controls.Add(checkedListBox1);
+            panelRegister.Controls.Add(checkBox1);
             panelRegister.Controls.Add(lblTitle);
             panelRegister.Controls.Add(btnCancel);
             panelRegister.Controls.Add(btnRegister);
             panelRegister.Location = new Point(185, 95);
             panelRegister.Name = "panelRegister";
-            panelRegister.Size = new Size(746, 439);
+            panelRegister.Size = new Size(746, 513);
             panelRegister.TabIndex = 1;
             // 
             // label4
@@ -149,7 +154,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 11F);
-            label1.Location = new Point(56, 243);
+            label1.Location = new Point(56, 273);
             label1.Name = "label1";
             label1.Size = new Size(243, 25);
             label1.TabIndex = 21;
@@ -174,22 +179,54 @@
             dateTimePicker1.Size = new Size(320, 32);
             dateTimePicker1.TabIndex = 18;
             // 
-            // checkedListBox1
+            // checkBox1
             // 
-            checkedListBox1.Font = new Font("Segoe UI", 11F);
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "Báo giấy", "Banner Quảng cáo", "Đăng trên trang mạng" });
-            checkedListBox1.Location = new Point(308, 243);
-            checkedListBox1.Margin = new Padding(2);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(320, 31);
-            checkedListBox1.TabIndex = 17;
+            checkBox1.AutoSize = true;
+            checkBox1.BackColor = SystemColors.Window;
+            checkBox1.Checked = true;
+            checkBox1.CheckState = CheckState.Checked;
+            checkBox1.FlatStyle = FlatStyle.Flat;
+            checkBox1.Font = new Font("Segoe UI", 11F);
+            checkBox1.Location = new Point(308, 273);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(102, 29);
+            checkBox1.TabIndex = 4;
+            checkBox1.Text = "Báo giấy";
+            checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.BackColor = SystemColors.Window;
+            checkBox4.Checked = true;
+            checkBox4.CheckState = CheckState.Checked;
+            checkBox4.FlatStyle = FlatStyle.Flat;
+            checkBox4.Font = new Font("Segoe UI", 11F);
+            checkBox4.Location = new Point(308, 308);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(190, 29);
+            checkBox4.TabIndex = 25;
+            checkBox4.Text = "Banner Quảng Cáo";
+            checkBox4.UseVisualStyleBackColor = false;
+            // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.BackColor = SystemColors.Window;
+            checkBox5.FlatStyle = FlatStyle.Flat;
+            checkBox5.Font = new Font("Segoe UI", 11F);
+            checkBox5.Location = new Point(308, 343);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(217, 29);
+            checkBox5.TabIndex = 26;
+            checkBox5.Text = "Đăng trên trang mạng";
+            checkBox5.UseVisualStyleBackColor = false;
             // 
             // DangKyDangTuyen2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1068, 682);
+            ClientSize = new Size(1068, 661);
             Controls.Add(panelNavbar);
             Controls.Add(panelRegister);
             Name = "DangKyDangTuyen2";
@@ -215,11 +252,13 @@
         private Label lblTitle;
         private Panel panelRegister;
         private DateTimePicker dateTimePicker1;
-        private CheckedListBox checkedListBox1;
         private Label label3;
         private Label label1;
         private Label label2;
         private Label label4;
         private DateTimePicker dateTimePicker2;
+        private CheckBox checkBox1;
+        private CheckBox checkBox5;
+        private CheckBox checkBox4;
     }
 }

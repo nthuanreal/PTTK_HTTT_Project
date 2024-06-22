@@ -36,12 +36,12 @@
             textBox1 = new TextBox();
             label1 = new Label();
             panelRegister = new Panel();
-            label5 = new Label();
             label4 = new Label();
             label3 = new Label();
             textBox3 = new TextBox();
             label2 = new Label();
             textBox2 = new TextBox();
+            textBox4 = new TextBox();
             panelNavbar.SuspendLayout();
             panelRegister.SuspendLayout();
             SuspendLayout();
@@ -74,7 +74,7 @@
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(107, 38);
             btnRegister.TabIndex = 14;
-            btnRegister.Text = "ĐĂNG KÝ";
+            btnRegister.Text = "TIẾP TỤC";
             btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
@@ -122,7 +122,7 @@
             // 
             panelRegister.BackColor = Color.FromArgb(217, 217, 217);
             panelRegister.BorderStyle = BorderStyle.FixedSingle;
-            panelRegister.Controls.Add(label5);
+            panelRegister.Controls.Add(textBox4);
             panelRegister.Controls.Add(label4);
             panelRegister.Controls.Add(label3);
             panelRegister.Controls.Add(textBox3);
@@ -137,19 +137,6 @@
             panelRegister.Name = "panelRegister";
             panelRegister.Size = new Size(746, 548);
             panelRegister.TabIndex = 1;
-
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.BackColor = SystemColors.Window;
-            label5.BorderStyle = BorderStyle.Fixed3D;
-            label5.Font = new Font("Segoe UI", 11F);
-            label5.Location = new Point(314, 318);
-            label5.Name = "label5";
-            label5.Size = new Size(232, 77);
-            label5.TabIndex = 26;
-            label5.Text = "Trình độ học vấn: Đại học \nChứng chỉ tin học Z\nChứng chỉ tiếng anh A";
             // 
             // label4
             // 
@@ -199,6 +186,17 @@
             textBox2.TabIndex = 22;
             textBox2.Text = "1";
             // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Segoe UI", 11F);
+            textBox4.Location = new Point(314, 318);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.ScrollBars = ScrollBars.Both;
+            textBox4.Size = new Size(350, 113);
+            textBox4.TabIndex = 26;
+            textBox4.Text = "- Trình độ học vấn: Đại học \r\n- Chứng chỉ tin học Z\r\n- Chứng chỉ tiếng anh A";
+            // 
             // DangKyDangTuyen1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -209,9 +207,9 @@
             Name = "DangKyDangTuyen1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DangKyDangTuyen1";
+            WindowState = FormWindowState.Maximized;
             Load += DangKyDangTuyen1_Load;
             Resize += DangKyDangTuyen1_Resize;
-            WindowState = FormWindowState.Maximized;
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
             panelRegister.ResumeLayout(false);
@@ -233,7 +231,7 @@
         private Label label2;
         private TextBox textBox2;
         private Label label4;
-        private Label label5;
         private Label label6;
+        private TextBox textBox4;
     }
 }
