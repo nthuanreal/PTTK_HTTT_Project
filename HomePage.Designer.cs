@@ -32,6 +32,7 @@
             panelNavbar = new Panel();
             label6 = new Label();
             linkBack = new LinkLabel();
+            button1 = new Button();
             panelNavbar.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,7 +41,7 @@
             btnDKyDangTuyen.BackColor = Color.FromArgb(250, 135, 135);
             btnDKyDangTuyen.Location = new Point(105, 129);
             btnDKyDangTuyen.Name = "btnDKyDangTuyen";
-            btnDKyDangTuyen.Size = new Size(185, 38);
+            btnDKyDangTuyen.Size = new Size(238, 38);
             btnDKyDangTuyen.TabIndex = 15;
             btnDKyDangTuyen.Text = "ĐĂNG KÝ ĐĂNG TUYỂN";
             btnDKyDangTuyen.UseVisualStyleBackColor = false;
@@ -78,11 +79,23 @@
             linkBack.Text = "Đăng xuất";
             linkBack.LinkClicked += linkBack_LinkClicked;
             // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(250, 135, 135);
+            button1.Location = new Point(105, 204);
+            button1.Name = "button1";
+            button1.Size = new Size(238, 38);
+            button1.TabIndex = 17;
+            button1.Text = "TRA CỨU THÔNG TIN ỨNG VIÊN";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 551);
+            Controls.Add(button1);
             Controls.Add(btnDKyDangTuyen);
             Controls.Add(panelNavbar);
             Name = "HomePage";
@@ -102,5 +115,6 @@
         private Panel panelNavbar;
         private LinkLabel linkBack;
         private Label label6;
+        private Button button1;
     }
 }

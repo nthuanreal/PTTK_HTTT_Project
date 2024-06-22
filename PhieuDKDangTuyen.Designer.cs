@@ -31,6 +31,7 @@
             panelNavbar = new Panel();
             label6 = new Label();
             panelRegister = new Panel();
+            button1 = new Button();
             label16 = new Label();
             label15 = new Label();
             label14 = new Label();
@@ -48,7 +49,6 @@
             label1 = new Label();
             lblTitle = new Label();
             btnRegister = new Button();
-            button1 = new Button();
             panelNavbar.SuspendLayout();
             panelRegister.SuspendLayout();
             SuspendLayout();
@@ -100,6 +100,17 @@
             panelRegister.Name = "panelRegister";
             panelRegister.Size = new Size(746, 684);
             panelRegister.TabIndex = 18;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(250, 135, 135);
+            button1.Location = new Point(217, 579);
+            button1.Name = "button1";
+            button1.Size = new Size(121, 44);
+            button1.TabIndex = 40;
+            button1.Text = "HỦY BỎ";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label16
             // 
@@ -269,7 +280,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(187, 59);
+            lblTitle.Location = new Point(162, 60);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(459, 35);
             lblTitle.TabIndex = 0;
@@ -286,17 +297,6 @@
             btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(250, 135, 135);
-            button1.Location = new Point(217, 579);
-            button1.Name = "button1";
-            button1.Size = new Size(121, 44);
-            button1.TabIndex = 40;
-            button1.Text = "HỦY BỎ";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // PhieuDKDangTuyen
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -305,7 +305,9 @@
             Controls.Add(panelNavbar);
             Controls.Add(panelRegister);
             Name = "PhieuDKDangTuyen";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "PhieuDKDangTuyen";
+            WindowState = FormWindowState.Maximized;
             Load += PhieuDKDangTuyen_Load;
             Resize += PhieuDKDangTuyen_Resize;
             panelNavbar.ResumeLayout(false);

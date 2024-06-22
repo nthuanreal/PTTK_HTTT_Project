@@ -52,5 +52,13 @@ namespace UI_winform
             loginForm.FormClosed += (s, args) => this.Close();
             loginForm.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            TraCuuThongTinUV loginForm = new TraCuuThongTinUV();
+            loginForm.FormClosed += (s, args) => this.Close();
+            loginForm.Show();
+        }
     }
 }

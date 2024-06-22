@@ -13,7 +13,7 @@ To do list:
   - [x] Lập phiếu đăng ký đăng tuyển
 
   - [x] Đăng ký Tài khoản Ứng viên
-  - [ ] Tra cứu tài khoản ứng viên
+  - [x] Tra cứu tài khoản ứng viên
   - [ ] Nộp hồ sơ ứng tuyển
 
 Login key: 
