@@ -23,6 +23,8 @@
         private void InitializeComponent()
         {
             panelForgotPassword = new Panel();
+            label1 = new Label();
+            textBox1 = new TextBox();
             lblTitle = new Label();
             lblEmail = new Label();
             txtEmail = new TextBox();
@@ -38,6 +40,8 @@
             // 
             panelForgotPassword.BackColor = Color.FromArgb(217, 217, 217);
             panelForgotPassword.BorderStyle = BorderStyle.FixedSingle;
+            panelForgotPassword.Controls.Add(label1);
+            panelForgotPassword.Controls.Add(textBox1);
             panelForgotPassword.Controls.Add(lblTitle);
             panelForgotPassword.Controls.Add(lblEmail);
             panelForgotPassword.Controls.Add(txtEmail);
@@ -47,8 +51,26 @@
             panelForgotPassword.Controls.Add(linkBack);
             panelForgotPassword.Location = new Point(141, 67);
             panelForgotPassword.Name = "panelForgotPassword";
-            panelForgotPassword.Size = new Size(540, 332);
+            panelForgotPassword.Size = new Size(540, 383);
             panelForgotPassword.TabIndex = 0;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 13F);
+            label1.Location = new Point(83, 95);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 30);
+            label1.TabIndex = 7;
+            label1.Text = "Tài khoản";
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 12F);
+            textBox1.Location = new Point(83, 133);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(381, 34);
+            textBox1.TabIndex = 8;
             // 
             // lblTitle
             // 
@@ -64,7 +86,7 @@
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI", 13F);
-            lblEmail.Location = new Point(80, 109);
+            lblEmail.Location = new Point(83, 186);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(64, 30);
             lblEmail.TabIndex = 1;
@@ -73,7 +95,7 @@
             // txtEmail
             // 
             txtEmail.Font = new Font("Segoe UI", 12F);
-            txtEmail.Location = new Point(80, 147);
+            txtEmail.Location = new Point(83, 224);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(381, 34);
             txtEmail.TabIndex = 2;
@@ -83,18 +105,18 @@
             lblEmailValidation.AutoSize = true;
             lblEmailValidation.ForeColor = Color.Red;
             lblEmailValidation.ImageAlign = ContentAlignment.TopRight;
-            lblEmailValidation.Location = new Point(80, 184);
+            lblEmailValidation.Location = new Point(83, 261);
             lblEmailValidation.Name = "lblEmailValidation";
-            lblEmailValidation.Size = new Size(67, 20);
+            lblEmailValidation.Size = new Size(73, 20);
             lblEmailValidation.TabIndex = 3;
-            lblEmailValidation.Text = "message";
+            lblEmailValidation.Text = "*message";
             lblEmailValidation.TextAlign = ContentAlignment.MiddleRight;
             lblEmailValidation.Visible = false;
             // 
             // linkNotReceivedEmail
             // 
             linkNotReceivedEmail.AutoSize = true;
-            linkNotReceivedEmail.Location = new Point(30, 291);
+            linkNotReceivedEmail.Location = new Point(26, 349);
             linkNotReceivedEmail.Name = "linkNotReceivedEmail";
             linkNotReceivedEmail.Size = new Size(187, 20);
             linkNotReceivedEmail.TabIndex = 4;
@@ -105,7 +127,7 @@
             // btnSubmit
             // 
             btnSubmit.BackColor = Color.FromArgb(250, 135, 135);
-            btnSubmit.Location = new Point(211, 227);
+            btnSubmit.Location = new Point(211, 289);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(126, 39);
             btnSubmit.TabIndex = 5;
@@ -116,7 +138,7 @@
             // linkBack
             // 
             linkBack.AutoSize = true;
-            linkBack.Location = new Point(442, 291);
+            linkBack.Location = new Point(442, 349);
             linkBack.Name = "linkBack";
             linkBack.Size = new Size(63, 20);
             linkBack.TabIndex = 6;
@@ -128,7 +150,7 @@
             // 
             lblFooterMessage.AutoSize = true;
             lblFooterMessage.ForeColor = Color.Red;
-            lblFooterMessage.Location = new Point(197, 442);
+            lblFooterMessage.Location = new Point(197, 491);
             lblFooterMessage.Name = "lblFooterMessage";
             lblFooterMessage.Size = new Size(435, 20);
             lblFooterMessage.TabIndex = 7;
@@ -138,7 +160,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(847, 480);
+            ClientSize = new Size(847, 520);
             Controls.Add(panelForgotPassword);
             Controls.Add(lblFooterMessage);
             Name = "QuenMatKhau";
@@ -172,5 +194,7 @@
         private Button btnSubmit;
         private LinkLabel linkBack;
         private Label lblFooterMessage;
+        private Label label1;
+        private TextBox textBox1;
     }
 }

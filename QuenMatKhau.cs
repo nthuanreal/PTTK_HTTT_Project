@@ -45,10 +45,20 @@ namespace UI_winform
             }
             else
             {
-                this.lblEmailValidation.Text = "Đã gửi thành công!";
-                this.lblEmailValidation.Visible = true;
-                // Code to handle email submission
+                if (string.IsNullOrEmpty(this.textBox1.Text))
+                {
+                    this.lblEmailValidation.Text = "Tài khoản không hợp lệ!";
+                    this.lblEmailValidation.Visible = true;
+                }
+                else
+                {
+                    this.lblEmailValidation.Text = "Đã gửi thành công!";
+                    this.lblEmailValidation.Visible = true;
+                    // Code to handle email submission
+                }
+
             }
+
         }
 
         private bool IsValidEmail(string email)
@@ -82,11 +92,21 @@ namespace UI_winform
             }
             else
             {
-                this.lblEmailValidation.Text = "Mật khẩu đã được gửi lại qua email!";
-                this.lblEmailValidation.Visible = true;
-                // Code to handle email submission
+                if (string.IsNullOrEmpty(this.textBox1.Text))
+                {
+                    this.lblEmailValidation.Text = "Tài khoản không hợp lệ!";
+                    this.lblEmailValidation.Visible = true;
+                }
+                else
+                {
+                    this.lblEmailValidation.Text = "Mật khẩu đã được gửi lại qua email!";
+                    this.lblEmailValidation.Visible = true;
+                    // Code to handle email submission
+                }
+
             }
         }
+
 
     }
 }
