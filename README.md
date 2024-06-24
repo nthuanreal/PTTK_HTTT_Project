@@ -14,7 +14,10 @@ To do list:
 
   - [x] Đăng ký Tài khoản Ứng viên
   - [x] Tra cứu tài khoản ứng viên
-  - [ ] Nộp hồ sơ ứng tuyển
+New UI: (required: test and link )
+  - [x] Nộp hồ sơ ứng tuyển?
+  - [x] Tra cứu hồ sơ?
+  - [x] Tra cứu vị trí ứng tuyển?
 
 Login key: 
     - username: admin 
