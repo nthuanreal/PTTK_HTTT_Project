@@ -1,6 +1,6 @@
 ﻿namespace UI_winform
 {
-    partial class TraCuuThongTinUV
+    partial class CapNhatThongTin
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@
         {
             panelNavbar = new Panel();
             label6 = new Label();
-            linkBack = new LinkLabel();
             linkLabel1 = new LinkLabel();
             dateTimePicker1 = new DateTimePicker();
             checkedListBox1 = new CheckedListBox();
@@ -74,21 +73,10 @@
             label6.TabIndex = 8;
             label6.Text = "THÔNG TIN ỨNG VIÊN";
             // 
-            // linkBack
-            // 
-            linkBack.AutoSize = true;
-            linkBack.Location = new Point(81, 78);
-            linkBack.Name = "linkBack";
-            linkBack.Size = new Size(77, 20);
-            linkBack.TabIndex = 7;
-            linkBack.TabStop = true;
-            linkBack.Text = "Đăng xuất";
-            linkBack.LinkClicked += linkBack_LinkClicked;
-            // 
             // linkLabel1
             // 
             linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(12, 78);
+            linkLabel1.Location = new Point(566, 560);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(63, 20);
             linkLabel1.TabIndex = 18;
@@ -98,7 +86,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(341, 183);
+            dateTimePicker1.Location = new Point(297, 182);
             dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(207, 27);
@@ -108,7 +96,7 @@
             // 
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "Đại học", "Cao Đẳng", "Trung cấp" });
-            checkedListBox1.Location = new Point(341, 377);
+            checkedListBox1.Location = new Point(297, 376);
             checkedListBox1.Margin = new Padding(2);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(139, 26);
@@ -117,7 +105,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(476, 427);
+            checkBox2.Location = new Point(432, 426);
             checkBox2.Margin = new Padding(2);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(51, 24);
@@ -130,7 +118,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Checked = true;
             checkBox1.CheckState = CheckState.Checked;
-            checkBox1.Location = new Point(341, 427);
+            checkBox1.Location = new Point(297, 426);
             checkBox1.Margin = new Padding(2);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(63, 24);
@@ -140,7 +128,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(341, 329);
+            textBox4.Location = new Point(297, 328);
             textBox4.Margin = new Padding(2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(207, 27);
@@ -149,7 +137,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(341, 280);
+            textBox3.Location = new Point(297, 279);
             textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(207, 27);
@@ -158,7 +146,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(341, 227);
+            textBox2.Location = new Point(297, 226);
             textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(207, 27);
@@ -167,7 +155,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(341, 139);
+            textBox1.Location = new Point(297, 138);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(207, 27);
@@ -177,7 +165,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(222, 430);
+            label7.Location = new Point(178, 429);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(65, 20);
@@ -187,7 +175,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(222, 383);
+            label1.Location = new Point(178, 382);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(63, 20);
@@ -197,7 +185,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(222, 331);
+            label5.Location = new Point(178, 330);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(46, 20);
@@ -207,7 +195,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(222, 283);
+            label4.Location = new Point(178, 282);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(36, 20);
@@ -217,7 +205,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(221, 232);
+            label3.Location = new Point(177, 231);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(55, 20);
@@ -227,7 +215,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(221, 183);
+            label2.Location = new Point(177, 182);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(74, 20);
@@ -237,7 +225,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(221, 139);
+            label8.Location = new Point(177, 138);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(54, 20);
@@ -247,7 +235,7 @@
             // btnRegister
             // 
             btnRegister.BackColor = Color.FromArgb(250, 135, 135);
-            btnRegister.Location = new Point(307, 514);
+            btnRegister.Location = new Point(263, 490);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(121, 44);
             btnRegister.TabIndex = 34;
@@ -259,6 +247,7 @@
             // 
             panelRegister.BackColor = Color.FromArgb(217, 217, 217);
             panelRegister.BorderStyle = BorderStyle.FixedSingle;
+            panelRegister.Controls.Add(linkLabel1);
             panelRegister.Controls.Add(btnRegister);
             panelRegister.Controls.Add(dateTimePicker1);
             panelRegister.Controls.Add(lblTitle);
@@ -276,49 +265,45 @@
             panelRegister.Controls.Add(label5);
             panelRegister.Controls.Add(label7);
             panelRegister.Controls.Add(label1);
-            panelRegister.Location = new Point(129, 146);
+            panelRegister.Location = new Point(218, 146);
             panelRegister.Name = "panelRegister";
-            panelRegister.Size = new Size(746, 603);
+            panelRegister.Size = new Size(657, 603);
             panelRegister.TabIndex = 35;
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(148, 61);
+            lblTitle.Location = new Point(164, 60);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(459, 35);
+            lblTitle.Size = new Size(340, 35);
             lblTitle.TabIndex = 0;
-            lblTitle.Text = "PHIẾU ĐĂNG KÝ ĐĂNG TUYỂN";
+            lblTitle.Text = "CẬP NHẬT THÔNG TIN";
             // 
-            // TraCuuThongTinUV
+            // CapNhatThongTin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 787);
-            Controls.Add(linkLabel1);
-            Controls.Add(linkBack);
             Controls.Add(panelNavbar);
             Controls.Add(panelRegister);
-            Name = "TraCuuThongTinUV";
+            Name = "CapNhatThongTin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TraCuuThongTinUV";
+            WindowState = FormWindowState.Maximized;
             Load += TraCuuThongTinUV_Load;
             Resize += TraCuuThongTinUV_Resize;
-            WindowState = FormWindowState.Maximized;
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
             panelRegister.ResumeLayout(false);
             panelRegister.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Panel panelNavbar;
         private Label label6;
-        private LinkLabel linkBack;
         private LinkLabel linkLabel1;
         private DateTimePicker dateTimePicker1;
         private CheckedListBox checkedListBox1;

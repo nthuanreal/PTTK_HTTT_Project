@@ -48,7 +48,9 @@
             txtEmail = new TextBox();
             btnCancel = new Button();
             btnRegister = new Button();
+            panel1 = new Panel();
             panelRegister.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelRegister
@@ -59,7 +61,6 @@
             panelRegister.Controls.Add(txtPassword);
             panelRegister.Controls.Add(lblUsername);
             panelRegister.Controls.Add(txtUsername);
-            panelRegister.Controls.Add(lblTitle);
             panelRegister.Controls.Add(lblCompanyName);
             panelRegister.Controls.Add(txtCompanyName);
             panelRegister.Controls.Add(lblTaxID);
@@ -74,6 +75,7 @@
             panelRegister.Controls.Add(txtEmail);
             panelRegister.Controls.Add(btnCancel);
             panelRegister.Controls.Add(btnRegister);
+            panelRegister.Controls.Add(panel1);
             panelRegister.Location = new Point(161, 40);
             panelRegister.Name = "panelRegister";
             panelRegister.Size = new Size(746, 574);
@@ -119,7 +121,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(83, 43);
+            lblTitle.Location = new Point(84, 36);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(586, 35);
             lblTitle.TabIndex = 0;
@@ -255,6 +257,16 @@
             btnRegister.UseVisualStyleBackColor = false;
             btnRegister.Click += btnRegister_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.LightCoral;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(lblTitle);
+            panel1.Location = new Point(-1, -1);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(746, 102);
+            panel1.TabIndex = 19;
+            // 
             // DangKyTVDN
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -269,6 +281,8 @@
             Resize += DangKyTVDN_Resize;
             panelRegister.ResumeLayout(false);
             panelRegister.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -293,5 +307,6 @@
         private TextBox txtUsername;
         private Label lblPassword;
         private TextBox txtPassword;
+        private Panel panel1;
     }
 }

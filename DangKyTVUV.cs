@@ -19,7 +19,16 @@ namespace UI_winform
 
         private void DangKyTVUV_Load(object sender, EventArgs e)
         {
-
+            CenterPanel();
+        }
+        private void DangKyTVUV_Resize(object sender, EventArgs e)
+        {
+            CenterPanel();
+        }
+        private void CenterPanel()
+        {
+            panelMain.Left = (this.ClientSize.Width - panelMain.Width) / 2;
+            panelMain.Top = (this.ClientSize.Height - panelMain.Height) / 2;
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)

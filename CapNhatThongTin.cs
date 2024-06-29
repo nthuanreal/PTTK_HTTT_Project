@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UI_winform
 {
-    public partial class TraCuuThongTinUV : Form
+    public partial class CapNhatThongTin : Form
     {
-        public TraCuuThongTinUV()
+        public CapNhatThongTin()
         {
             InitializeComponent();
         }

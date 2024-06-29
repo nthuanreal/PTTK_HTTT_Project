@@ -2,6 +2,7 @@
 Giai đoạn 3,
 Thiết kế giao diện Winform UI.
 
+
 To do list:
   - [x] Đăng nhập
     + [x] Đăng nhập
@@ -26,3 +27,14 @@ Login key:
 
 Notes: Đây chỉ là phần giao diện, xử lý backend chưa được hoàn thiện do thiếu database nên tạm thời
 chưa thể truyền dữ liệu.
+
+
+Special Requirement:
+    - Window.Minimum_Size: 1000,600_
+
+
+06/27/2024 note: 
+    TraCuuThongTinUV_UI -> CapNhatThongTin_UI_;
+    TraCuuThongTin -> Homepage
+
+    

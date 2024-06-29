@@ -34,6 +34,8 @@
             btnCancel = new Button();
             lblTitle = new Label();
             panelRegister = new Panel();
+            checkBox5 = new CheckBox();
+            checkBox4 = new CheckBox();
             label4 = new Label();
             dateTimePicker2 = new DateTimePicker();
             label3 = new Label();
@@ -41,8 +43,6 @@
             label2 = new Label();
             dateTimePicker1 = new DateTimePicker();
             checkBox1 = new CheckBox();
-            checkBox4 = new CheckBox();
-            checkBox5 = new CheckBox();
             panelNavbar.SuspendLayout();
             panelRegister.SuspendLayout();
             SuspendLayout();
@@ -121,6 +121,36 @@
             panelRegister.Size = new Size(746, 513);
             panelRegister.TabIndex = 1;
             // 
+            // checkBox5
+            // 
+            checkBox5.AutoSize = true;
+            checkBox5.BackColor = SystemColors.Window;
+            checkBox5.FlatStyle = FlatStyle.Flat;
+            checkBox5.Font = new Font("Segoe UI", 11F);
+            checkBox5.ImageAlign = ContentAlignment.MiddleRight;
+            checkBox5.Location = new Point(308, 343);
+            checkBox5.Name = "checkBox5";
+            checkBox5.Size = new Size(217, 29);
+            checkBox5.TabIndex = 26;
+            checkBox5.Text = "Đăng trên trang mạng";
+            checkBox5.UseVisualStyleBackColor = false;
+            // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.BackColor = SystemColors.Window;
+            checkBox4.Checked = true;
+            checkBox4.CheckState = CheckState.Checked;
+            checkBox4.FlatStyle = FlatStyle.Flat;
+            checkBox4.Font = new Font("Segoe UI", 11F);
+            checkBox4.ImageAlign = ContentAlignment.MiddleRight;
+            checkBox4.Location = new Point(308, 308);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(190, 29);
+            checkBox4.TabIndex = 25;
+            checkBox4.Text = "Banner Quảng Cáo";
+            checkBox4.UseVisualStyleBackColor = false;
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -187,40 +217,13 @@
             checkBox1.CheckState = CheckState.Checked;
             checkBox1.FlatStyle = FlatStyle.Flat;
             checkBox1.Font = new Font("Segoe UI", 11F);
+            checkBox1.ImageAlign = ContentAlignment.MiddleRight;
             checkBox1.Location = new Point(308, 273);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(102, 29);
             checkBox1.TabIndex = 4;
             checkBox1.Text = "Báo giấy";
             checkBox1.UseVisualStyleBackColor = false;
-            // 
-            // checkBox4
-            // 
-            checkBox4.AutoSize = true;
-            checkBox4.BackColor = SystemColors.Window;
-            checkBox4.Checked = true;
-            checkBox4.CheckState = CheckState.Checked;
-            checkBox4.FlatStyle = FlatStyle.Flat;
-            checkBox4.Font = new Font("Segoe UI", 11F);
-            checkBox4.Location = new Point(308, 308);
-            checkBox4.Name = "checkBox4";
-            checkBox4.Size = new Size(190, 29);
-            checkBox4.TabIndex = 25;
-            checkBox4.Text = "Banner Quảng Cáo";
-            checkBox4.UseVisualStyleBackColor = false;
-            // 
-            // checkBox5
-            // 
-            checkBox5.AutoSize = true;
-            checkBox5.BackColor = SystemColors.Window;
-            checkBox5.FlatStyle = FlatStyle.Flat;
-            checkBox5.Font = new Font("Segoe UI", 11F);
-            checkBox5.Location = new Point(308, 343);
-            checkBox5.Name = "checkBox5";
-            checkBox5.Size = new Size(217, 29);
-            checkBox5.TabIndex = 26;
-            checkBox5.Text = "Đăng trên trang mạng";
-            checkBox5.UseVisualStyleBackColor = false;
             // 
             // DangKyDangTuyen2
             // 
