@@ -16,10 +16,9 @@ To do list:
   - [x] Đăng ký Tài khoản Ứng viên
   - [x] Tra cứu tài khoản ứng viên
 
-New UI: (required: test and link )
-  - [x] Nộp hồ sơ ứng tuyển?
-  - [x] Tra cứu hồ sơ?
-  - [x] Tra cứu vị trí ứng tuyển?
+  - [x] Nộp hồ sơ ứng tuyển
+  - [x] Tra cứu hồ sơ
+  - [x] Tra cứu vị trí ứng tuyển
 
 Login key: 
     - username: admin 
@@ -29,8 +28,8 @@ Notes: Đây chỉ là phần giao diện, xử lý backend chưa được hoàn
 chưa thể truyền dữ liệu.
 
 
-Special Requirement:
-    - Window.Minimum_Size: 1000,600_
+**Special Requirement:
+    - Window.Minimum_Size: 1000,600
 
 
 06/27/2024 note: 
