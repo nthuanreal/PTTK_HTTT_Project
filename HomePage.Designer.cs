@@ -34,6 +34,7 @@
             linkBack = new LinkLabel();
             button1 = new Button();
             panel1 = new Panel();
+            nvXemHopDongBtn = new Button();
             button5 = new Button();
             button4 = new Button();
             button3 = new Button();
@@ -119,6 +120,7 @@
             // 
             panel1.BackColor = Color.Silver;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(nvXemHopDongBtn);
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
             panel1.Controls.Add(button3);
@@ -129,6 +131,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(170, 783);
             panel1.TabIndex = 17;
+            // 
+            // nvXemHopDongBtn
+            // 
+            nvXemHopDongBtn.BackColor = Color.FromArgb(250, 135, 135);
+            nvXemHopDongBtn.Location = new Point(3, 521);
+            nvXemHopDongBtn.Name = "nvXemHopDongBtn";
+            nvXemHopDongBtn.Size = new Size(154, 60);
+            nvXemHopDongBtn.TabIndex = 20;
+            nvXemHopDongBtn.Text = "TRA CỨU VỊ TRÍ ỨNG TUYỂN";
+            nvXemHopDongBtn.UseVisualStyleBackColor = false;
             // 
             // button5
             // 
@@ -412,5 +424,6 @@
         private Button button2;
         private Button button5;
         private Button button4;
+        private Button nvXemHopDongBtn;
     }
 }
