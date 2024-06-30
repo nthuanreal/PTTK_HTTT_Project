@@ -55,7 +55,7 @@ namespace UI_winform
                 homepage.FormClosed += (s, args) => this.Close();
                 homepage.Show();
             }
-            else if (txtUsername.Text == "staff" && txtPassword.Text == "staffpass")
+            else if (txtUsername.Text == "staff" && txtPassword.Text == "staff")
             {
                 MessageBox.Show("Đăng nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 EmployeePage employeePage = new EmployeePage();
