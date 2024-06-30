@@ -289,10 +289,10 @@
             Controls.Add(panelRegister);
             Name = "CapNhatThongTin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "TraCuuThongTinUV";
+            Text = "CapNhatThongTin";
             WindowState = FormWindowState.Maximized;
-            Load += TraCuuThongTinUV_Load;
-            Resize += TraCuuThongTinUV_Resize;
+            Load += CapNhatThongTin_Load;
+            Resize += CapNhatThongTin_Resize;
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
             panelRegister.ResumeLayout(false);

@@ -16,13 +16,13 @@ namespace UI_winform
         {
             InitializeComponent();
         }
-        private void TraCuuThongTinUV_Load(object sender, EventArgs e)
+        private void CapNhatThongTin_Load(object sender, EventArgs e)
         {
             CenterPanel();
             NavBar();
         }
 
-        private void TraCuuThongTinUV_Resize(object sender, EventArgs e)
+        private void CapNhatThongTin_Resize(object sender, EventArgs e)
         {
             CenterPanel();
             NavBar();
@@ -49,19 +49,16 @@ namespace UI_winform
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            HomePage loginForm = new HomePage();
-            loginForm.FormClosed += (s, args) => this.Close();
-            loginForm.Show();
+            this.Close();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            // ADD FUNCTION HERE
-            this.Hide();
-            HomePage loginForm = new HomePage();
-            loginForm.FormClosed += (s, args) => this.Close();
-            loginForm.Show();
+            // ADD UC FUNCTION HERE 
+            //===========================
+
+            //===========================
+            this.Close();
         }
     }
 }
