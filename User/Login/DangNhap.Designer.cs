@@ -169,10 +169,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(792, 542);
             Controls.Add(panelLogin);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "DangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DangNhap";
-            WindowState = FormWindowState.Maximized;
             Load += DangNhap_Load;
             Resize += DangNhap_Resize;
             panelLogin.ResumeLayout(false);
