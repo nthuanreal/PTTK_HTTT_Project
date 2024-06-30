@@ -12,8 +12,15 @@ namespace UI_winform
 {
     public partial class DangKyDangTuyen2 : Form
     {
+        private DangKyDangTuyen1 dangKyDangTuyen1;
         public DangKyDangTuyen2()
         {
+            this.dangKyDangTuyen1 = new DangKyDangTuyen1();
+            InitializeComponent();
+        }
+        public DangKyDangTuyen2(DangKyDangTuyen1 copy)
+        {
+            this.dangKyDangTuyen1 = copy;
             InitializeComponent();
         }
         private void DangKyDangTuyen2_Load(object sender, EventArgs e)
@@ -43,16 +50,22 @@ namespace UI_winform
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DangKyDangTuyen1 dkDangTuyenForm = new DangKyDangTuyen1();
-            dkDangTuyenForm.FormClosed += (s, args) => this.Close();
-            dkDangTuyenForm.Show();
+            this.dangKyDangTuyen1.Show();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            //IMPLEMENTATION
+            //===========================
+
+            //===========================
             this.Hide();
             PhieuDKDangTuyen dkDangTuyenForm = new PhieuDKDangTuyen();
-            dkDangTuyenForm.FormClosed += (s, args) => this.Close();
+            dkDangTuyenForm.FormClosed += (s, args) =>
+            {
+                this.dangKyDangTuyen1.Close();
+                this.Close();
+            };
             dkDangTuyenForm.Show();
         }
     }

@@ -96,7 +96,7 @@
             panelRegister.Controls.Add(label1);
             panelRegister.Controls.Add(lblTitle);
             panelRegister.Controls.Add(btnRegister);
-            panelRegister.Location = new Point(229, 87);
+            panelRegister.Location = new Point(115, 116);
             panelRegister.Name = "panelRegister";
             panelRegister.Size = new Size(746, 684);
             panelRegister.TabIndex = 18;
@@ -301,13 +301,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1147, 832);
+            ClientSize = new Size(982, 853);
             Controls.Add(panelNavbar);
             Controls.Add(panelRegister);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(1000, 800);
             Name = "PhieuDKDangTuyen";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PhieuDKDangTuyen";
-            WindowState = FormWindowState.Maximized;
             Load += PhieuDKDangTuyen_Load;
             Resize += PhieuDKDangTuyen_Resize;
             panelNavbar.ResumeLayout(false);

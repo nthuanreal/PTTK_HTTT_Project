@@ -2,24 +2,6 @@
 Giai đoạn 3,
 Thiết kế giao diện Winform UI.
 
-
-To do list:
-  - [x] Đăng nhập
-    + [x] Đăng nhập
-    + [x] Quên mật khẩu
-  - [x] Đăng ký tài khoản Doanh nghiệp Thành Viên
-  - [x] Đăng ký đăng tuyểns
-    + [x] Điền thông tin đăng tuyển
-    + [x] Chọn hình thức đăng tuyển dụng
-  - [x] Lập phiếu đăng ký đăng tuyển
-
-  - [x] Đăng ký Tài khoản Ứng viên
-  - [x] Tra cứu tài khoản ứng viên
-
-  - [x] Nộp hồ sơ ứng tuyển
-  - [x] Tra cứu hồ sơ
-  - [x] Tra cứu vị trí ứng tuyển
-
 Login key: 
     - username: admin 
     - password: password
@@ -28,12 +10,39 @@ Notes: Đây chỉ là phần giao diện, xử lý backend chưa được hoàn
 chưa thể truyền dữ liệu.
 
 
-**Special Requirement:
-    - Window.Minimum_Size: 1000,600
+**Special Requirement**:
+    - Layout:
+        + MinimumSize: 1000,800 (800,600 với Đăng nhập/Quên mật khẩu/Đổi mật khẩu)
+        + Size: (recommend) 1000,800
+        + StartLocation: Center
+        + WindowState: Normal (Ngoại trừ Homepage Maximized)
+    - WindowStyle:
+        + Min/MaximizeBox: False (Với các chức năng điền thông tin)
 
 
-06/27/2024 note: 
-    TraCuuThongTinUV_UI -> CapNhatThongTin_UI_;
-    TraCuuThongTin -> Homepage
+30/6/2024 Tasks: 
+  - [x] Hoàn thành DoiMatKhau
+  - [x] Chỉnh sửa window size của các form
+     + [x] DangKyDangTuyen1,2
+     + [x] PhieuDKDangTuyen
+     + [x] DangKyTVDN
 
-    
+     + [x] TraCuuHoSo
+
+     + [x] DangKyTVUV
+     + [x] NopHoSo1,2 (Link 2 màn hình lại)
+     + [x] TraCuuViTriUngTuyen
+
+     + [x] QuenMatKhau (Cần đồng bộ với Đăng nhập ~ Cùng size ~)
+     + [x] CapNhatThongTin
+     + [x] DangNhap
+     + [x] DoiMatKhau
+
+  - [x] Thay đổi: chuyển màn hình -> hiện cửa sổ popup của các màn hình:
+     + [x] CapNhatThongTin (Cần đổi tên tab)
+     + [x] DangKyDangTuyen1 -> DangKyDangTuyen2 -> LapPhieuDKDangTuyen (Close)
+     + [x] DangKyTK (UV/DN)
+  - [ ] Chỉnh sửa box chọn trình độ (dktvuv)
+  - [ ] Chỉnh sửa box chọn giới tính (dktvuv)
+  - [ ] Đổi tên các component cho phù hợp convention: label1 -> labelTitle/labelChangePassword
+  - [ ] Thêm hình avt trong thông tin chung

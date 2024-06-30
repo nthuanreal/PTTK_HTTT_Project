@@ -12,14 +12,21 @@ namespace UI_winform
 {
     public partial class NopHoSo01 : Form
     {
+        private NopHoSo02 nopHoSo02;
         public NopHoSo01()
         {
             InitializeComponent();
+            this.nopHoSo02 = new NopHoSo02(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //IMPLEMENTATION
+            //===========================
 
+            //===========================
+            this.Hide();
+            this.nopHoSo02.Show();
         }
     }
 }

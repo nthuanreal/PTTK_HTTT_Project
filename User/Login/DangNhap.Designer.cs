@@ -48,9 +48,9 @@
             panelLogin.Controls.Add(linkRegisterApplicant);
             panelLogin.Controls.Add(linkRegisterEmployer);
             panelLogin.Controls.Add(txtPassword);
-            panelLogin.Location = new Point(78, 42);
+            panelLogin.Location = new Point(82, 64);
             panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(634, 406);
+            panelLogin.Size = new Size(620, 420);
             panelLogin.TabIndex = 0;
             panelLogin.TabStop = true;
             // 
@@ -74,7 +74,7 @@
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblLogin.Location = new Point(211, 53);
+            lblLogin.Location = new Point(213, 44);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(196, 35);
             lblLogin.TabIndex = 6;
@@ -84,7 +84,7 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F);
-            lblUsername.Location = new Point(156, 109);
+            lblUsername.Location = new Point(156, 101);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(94, 28);
             lblUsername.TabIndex = 0;
@@ -103,7 +103,7 @@
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 11F);
-            txtUsername.Location = new Point(156, 140);
+            txtUsername.Location = new Point(156, 132);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(306, 32);
             txtUsername.TabIndex = 2;
@@ -112,7 +112,7 @@
             // 
             btnLogin.BackColor = Color.FromArgb(250, 135, 135);
             btnLogin.FlatAppearance.BorderColor = Color.Black;
-            btnLogin.Location = new Point(240, 272);
+            btnLogin.Location = new Point(244, 285);
             btnLogin.Margin = new Padding(0);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(132, 33);
@@ -135,7 +135,7 @@
             // linkRegisterApplicant
             // 
             linkRegisterApplicant.AutoSize = true;
-            linkRegisterApplicant.Location = new Point(97, 324);
+            linkRegisterApplicant.Location = new Point(97, 346);
             linkRegisterApplicant.Name = "linkRegisterApplicant";
             linkRegisterApplicant.Size = new Size(254, 20);
             linkRegisterApplicant.TabIndex = 7;
@@ -146,7 +146,7 @@
             // linkRegisterEmployer
             // 
             linkRegisterEmployer.AutoSize = true;
-            linkRegisterEmployer.Location = new Point(97, 355);
+            linkRegisterEmployer.Location = new Point(97, 377);
             linkRegisterEmployer.Name = "linkRegisterEmployer";
             linkRegisterEmployer.Size = new Size(345, 20);
             linkRegisterEmployer.TabIndex = 8;
@@ -167,12 +167,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(792, 542);
+            ClientSize = new Size(782, 553);
             Controls.Add(panelLogin);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(800, 600);
             Name = "DangNhap";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DangNhap";
-            WindowState = FormWindowState.Maximized;
             Load += DangNhap_Load;
             Resize += DangNhap_Resize;
             panelLogin.ResumeLayout(false);

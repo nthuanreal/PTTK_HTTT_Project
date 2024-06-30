@@ -204,6 +204,7 @@
             button1.TabIndex = 15;
             button1.Text = "ĐĂNG KÝ";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnCancel
             // 
@@ -238,7 +239,7 @@
             panelMain.Controls.Add(textBox2);
             panelMain.Controls.Add(label7);
             panelMain.Controls.Add(textBox1);
-            panelMain.Location = new Point(80, 12);
+            panelMain.Location = new Point(125, 63);
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(746, 574);
             panelMain.TabIndex = 17;
@@ -267,11 +268,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 628);
+            ClientSize = new Size(982, 753);
             Controls.Add(panelMain);
             Margin = new Padding(2);
-            MinimumSize = new Size(1000, 600);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(1000, 800);
             Name = "DangKyTVUV";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DangKyTVUV";
             Load += DangKyTVUV_Load;
             Resize += DangKyTVUV_Resize;

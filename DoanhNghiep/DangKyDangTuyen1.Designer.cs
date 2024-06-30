@@ -36,12 +36,12 @@
             textBox1 = new TextBox();
             label1 = new Label();
             panelRegister = new Panel();
+            textBox4 = new TextBox();
             label4 = new Label();
             label3 = new Label();
             textBox3 = new TextBox();
             label2 = new Label();
             textBox2 = new TextBox();
-            textBox4 = new TextBox();
             panelNavbar.SuspendLayout();
             panelRegister.SuspendLayout();
             SuspendLayout();
@@ -133,10 +133,21 @@
             panelRegister.Controls.Add(lblTitle);
             panelRegister.Controls.Add(btnCancel);
             panelRegister.Controls.Add(btnRegister);
-            panelRegister.Location = new Point(185, 95);
+            panelRegister.Location = new Point(122, 126);
             panelRegister.Name = "panelRegister";
             panelRegister.Size = new Size(746, 548);
             panelRegister.TabIndex = 1;
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Segoe UI", 11F);
+            textBox4.Location = new Point(314, 318);
+            textBox4.Multiline = true;
+            textBox4.Name = "textBox4";
+            textBox4.ScrollBars = ScrollBars.Both;
+            textBox4.Size = new Size(350, 113);
+            textBox4.TabIndex = 26;
+            textBox4.Text = "- Trình độ học vấn: Đại học \r\n- Chứng chỉ tin học Z\r\n- Chứng chỉ tiếng anh A";
             // 
             // label4
             // 
@@ -186,28 +197,19 @@
             textBox2.TabIndex = 22;
             textBox2.Text = "1";
             // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Segoe UI", 11F);
-            textBox4.Location = new Point(314, 318);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.ScrollBars = ScrollBars.Both;
-            textBox4.Size = new Size(350, 113);
-            textBox4.TabIndex = 26;
-            textBox4.Text = "- Trình độ học vấn: Đại học \r\n- Chứng chỉ tin học Z\r\n- Chứng chỉ tiếng anh A";
-            // 
             // DangKyDangTuyen1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1068, 682);
+            ClientSize = new Size(982, 753);
             Controls.Add(panelNavbar);
             Controls.Add(panelRegister);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(1000, 800);
             Name = "DangKyDangTuyen1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DangKyDangTuyen1";
-            WindowState = FormWindowState.Maximized;
             Load += DangKyDangTuyen1_Load;
             Resize += DangKyDangTuyen1_Resize;
             panelNavbar.ResumeLayout(false);

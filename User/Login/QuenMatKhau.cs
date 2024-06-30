@@ -106,7 +106,5 @@ namespace UI_winform
 
             }
         }
-
-
     }
 }

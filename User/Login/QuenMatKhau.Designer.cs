@@ -49,16 +49,16 @@
             panelForgotPassword.Controls.Add(linkNotReceivedEmail);
             panelForgotPassword.Controls.Add(btnSubmit);
             panelForgotPassword.Controls.Add(linkBack);
-            panelForgotPassword.Location = new Point(141, 67);
+            panelForgotPassword.Location = new Point(91, 57);
             panelForgotPassword.Name = "panelForgotPassword";
-            panelForgotPassword.Size = new Size(540, 383);
+            panelForgotPassword.Size = new Size(620, 420);
             panelForgotPassword.TabIndex = 0;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13F);
-            label1.Location = new Point(83, 95);
+            label1.Location = new Point(123, 111);
             label1.Name = "label1";
             label1.Size = new Size(104, 30);
             label1.TabIndex = 7;
@@ -67,7 +67,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(83, 133);
+            textBox1.Location = new Point(123, 149);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(381, 34);
             textBox1.TabIndex = 8;
@@ -76,7 +76,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(139, 41);
+            lblTitle.Location = new Point(175, 39);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(269, 35);
             lblTitle.TabIndex = 0;
@@ -86,7 +86,7 @@
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI", 13F);
-            lblEmail.Location = new Point(83, 186);
+            lblEmail.Location = new Point(123, 202);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(64, 30);
             lblEmail.TabIndex = 1;
@@ -95,7 +95,7 @@
             // txtEmail
             // 
             txtEmail.Font = new Font("Segoe UI", 12F);
-            txtEmail.Location = new Point(83, 224);
+            txtEmail.Location = new Point(123, 240);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(381, 34);
             txtEmail.TabIndex = 2;
@@ -105,7 +105,7 @@
             lblEmailValidation.AutoSize = true;
             lblEmailValidation.ForeColor = Color.Red;
             lblEmailValidation.ImageAlign = ContentAlignment.TopRight;
-            lblEmailValidation.Location = new Point(83, 261);
+            lblEmailValidation.Location = new Point(123, 277);
             lblEmailValidation.Name = "lblEmailValidation";
             lblEmailValidation.Size = new Size(73, 20);
             lblEmailValidation.TabIndex = 3;
@@ -116,7 +116,7 @@
             // linkNotReceivedEmail
             // 
             linkNotReceivedEmail.AutoSize = true;
-            linkNotReceivedEmail.Location = new Point(26, 349);
+            linkNotReceivedEmail.Location = new Point(36, 381);
             linkNotReceivedEmail.Name = "linkNotReceivedEmail";
             linkNotReceivedEmail.Size = new Size(187, 20);
             linkNotReceivedEmail.TabIndex = 4;
@@ -127,7 +127,7 @@
             // btnSubmit
             // 
             btnSubmit.BackColor = Color.FromArgb(250, 135, 135);
-            btnSubmit.Location = new Point(211, 289);
+            btnSubmit.Location = new Point(246, 310);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(126, 39);
             btnSubmit.TabIndex = 5;
@@ -138,7 +138,7 @@
             // linkBack
             // 
             linkBack.AutoSize = true;
-            linkBack.Location = new Point(442, 349);
+            linkBack.Location = new Point(517, 381);
             linkBack.Name = "linkBack";
             linkBack.Size = new Size(63, 20);
             linkBack.TabIndex = 6;
@@ -150,7 +150,7 @@
             // 
             lblFooterMessage.AutoSize = true;
             lblFooterMessage.ForeColor = Color.Red;
-            lblFooterMessage.Location = new Point(197, 491);
+            lblFooterMessage.Location = new Point(190, 510);
             lblFooterMessage.Name = "lblFooterMessage";
             lblFooterMessage.Size = new Size(435, 20);
             lblFooterMessage.TabIndex = 7;
@@ -160,13 +160,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(847, 520);
+            ClientSize = new Size(782, 553);
             Controls.Add(panelForgotPassword);
             Controls.Add(lblFooterMessage);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(800, 600);
             Name = "QuenMatKhau";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "QuenMatKhau";
-            WindowState = FormWindowState.Maximized;
             Load += QuenMatKhau_Load;
             Resize += QuenMatKhau_Resize;
             panelForgotPassword.ResumeLayout(false);

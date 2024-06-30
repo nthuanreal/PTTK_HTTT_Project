@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI_winform.User.Login;
 
 namespace UI_winform
 {
@@ -58,55 +59,51 @@ namespace UI_winform
 
         private void btnDKyDangTuyen_Click(object sender, EventArgs e)
         {
-            this.Hide();
             DangKyDangTuyen1 dkDangTuyenForm = new DangKyDangTuyen1();
-            dkDangTuyenForm.FormClosed += (s, args) => this.Close();
             dkDangTuyenForm.Show();
         }
 
         private void linkBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
-            DangNhap loginForm = new DangNhap();
-            loginForm.FormClosed += (s, args) => this.Close();
-            loginForm.Show();
+            DangNhap newWindow = new DangNhap();
+            this.FormClosing += (s, args) => newWindow.Show();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            CapNhatThongTin loginForm = new CapNhatThongTin();
-            loginForm.FormClosed += (s, args) => this.Close();
-            loginForm.Show();
+            CapNhatThongTin newWindow = new CapNhatThongTin();
+            newWindow.Show();
         }
 
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
-
+            DoiMatKhau newWindow = new DoiMatKhau();
+            newWindow.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            NopHoSo01 loginForm = new NopHoSo01();
-            loginForm.Show();
+            NopHoSo01 newWindow = new NopHoSo01();
+            newWindow.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            NopHoSo02 loginForm = new NopHoSo02();
-            loginForm.Show();
+            NopHoSo02 newWindow = new NopHoSo02();
+            newWindow.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            TraCuuHoSo loginForm = new TraCuuHoSo();
-            loginForm.Show();
+            TraCuuHoSo newWindow = new TraCuuHoSo();
+            newWindow.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            TraCuuViTriUngTuyen loginForm = new TraCuuViTriUngTuyen();
-            loginForm.Show();
+            TraCuuViTriUngTuyen newWindow = new TraCuuViTriUngTuyen();
+            newWindow.Show();
         }
     }
 }
