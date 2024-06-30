@@ -38,10 +38,25 @@ namespace UI_winform
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DangNhap loginForm = new DangNhap();
-            loginForm.FormClosed += (s, args) => this.Close();
-            loginForm.Show();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //IMPLEMENTATION
+            //===========================
+            //if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            //{
+            //    MessageBox.Show("Tên đăng nhập và mật khẩu không được để trống", "ĐĂNG KÝ THẤT BẠI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    return;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Đăng ký tài khoản thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    this.Close();
+            //}
+            //===========================
+            this.Close();
         }
     }
 }

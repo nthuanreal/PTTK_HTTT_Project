@@ -36,7 +36,6 @@
             panel1 = new Panel();
             button5 = new Button();
             button4 = new Button();
-            button3 = new Button();
             button2 = new Button();
             btnChangePassword = new Button();
             dateTimePicker1 = new DateTimePicker();
@@ -121,7 +120,6 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(button5);
             panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
             panel1.Controls.Add(btnDKyDangTuyen);
             panel1.Controls.Add(linkBack);
@@ -152,17 +150,6 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(250, 135, 135);
-            button3.Location = new Point(3, 285);
-            button3.Name = "button3";
-            button3.Size = new Size(154, 60);
-            button3.TabIndex = 17;
-            button3.Text = "NỘP HỒ SƠ 2";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(250, 135, 135);
@@ -170,7 +157,7 @@
             button2.Name = "button2";
             button2.Size = new Size(154, 60);
             button2.TabIndex = 16;
-            button2.Text = "NỘP HỒ SƠ 1";
+            button2.Text = "NỘP HỒ SƠ";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
@@ -408,7 +395,6 @@
         private Label label7;
         private Label label1;
         private Panel panelRegister;
-        private Button button3;
         private Button button2;
         private Button button5;
         private Button button4;

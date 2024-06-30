@@ -56,16 +56,16 @@
             panelChangePassword.Controls.Add(lblValidation);
             panelChangePassword.Controls.Add(btnSubmit);
             panelChangePassword.Controls.Add(linkBack);
-            panelChangePassword.Location = new Point(130, 34);
+            panelChangePassword.Location = new Point(87, 36);
             panelChangePassword.Name = "panelChangePassword";
-            panelChangePassword.Size = new Size(540, 471);
+            panelChangePassword.Size = new Size(620, 471);
             panelChangePassword.TabIndex = 1;
             // 
             // labelConfirmPassword
             // 
             labelConfirmPassword.AutoSize = true;
             labelConfirmPassword.Font = new Font("Segoe UI", 13F);
-            labelConfirmPassword.Location = new Point(83, 274);
+            labelConfirmPassword.Location = new Point(125, 277);
             labelConfirmPassword.Name = "labelConfirmPassword";
             labelConfirmPassword.Size = new Size(187, 30);
             labelConfirmPassword.TabIndex = 9;
@@ -74,7 +74,7 @@
             // textBoxConfirmPassword
             // 
             textBoxConfirmPassword.Font = new Font("Segoe UI", 12F);
-            textBoxConfirmPassword.Location = new Point(83, 312);
+            textBoxConfirmPassword.Location = new Point(125, 315);
             textBoxConfirmPassword.Name = "textBoxConfirmPassword";
             textBoxConfirmPassword.Size = new Size(381, 34);
             textBoxConfirmPassword.TabIndex = 10;
@@ -83,7 +83,7 @@
             // 
             labelCurrentPassword.AutoSize = true;
             labelCurrentPassword.Font = new Font("Segoe UI", 13F);
-            labelCurrentPassword.Location = new Point(83, 95);
+            labelCurrentPassword.Location = new Point(125, 98);
             labelCurrentPassword.Name = "labelCurrentPassword";
             labelCurrentPassword.Size = new Size(179, 30);
             labelCurrentPassword.TabIndex = 7;
@@ -92,7 +92,7 @@
             // textBoxCurrentPassword
             // 
             textBoxCurrentPassword.Font = new Font("Segoe UI", 12F);
-            textBoxCurrentPassword.Location = new Point(83, 133);
+            textBoxCurrentPassword.Location = new Point(125, 136);
             textBoxCurrentPassword.Name = "textBoxCurrentPassword";
             textBoxCurrentPassword.Size = new Size(381, 34);
             textBoxCurrentPassword.TabIndex = 8;
@@ -101,7 +101,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(159, 33);
+            lblTitle.Location = new Point(201, 36);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(235, 35);
             lblTitle.TabIndex = 0;
@@ -111,7 +111,7 @@
             // 
             lblNewPassword.AutoSize = true;
             lblNewPassword.Font = new Font("Segoe UI", 13F);
-            lblNewPassword.Location = new Point(83, 186);
+            lblNewPassword.Location = new Point(125, 189);
             lblNewPassword.Name = "lblNewPassword";
             lblNewPassword.Size = new Size(146, 30);
             lblNewPassword.TabIndex = 1;
@@ -120,7 +120,7 @@
             // txtNewPassword
             // 
             txtNewPassword.Font = new Font("Segoe UI", 12F);
-            txtNewPassword.Location = new Point(83, 224);
+            txtNewPassword.Location = new Point(125, 227);
             txtNewPassword.Name = "txtNewPassword";
             txtNewPassword.Size = new Size(381, 34);
             txtNewPassword.TabIndex = 2;
@@ -130,7 +130,7 @@
             lblValidation.AutoSize = true;
             lblValidation.ForeColor = Color.Red;
             lblValidation.ImageAlign = ContentAlignment.TopRight;
-            lblValidation.Location = new Point(83, 349);
+            lblValidation.Location = new Point(125, 352);
             lblValidation.Name = "lblValidation";
             lblValidation.Size = new Size(73, 20);
             lblValidation.TabIndex = 3;
@@ -141,9 +141,9 @@
             // btnSubmit
             // 
             btnSubmit.BackColor = Color.FromArgb(250, 135, 135);
-            btnSubmit.Location = new Point(215, 390);
+            btnSubmit.Location = new Point(252, 392);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(126, 39);
+            btnSubmit.Size = new Size(136, 43);
             btnSubmit.TabIndex = 5;
             btnSubmit.Text = "Xác nhận";
             btnSubmit.UseVisualStyleBackColor = false;
@@ -152,7 +152,7 @@
             // linkBack
             // 
             linkBack.AutoSize = true;
-            linkBack.Location = new Point(446, 434);
+            linkBack.Location = new Point(519, 433);
             linkBack.Name = "linkBack";
             linkBack.Size = new Size(63, 20);
             linkBack.TabIndex = 6;
@@ -164,9 +164,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 542);
+            ClientSize = new Size(782, 553);
             Controls.Add(panelChangePassword);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(800, 600);
             Name = "DoiMatKhau";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "DoiMatKhau";
             Load += DoiMatKhau_Load;
             panelChangePassword.ResumeLayout(false);

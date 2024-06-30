@@ -59,18 +59,15 @@ namespace UI_winform
 
         private void btnDKyDangTuyen_Click(object sender, EventArgs e)
         {
-            this.Hide();
             DangKyDangTuyen1 dkDangTuyenForm = new DangKyDangTuyen1();
-            dkDangTuyenForm.FormClosed += (s, args) => this.Close();
             dkDangTuyenForm.Show();
         }
 
         private void linkBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            this.Hide();
             DangNhap newWindow = new DangNhap();
-            newWindow.FormClosed += (s, args) => this.Close();
-            newWindow.Show();
+            this.FormClosing += (s, args) => newWindow.Show();
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -29,7 +29,7 @@ namespace UI_winform.User.Login
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            // ADD UC FUNCTION HERE 
+            //IMPLEMENTATION
             //===========================
 
             //===========================

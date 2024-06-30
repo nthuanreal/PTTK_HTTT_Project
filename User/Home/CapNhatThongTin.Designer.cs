@@ -86,7 +86,7 @@
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(297, 182);
+            dateTimePicker1.Location = new Point(289, 183);
             dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(207, 27);
@@ -96,7 +96,7 @@
             // 
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "Đại học", "Cao Đẳng", "Trung cấp" });
-            checkedListBox1.Location = new Point(297, 376);
+            checkedListBox1.Location = new Point(289, 377);
             checkedListBox1.Margin = new Padding(2);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(139, 26);
@@ -105,7 +105,7 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(432, 426);
+            checkBox2.Location = new Point(424, 427);
             checkBox2.Margin = new Padding(2);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(51, 24);
@@ -118,7 +118,7 @@
             checkBox1.AutoSize = true;
             checkBox1.Checked = true;
             checkBox1.CheckState = CheckState.Checked;
-            checkBox1.Location = new Point(297, 426);
+            checkBox1.Location = new Point(289, 427);
             checkBox1.Margin = new Padding(2);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(63, 24);
@@ -128,7 +128,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(297, 328);
+            textBox4.Location = new Point(289, 329);
             textBox4.Margin = new Padding(2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(207, 27);
@@ -137,7 +137,7 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(297, 279);
+            textBox3.Location = new Point(289, 280);
             textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(207, 27);
@@ -146,7 +146,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(297, 226);
+            textBox2.Location = new Point(289, 227);
             textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(207, 27);
@@ -155,7 +155,7 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(297, 138);
+            textBox1.Location = new Point(289, 139);
             textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(207, 27);
@@ -165,7 +165,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(178, 429);
+            label7.Location = new Point(170, 430);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
             label7.Size = new Size(65, 20);
@@ -175,7 +175,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(178, 382);
+            label1.Location = new Point(170, 383);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(63, 20);
@@ -185,7 +185,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(178, 330);
+            label5.Location = new Point(170, 331);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(46, 20);
@@ -195,7 +195,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(178, 282);
+            label4.Location = new Point(170, 283);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
             label4.Size = new Size(36, 20);
@@ -205,7 +205,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(177, 231);
+            label3.Location = new Point(169, 232);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(55, 20);
@@ -215,7 +215,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(177, 182);
+            label2.Location = new Point(169, 183);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(74, 20);
@@ -225,7 +225,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(177, 138);
+            label8.Location = new Point(169, 139);
             label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
             label8.Size = new Size(54, 20);
@@ -265,7 +265,7 @@
             panelRegister.Controls.Add(label5);
             panelRegister.Controls.Add(label7);
             panelRegister.Controls.Add(label1);
-            panelRegister.Location = new Point(218, 146);
+            panelRegister.Location = new Point(174, 102);
             panelRegister.Name = "panelRegister";
             panelRegister.Size = new Size(657, 603);
             panelRegister.TabIndex = 35;
@@ -274,7 +274,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(164, 60);
+            lblTitle.Location = new Point(156, 61);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(340, 35);
             lblTitle.TabIndex = 0;
@@ -284,13 +284,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 787);
+            ClientSize = new Size(982, 753);
             Controls.Add(panelNavbar);
             Controls.Add(panelRegister);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(1000, 800);
             Name = "CapNhatThongTin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CapNhatThongTin";
-            WindowState = FormWindowState.Maximized;
             Load += CapNhatThongTin_Load;
             Resize += CapNhatThongTin_Resize;
             panelNavbar.ResumeLayout(false);

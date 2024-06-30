@@ -42,20 +42,19 @@ namespace UI_winform
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            //IMPLEMENTATION
+            //===========================
+
             MessageBox.Show("Đăng ký đăng tuyển thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide();
-            HomePage homepage = new HomePage();
-            homepage.FormClosed += (s, args) => this.Close();
-            homepage.Show();
+
+            //===========================
+            this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Hủy bỏ phiếu đăng ký thành công!", "Hủy bỏ", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide();
-            HomePage homepage = new HomePage();
-            homepage.FormClosed += (s, args) => this.Close();
-            homepage.Show();
+            this.Close();
         }
     }
 }

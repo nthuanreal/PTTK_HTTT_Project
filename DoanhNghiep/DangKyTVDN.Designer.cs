@@ -33,7 +33,6 @@
             txtPassword = new TextBox();
             lblUsername = new Label();
             txtUsername = new TextBox();
-            lblTitle = new Label();
             lblCompanyName = new Label();
             txtCompanyName = new TextBox();
             lblTaxID = new Label();
@@ -49,6 +48,7 @@
             btnCancel = new Button();
             btnRegister = new Button();
             panel1 = new Panel();
+            lblTitle = new Label();
             panelRegister.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -76,7 +76,7 @@
             panelRegister.Controls.Add(btnCancel);
             panelRegister.Controls.Add(btnRegister);
             panelRegister.Controls.Add(panel1);
-            panelRegister.Location = new Point(161, 40);
+            panelRegister.Location = new Point(126, 85);
             panelRegister.Name = "panelRegister";
             panelRegister.Size = new Size(746, 574);
             panelRegister.TabIndex = 0;
@@ -116,16 +116,6 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(350, 32);
             txtUsername.TabIndex = 16;
-            // 
-            // lblTitle
-            // 
-            lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(84, 36);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(586, 35);
-            lblTitle.TabIndex = 0;
-            lblTitle.Text = "ĐĂNG KÝ THÀNH VIÊN DOANH NGHIỆP";
             // 
             // lblCompanyName
             // 
@@ -267,16 +257,28 @@
             panel1.Size = new Size(746, 102);
             panel1.TabIndex = 19;
             // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
+            lblTitle.Location = new Point(84, 36);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(586, 35);
+            lblTitle.TabIndex = 0;
+            lblTitle.Text = "ĐĂNG KÝ THÀNH VIÊN DOANH NGHIỆP";
+            // 
             // DangKyTVDN
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1005, 665);
+            ClientSize = new Size(982, 753);
             Controls.Add(panelRegister);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(1000, 800);
             Name = "DangKyTVDN";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DangKyTVDN";
-            WindowState = FormWindowState.Maximized;
             Load += DangKyTVDN_Load;
             Resize += DangKyTVDN_Resize;
             panelRegister.ResumeLayout(false);

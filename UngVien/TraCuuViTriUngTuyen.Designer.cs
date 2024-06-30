@@ -46,35 +46,39 @@
             // button1
             // 
             button1.BackColor = SystemColors.ActiveCaption;
-            button1.Location = new Point(997, 49);
+            button1.Location = new Point(798, 39);
+            button1.Margin = new Padding(2, 2, 2, 2);
             button1.Name = "button1";
-            button1.Size = new Size(129, 43);
+            button1.Size = new Size(103, 34);
             button1.TabIndex = 31;
             button1.Text = "Tìm kiếm";
             button1.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(511, 58);
+            textBox1.Location = new Point(409, 46);
+            textBox1.Margin = new Padding(2, 2, 2, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(158, 31);
+            textBox1.Size = new Size(127, 27);
             textBox1.TabIndex = 26;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(38, 18);
+            label5.Location = new Point(30, 14);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(87, 25);
+            label5.Size = new Size(72, 20);
             label5.TabIndex = 20;
             label5.Text = "TÌM KIẾM";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(66, 61);
+            label1.Location = new Point(53, 49);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(48, 25);
+            label1.Size = new Size(40, 20);
             label1.TabIndex = 32;
             label1.Text = "Vị trí";
             // 
@@ -82,50 +86,55 @@
             // 
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "Nhân viên chính thức", "Bán thời gian", "Thực tập sinh", "Tất cả" });
-            checkedListBox1.Location = new Point(131, 60);
+            checkedListBox1.Location = new Point(105, 48);
+            checkedListBox1.Margin = new Padding(2, 2, 2, 2);
             checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(253, 32);
+            checkedListBox1.Size = new Size(203, 26);
             checkedListBox1.TabIndex = 33;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(406, 61);
+            label2.Location = new Point(325, 49);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(99, 25);
+            label2.Size = new Size(81, 20);
             label2.TabIndex = 34;
             label2.Text = "Mức lương";
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(719, 63);
+            label3.Location = new Point(575, 50);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(76, 25);
+            label3.Size = new Size(62, 20);
             label3.TabIndex = 36;
             label3.Text = "Từ khóa";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(815, 55);
+            textBox2.Location = new Point(652, 44);
+            textBox2.Margin = new Padding(2, 2, 2, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(158, 31);
+            textBox2.Size = new Size(127, 27);
             textBox2.TabIndex = 35;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(66, 138);
+            dataGridView1.Location = new Point(53, 110);
+            dataGridView1.Margin = new Padding(2, 2, 2, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.Size = new Size(958, 462);
+            dataGridView1.Size = new Size(766, 370);
             dataGridView1.TabIndex = 37;
             // 
             // TraCuuViTriUngTuyen
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1152, 725);
+            ClientSize = new Size(982, 753);
             Controls.Add(dataGridView1);
             Controls.Add(label3);
             Controls.Add(textBox2);
@@ -135,7 +144,10 @@
             Controls.Add(button1);
             Controls.Add(textBox1);
             Controls.Add(label5);
+            Margin = new Padding(2, 2, 2, 2);
+            MinimumSize = new Size(1000, 800);
             Name = "TraCuuViTriUngTuyen";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "TraCuuViTriUngTuyen";
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

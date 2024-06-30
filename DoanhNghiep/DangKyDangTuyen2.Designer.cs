@@ -116,7 +116,7 @@
             panelRegister.Controls.Add(lblTitle);
             panelRegister.Controls.Add(btnCancel);
             panelRegister.Controls.Add(btnRegister);
-            panelRegister.Location = new Point(185, 95);
+            panelRegister.Location = new Point(118, 132);
             panelRegister.Name = "panelRegister";
             panelRegister.Size = new Size(746, 513);
             panelRegister.TabIndex = 1;
@@ -229,13 +229,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1068, 661);
+            ClientSize = new Size(982, 753);
             Controls.Add(panelNavbar);
             Controls.Add(panelRegister);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            MinimumSize = new Size(1000, 800);
             Name = "DangKyDangTuyen2";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DangKyDangTuyen2";
-            WindowState = FormWindowState.Maximized;
             Load += DangKyDangTuyen2_Load;
             Resize += DangKyDangTuyen2_Resize;
             panelNavbar.ResumeLayout(false);

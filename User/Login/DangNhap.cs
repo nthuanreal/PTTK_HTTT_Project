@@ -77,7 +77,7 @@ namespace UI_winform
         {
             this.Hide();
             DangKyTVDN registerForm = new DangKyTVDN();
-            registerForm.FormClosed += (s, args) => this.Close();
+            registerForm.FormClosed += (s, args) => this.Show();
             registerForm.Show();
         }
 
@@ -85,7 +85,7 @@ namespace UI_winform
         {
             this.Hide();
             DangKyTVUV registerForm = new DangKyTVUV();
-            registerForm.FormClosed += (s, args) => this.Close();
+            registerForm.FormClosed += (s, args) => this.Show();
             registerForm.Show();
         }
 
@@ -96,9 +96,5 @@ namespace UI_winform
             forgotPasswordForm.FormClosed += (s, args) => this.Close();
             forgotPasswordForm.Show();
         }
-
-
-
-
     }
 }
