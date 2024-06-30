@@ -32,10 +32,13 @@
             giaHanBtn = new Button();
             hoSoBtn = new Button();
             hopDongBtn = new Button();
+            searchBtn = new Button();
+            comboBox1 = new ComboBox();
+            label2 = new Label();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             label1 = new Label();
             panelNavbar = new Panel();
             label6 = new Label();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -60,6 +63,9 @@
             // 
             // splitContainer1.Panel2
             // 
+            splitContainer1.Panel2.Controls.Add(searchBtn);
+            splitContainer1.Panel2.Controls.Add(comboBox1);
+            splitContainer1.Panel2.Controls.Add(label2);
             splitContainer1.Panel2.Controls.Add(flowLayoutPanel1);
             splitContainer1.Panel2.Controls.Add(label1);
             splitContainer1.Panel2.Controls.Add(panelNavbar);
@@ -105,10 +111,50 @@
             hopDongBtn.UseVisualStyleBackColor = false;
             hopDongBtn.Click += hopDongBtn_Click;
             // 
+            // searchBtn
+            // 
+            searchBtn.BackColor = Color.FromArgb(250, 135, 135);
+            searchBtn.Location = new Point(991, 312);
+            searchBtn.Name = "searchBtn";
+            searchBtn.Size = new Size(94, 35);
+            searchBtn.TabIndex = 22;
+            searchBtn.Text = "Tra cứu";
+            searchBtn.UseVisualStyleBackColor = false;
+            searchBtn.Click += searchBtn_Click;
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.FromArgb(255, 176, 176);
+            comboBox1.Font = new Font("Segoe UI", 10.2F);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Chưa duyệt", "Đã duyệt", "Gia hạn" });
+            comboBox1.Location = new Point(991, 210);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(146, 31);
+            comboBox1.TabIndex = 21;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10.2F);
+            label2.Location = new Point(900, 213);
+            label2.Name = "label2";
+            label2.Size = new Size(89, 23);
+            label2.TabIndex = 20;
+            label2.Text = "Tình trạng";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            flowLayoutPanel1.Location = new Point(9, 170);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(885, 582);
+            flowLayoutPanel1.TabIndex = 19;
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(19, 111);
+            label1.Location = new Point(9, 130);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(213, 25);
@@ -124,7 +170,7 @@
             panelNavbar.Location = new Point(0, 0);
             panelNavbar.Margin = new Padding(0);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1140, 87);
+            panelNavbar.Size = new Size(1146, 87);
             panelNavbar.TabIndex = 17;
             // 
             // label6
@@ -138,14 +184,6 @@
             label6.TabIndex = 8;
             label6.Text = "XỬ LÝ HỢP ĐỒNG";
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            flowLayoutPanel1.Location = new Point(19, 170);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(901, 582);
-            flowLayoutPanel1.TabIndex = 19;
-            // 
             // EmployeePage
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -156,6 +194,7 @@
             Margin = new Padding(4);
             Name = "EmployeePage";
             Text = "EmployeePage";
+            FormClosed += EmployeePage_FormClosed;
             Load += EmployeePage_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel2.ResumeLayout(false);
@@ -177,5 +216,8 @@
         public Button hopDongBtn;
         private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
+        private Label label2;
+        private ComboBox comboBox1;
+        private Button searchBtn;
     }
 }

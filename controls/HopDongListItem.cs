@@ -23,6 +23,11 @@ namespace UI_winform.controls
         private string _tinhTrang;
         private string _ngayHetHan;
 
+        private void HopDongListItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
         [Category("Custom Props")]
         public string MaHopDong
         {

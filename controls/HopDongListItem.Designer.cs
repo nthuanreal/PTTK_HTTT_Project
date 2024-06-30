@@ -132,6 +132,7 @@
             Margin = new Padding(4);
             Name = "HopDongListItem";
             Size = new Size(731, 83);
+            Click += HopDongListItem_Click;
             ResumeLayout(false);
             PerformLayout();
         }
