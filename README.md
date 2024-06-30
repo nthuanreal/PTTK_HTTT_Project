@@ -36,4 +36,22 @@ chưa thể truyền dữ liệu.
     TraCuuThongTinUV_UI -> CapNhatThongTin_UI_;
     TraCuuThongTin -> Homepage
 
-    
+30/6/2024 Tasks: 
+
+  - [ ] Thêm hình avt trong thông tin chung
+  - [ ] Hoàn thành DoiMatKhau
+  - [ ] Chỉnh sửa window size của các form
+        - [ ] QuenMatKhau (Cần đồng bộ với Đăng nhập ~ Cùng size ~)
+        - [ ] DangKyTVUV
+        - [ ] DangKyTVDN
+        - [ ] NopHoSo1,2 (Link 2 màn hình lại)
+        - [ ] TraCuuHoSo
+        - [ ] TraCuuViTriUngTuyen
+
+  - [ ] Thay đổi: chuyển màn hình -> hiện cửa sổ popup của các màn hình:
+        - [ ] CapNhatThongTin (Cần đổi tên tab)
+        - [ ] DangKyDangTuyen1 -> DangKyDangTuyen2 -> LapPhieuDKDangTuyen
+        - [ ] DangKyTK (UV/DN)
+  - [ ] Chỉnh sửa box chọn trình độ
+  - [ ] Chỉnh sửa box chọn giới tính
+
