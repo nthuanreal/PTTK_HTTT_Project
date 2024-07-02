@@ -14,6 +14,8 @@ namespace UI_winform.NhanVien.controls
 {
     public partial class HoSoUngVien : UserControl
     {
+        private static Dictionary<string, string> TRANGTHAI = new Dictionary<string, string>() { { "0", "Chưa duyệt" }, { "1", "Đã duyệt" } };
+
         public HoSoUngVien()
         {
             InitializeComponent();
@@ -22,7 +24,7 @@ namespace UI_winform.NhanVien.controls
 
         private void populateItems(string? filter)
         {
-            string query = "select hs.mahs, dn.tendn, ttdt.vitri_ungtuyen, hs.trangthaiduyet\r\nfrom qlhsut.qlhsut_ho_so_ung_tuyen hs\r\njoin qlhsut.qlhsut_phieu_quang_cao pqc on hs.mapqc = pqc.mapqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen ttdt on ttdt.madt = hd.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on ttdt.dn_dangtuyen = dn.madn;";
+            string query = "select hs.mahs, dn.tendn, ttdt.vitri_ungtuyen, hs.trangthaiduyet\r\nfrom qlhsut.qlhsut_ho_so_ung_tuyen hs\r\njoin qlhsut.qlhsut_phieu_quang_cao pqc on hs.mapqc = pqc.mapqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen ttdt on ttdt.madt = hd.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on ttdt.dn_dangtuyen = dn.madn";
             if (filter != null)
             {
                 if (filter == "Chưa duyệt")
@@ -33,8 +35,8 @@ namespace UI_winform.NhanVien.controls
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             int n = data.Rows.Count;
-            HopDongListItem[] hopDongListItems = new HopDongListItem[n];
-
+            HoSoUngVienItem[] hopDongListItems = new HoSoUngVienItem[n];
+            
             if (flowLayoutPanel1.Controls.Count > 0)
             {
                 flowLayoutPanel1.Controls.Clear();
@@ -43,18 +45,18 @@ namespace UI_winform.NhanVien.controls
             for (int i = 0; i < n; i++)
             {
                 DataRow row = data.Rows[i];
-                hopDongListItems[i] = new HopDongListItem();
+                hopDongListItems[i] = new HoSoUngVienItem();
 
                 decimal maHS = (decimal)row["MAHS"];
                 string tenDN = (string)row["TENDN"];
                 string viTri = (string)row["VITRI_UNGTUYEN"];
-                decimal trangThai = (decimal)row["TRANGTHAIDUYET"]; 
+                decimal trangThai = (decimal)row["TRANGTHAIDUYET"];
 
                 
-                hopDongListItems[i].MaHopDong = maHS.ToString();
-                hopDongListItems[i].NgayLap = tenDN;
-                hopDongListItems[i].NgayHetHan = viTri;
-                hopDongListItems[i].TinhTrang = trangThai.ToString();
+                hopDongListItems[i].MaHs = maHS.ToString();
+                hopDongListItems[i].TenDn = tenDN;
+                hopDongListItems[i].ViTri = viTri;
+                hopDongListItems[i].TrangThaiDuyet = TRANGTHAI[trangThai.ToString()];
 
                 flowLayoutPanel1.Controls.Add(hopDongListItems[i]);
             }

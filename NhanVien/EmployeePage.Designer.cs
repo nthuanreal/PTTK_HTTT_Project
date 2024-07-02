@@ -73,6 +73,7 @@
             giaHanBtn.TabIndex = 5;
             giaHanBtn.Text = "XỬ LÝ GIA HẠN";
             giaHanBtn.UseVisualStyleBackColor = false;
+            giaHanBtn.Click += giaHanBtn_Click;
             // 
             // hoSoBtn
             // 
