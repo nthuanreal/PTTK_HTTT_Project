@@ -41,5 +41,15 @@ namespace UI_winform.NhanVien
         {
 
         }
+
+        private void MoTaCongViec_Textbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ViTriUngTuyen_Textbox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
