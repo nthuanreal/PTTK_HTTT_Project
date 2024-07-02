@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Query.Internal;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,13 +9,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI_winform
+namespace UI_winform.NhanVien.controls
 {
-    public partial class TraCuuHoSo : Form
+    public partial class DuyetTaiKhoan : UserControl
     {
-        public TraCuuHoSo()
+        public DuyetTaiKhoan()
         {
             InitializeComponent();
+        }
+
+        private void populateItems()
+        {
+
         }
     }
 }

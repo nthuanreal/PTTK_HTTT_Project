@@ -10,23 +10,13 @@ using System.Windows.Forms;
 using UI_winform.controls;
 using UI_winform.DAO;
 
-namespace UI_winform
+namespace UI_winform.NhanVien.controls
 {
-    public partial class EmployeePage : Form
+    public partial class DanhSachHopDong : UserControl
     {
-        public EmployeePage()
+        public DanhSachHopDong()
         {
             InitializeComponent();
-        }
-
-        private void hopDongBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void EmployeePage_Load(object sender, EventArgs e)
-        {
-            populateItems(null);
         }
 
         private void populateItems(string? filter)
@@ -43,7 +33,7 @@ namespace UI_winform
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             int n = data.Rows.Count;
             HopDongListItem[] hopDongListItems = new HopDongListItem[n];
-            
+
             if (flowLayoutPanel1.Controls.Count > 0)
             {
                 flowLayoutPanel1.Controls.Clear();
@@ -80,11 +70,9 @@ namespace UI_winform
             }
         }
 
-
-
-        private void EmployeePage_FormClosed(object sender, FormClosedEventArgs e)
+        private void DanhSachHopDong_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+            populateItems(null);
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -93,5 +81,4 @@ namespace UI_winform
 
         }
     }
-
 }

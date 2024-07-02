@@ -96,8 +96,8 @@ namespace UI_winform
 
         private void button4_Click(object sender, EventArgs e)
         {
-            TraCuuHoSo newWindow = new TraCuuHoSo();
-            newWindow.Show();
+            //TraCuuHoSo newWindow = new TraCuuHoSo();
+            //newWindow.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)

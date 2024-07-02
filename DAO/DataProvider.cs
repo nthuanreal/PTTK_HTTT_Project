@@ -24,7 +24,7 @@ namespace UI_winform.DAO
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
-            MessageBox.Show(_connectionString);
+
             OracleConnection connection = new OracleConnection();
             
                 connection.ConnectionString = _connectionString;
