@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI_winform.DAO;
+using UI_winform.NhanVien;
 
 namespace UI_winform.controls
 {
@@ -25,7 +27,15 @@ namespace UI_winform.controls
 
         private void HopDongListItem_Click(object sender, EventArgs e)
         {
-
+            
+            if (decimal.TryParse(_maHs, out decimal result))
+            {
+                ChiTietHoSo chiTietHoSo = new ChiTietHoSo(result);
+                chiTietHoSo.ShowDialog();
+            }
+            else {
+                MessageBox.Show("Lỗi khi tải hồ sơ");
+            }
         }
 
         [Category("Custom Props")]

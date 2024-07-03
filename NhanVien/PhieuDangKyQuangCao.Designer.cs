@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            label1 = new Label();
             TuChoi_Button = new Button();
             Tao_button = new Button();
             Huy_button = new Button();
@@ -80,19 +80,6 @@
             tableLayoutPanel1.Size = new Size(196, 399);
             tableLayoutPanel1.TabIndex = 0;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 25F);
-            label1.Location = new Point(225, 9);
-            label1.Name = "label1";
-            label1.Size = new Size(584, 57);
-            label1.TabIndex = 0;
-            label1.Text = "PHIẾU ĐĂNG KÝ QUẢNG CÁO";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -145,6 +132,19 @@
             label6.Size = new Size(120, 20);
             label6.TabIndex = 5;
             label6.Text = "Yêu cầu ứng viên";
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 25F);
+            label1.Location = new Point(225, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(584, 57);
+            label1.TabIndex = 0;
+            label1.Text = "PHIẾU ĐĂNG KÝ QUẢNG CÁO";
+            label1.TextAlign = ContentAlignment.MiddleCenter;
+            label1.Click += label1_Click;
             // 
             // TuChoi_Button
             // 
