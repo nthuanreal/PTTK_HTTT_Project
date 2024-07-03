@@ -102,11 +102,11 @@ namespace UI_winform
                 {
                     connectionString = @$"DATA SOURCE = {hostname}:{port}/XEPDB1; USER ID=" + txtUsername.Text + ";PASSWORD=" + txtPassword.Text;
                     var cmd = new OracleCommand();
-                    var qlthOracleConnection = new OracleConnection();
-                    qlthOracleConnection.ConnectionString = qlhsutConnectionString;
-                    qlthOracleConnection.Open();
-                    cmd.Connection = qlthOracleConnection;
-                    cmd.CommandText = "QLTH.USER_LOGIN";
+                    var qlhsutOracleConnection = new OracleConnection();
+                    qlhsutOracleConnection.ConnectionString = qlhsutConnectionString;
+                    qlhsutOracleConnection.Open();
+                    cmd.Connection = qlhsutOracleConnection;
+                    cmd.CommandText = "QLHSUT.USER_LOGIN";
                     cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
                     cmd.Parameters.Add("USRNAME", OracleDbType.Varchar2).Value = txtUsername.Text;
@@ -118,7 +118,7 @@ namespace UI_winform
 
                     int result = int.Parse(cmd.Parameters["CNT"].Value.ToString());
 
-                    qlthOracleConnection.Close();
+                    qlhsutOracleConnection.Close();
 
                     if (result == 0)
                     {
