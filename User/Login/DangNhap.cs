@@ -1,28 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Oracle.ManagedDataAccess.Client;
+using Oracle.ManagedDataAccess.Types;
+using System;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Collections.Specialized.BitVector32;
+using UI_winform.utils;
 
 namespace UI_winform
 {
     public partial class DangNhap : Form
     {
+        public OracleConnection con;
+        public static string Username;
+        public static string Password;
+        public static string Role;
 
         public DangNhap()
         {
+            con = new OracleConnection();
             InitializeComponent();
         }
 
-
-
         private void DangNhap_Load(object sender, EventArgs e)
         {
-             CenterPanel();
+            CenterPanel();
         }
 
         private void DangNhap_Resize(object sender, EventArgs e)
@@ -39,33 +42,131 @@ namespace UI_winform
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Basic validation
-            if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            if (txtUsername.Text.Length == 0)
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai!", "ĐĂNG NHẬP THẤT BẠI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("TÊN ĐĂNG NHẬP không được để trống.");
+                return;
+            }
+            if (txtPassword.Text.Length == 0)
+            {
+                MessageBox.Show("MẬT KHẨU không được để trống.");
+                return;
+            }
+            if (txtRole.Text.Length == 0)
+            {
+                MessageBox.Show("VAI TRÒ không được để trống.");
                 return;
             }
 
-            // Simulate a successful login
-            if (txtUsername.Text == "admin" && txtPassword.Text == "password")
-            // modify this line for login method. Ẽ: if(login(txtUsername.Text, txtPassword.Text)
+            Username = txtUsername.Text;
+            if (Username == "SYS" || Username == "sys")
             {
-                MessageBox.Show("Đăng nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
-                HomePage homepage = new HomePage();
-                homepage.FormClosed += (s, args) => this.Close();
-                homepage.Show();
+                MessageBox.Show("TÊN ĐĂNG NHẬP hoặcc MẬT KHẨU không hợp lệ!");
+                return;
             }
-            else if (txtUsername.Text == "staff" && txtPassword.Text == "staff")
-            {
-                MessageBox.Show("Đăng nhập thành công!", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                EmployeePage employeePage = new EmployeePage();
-                employeePage.ShowDialog();
-                this.Hide();
 
-            }
-            else
+            try
             {
-                MessageBox.Show("Tên đăng nhập hoặc mật khẩu sai!", "ĐĂNG NHẬP THẤT BẠI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                string connectionString = "";
+                var appSettings = ConfigurationManager.AppSettings;
+                string hostname = appSettings["hostname"] ?? "localhost";
+                string port = appSettings["port"] ?? "1521";
+                string qlhsut = appSettings["sysdba"] ?? "QLHSUT";
+                string pwd = appSettings["pwd"] ?? "123456";
+
+                string qlhsutConnectionString = @$"DATA SOURCE={hostname}:{port}/XEPDB1;DBA Privilege=SYSDBA; USER ID=" + qlhsut + ";PASSWORD=" + pwd;
+
+                using (OracleConnection con = new OracleConnection(qlhsutConnectionString))
+                {
+                    try
+                    {
+                        con.Open();
+                        MessageBox.Show("Kết nối với cơ sở dữ liệu thành công!");
+                    }
+                    catch (OracleException ex)
+                    {
+                        MessageBox.Show("Lỗi kết nối: " + ex.Message);
+                    }
+                }
+
+                if (txtRole.Text == "Quản trị viên")
+                {
+                    connectionString = @$"DATA SOURCE={hostname}:{port}/XEPDB1;DBA Privilege=SYSDBA; USER ID=" + txtUsername.Text + ";PASSWORD=" + txtPassword.Text;
+                    con.ConnectionString = connectionString;
+                    con.Open();
+                    Session.Instance.OracleConnection = con;
+                    MessageBox.Show("Connect với tư cách là quản trị viên thành công!");
+                    this.Hide();
+                }
+                else
+                {
+                    connectionString = @$"DATA SOURCE = {hostname}:{port}/XEPDB1; USER ID=" + txtUsername.Text + ";PASSWORD=" + txtPassword.Text;
+                    var cmd = new OracleCommand();
+                    var qlthOracleConnection = new OracleConnection();
+                    qlthOracleConnection.ConnectionString = qlhsutConnectionString;
+                    qlthOracleConnection.Open();
+                    cmd.Connection = qlthOracleConnection;
+                    cmd.CommandText = "QLTH.USER_LOGIN";
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add("USRNAME", OracleDbType.Varchar2).Value = txtUsername.Text;
+                    cmd.Parameters.Add("USR_ROLE", OracleDbType.NVarchar2).Value = txtRole.Text;
+                    var outputParam = cmd.Parameters.Add("CNT", OracleDbType.Int32);
+                    outputParam.Direction = System.Data.ParameterDirection.Output;
+
+                    cmd.ExecuteNonQuery();
+
+                    int result = int.Parse(cmd.Parameters["CNT"].Value.ToString());
+
+                    qlthOracleConnection.Close();
+
+                    if (result == 0)
+                    {
+                        MessageBox.Show("Không tồn tại tài khoản với vai trò tương ứng!");
+                    }
+                    else
+                    {
+                        if (result == 1)
+                        {
+                            con.ConnectionString = connectionString;
+                            con.Open();
+
+                            Session.Instance.Username = txtUsername.Text;
+                            Session.Instance.Password = txtPassword.Text;
+                            Session.Instance.Role = txtRole.Text;
+                            Session.Instance.OracleConnection = con;
+                            MessageBox.Show("Connect với tư cách là Doanh nghiệp thành công!");
+                            this.Hide();
+                        }
+                        else if (result == 2)
+                        {
+                            con.ConnectionString = connectionString;
+                            con.Open();
+                            Session.Instance.Username = txtUsername.Text;
+                            Session.Instance.Password = txtPassword.Text;
+                            Session.Instance.Role = txtRole.Text;
+                            Session.Instance.OracleConnection = con;
+                            MessageBox.Show("Connect với tư cách là Ứng viên thành công!");
+                            this.Hide();
+                        }
+                        else if (result == 3)
+                        {
+                            con.ConnectionString = connectionString;
+                            con.Open();
+
+                            Session.Instance.Username = txtUsername.Text;
+                            Session.Instance.Password = txtPassword.Text;
+                            Session.Instance.Role = txtRole.Text;
+                            Session.Instance.OracleConnection = con;
+                            MessageBox.Show("Connect với tư cách là Nhân viên thành công!");
+                            this.Hide();
+                        }
+                    }
+                }
+            }
+            catch (OracleException ex)
+            {
+                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!ha");
             }
         }
 
@@ -103,6 +204,11 @@ namespace UI_winform
             QuenMatKhau forgotPasswordForm = new QuenMatKhau();
             forgotPasswordForm.FormClosed += (s, args) => this.Close();
             forgotPasswordForm.Show();
+        }
+
+        private void txtRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
