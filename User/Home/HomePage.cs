@@ -72,7 +72,7 @@ namespace UI_winform
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CapNhatThongTin newWindow = new CapNhatThongTin();
+            CapNhatThongTinUV newWindow = new CapNhatThongTinUV(110004);
             newWindow.Show();
         }
 
@@ -84,15 +84,15 @@ namespace UI_winform
 
         private void button2_Click(object sender, EventArgs e)
         {
-            NopHoSo01 newWindow = new NopHoSo01();
+            NopHoSo01 newWindow = new NopHoSo01(110004, 30004);
             newWindow.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            NopHoSo02 newWindow = new NopHoSo02();
+/*            NopHoSo02 newWindow = new NopHoSo02();
             newWindow.Show();
-        }
+*/        }
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -102,7 +102,7 @@ namespace UI_winform
 
         private void button5_Click(object sender, EventArgs e)
         {
-            TraCuuViTriUngTuyen newWindow = new TraCuuViTriUngTuyen();
+            TraCuuViTriUngTuyen newWindow = new TraCuuViTriUngTuyen(110004);
             newWindow.Show();
         }
     }

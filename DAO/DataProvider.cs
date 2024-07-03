@@ -20,21 +20,44 @@ namespace UI_winform.DAO
         private DataProvider() { }
 
         private string _connectionString = @$"DATA SOURCE = localhost:1521/XEPDB1; USER ID=" + "QLHSUT" + ";PASSWORD=" + "123456";
-        // private string _connectionString = $"Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=localhost)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SID=xe)));User Id=SYS;Password=ngoc123;DBA Privilege=SYSDBA;";
 
-        public DataTable ExecuteQuery(string query, object[] parameter = null)
+        public DataTable ExecuteQuery(string query, object[] parameters = null)
         {
             DataTable data = new DataTable();
-            OracleConnection connection = new OracleConnection();
-            
-                connection.ConnectionString = _connectionString;
-                connection.Open();
-                OracleCommand command = new OracleCommand(query, connection);
-                OracleDataAdapter adapter = new OracleDataAdapter(command);
-                adapter.Fill(data);
-                connection.Close();
-            
-                
+
+            using (OracleConnection connection = new OracleConnection(_connectionString))
+            {
+                using (OracleCommand command = new OracleCommand(query, connection))
+                {
+                    // Add parameters if provided
+                    if (parameters != null)
+                    {
+                        string[] listParam = query.Split(' ');
+                        int i = 0;
+                        foreach (string item in listParam)
+                        {
+                            if (item.Contains(':'))
+                            {
+                                command.Parameters.Add(new OracleParameter(item, parameters[i]));
+                                i++;
+                            }
+                        }
+                    }
+
+                    try
+                    {
+                        connection.Open();
+                        OracleDataAdapter adapter = new OracleDataAdapter(command);
+                        adapter.Fill(data);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Handle exceptions or log errors
+                        Console.WriteLine($"Error executing query: {ex.Message}");
+                    }
+                }
+            }
+
             return data;
         }
         public void ExecuteNonQuery(string query, object[] parameter = null)

@@ -15,20 +15,22 @@ namespace UI_winform
 {
     public partial class NopHoSo01 : Form
     {
-        public string mauv = "110001";
+        public int mauv, madt;
         private NopHoSo02 nopHoSo02;
-        public NopHoSo01()
+        public NopHoSo01(int MaUV, int MaDT)
         {
             InitializeComponent();
+            this.mauv = MaUV;
+            this.madt = MaDT;
             this.nopHoSo02 = new NopHoSo02(this);
             LoadData();
         }
         private void LoadData()
         {
-            string query = "SELECT HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO FROM QLHSUT.QLHSUT_UNG_VIEN WHERE MAUV = ";
-            object[] parameters = { 110001}; 
+            string query = "SELECT HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO FROM QLHSUT.QLHSUT_UNG_VIEN WHERE MAUV = :MAUV";
+            object[] parameters = { mauv };
 
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
 
             if (data.Rows.Count > 0)
             {
@@ -58,6 +60,13 @@ namespace UI_winform
             //===========================
             this.Hide();
             this.nopHoSo02.Show();
+        }
+
+        private void btnExt_Click(object sender, EventArgs e)
+        {
+            TraCuuViTriUngTuyen tracuu = new TraCuuViTriUngTuyen(mauv);
+            this.Hide();
+            tracuu.Show();
         }
     }
 }
