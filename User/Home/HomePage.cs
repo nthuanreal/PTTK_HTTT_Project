@@ -13,9 +13,11 @@ namespace UI_winform
 {
     public partial class HomePage : Form
     {
-        public HomePage()
+        DangNhap curLogin = new DangNhap();
+        public HomePage(DangNhap curLogin)
         {
             InitializeComponent();
+            this.curLogin = curLogin;
         }
 
         private void HomePage_Load(object sender, EventArgs e)

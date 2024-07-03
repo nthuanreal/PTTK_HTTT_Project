@@ -76,18 +76,18 @@ namespace UI_winform
 
                 string qlhsutConnectionString = @$"DATA SOURCE={hostname}:{port}/XEPDB1;DBA Privilege=SYSDBA; USER ID=" + qlhsut + ";PASSWORD=" + pwd;
 
-                using (OracleConnection con = new OracleConnection(qlhsutConnectionString))
-                {
-                    try
-                    {
-                        con.Open();
-                        MessageBox.Show("Kết nối với cơ sở dữ liệu thành công!");
-                    }
-                    catch (OracleException ex)
-                    {
-                        MessageBox.Show("Lỗi kết nối: " + ex.Message);
-                    }
-                }
+                //using (OracleConnection con = new OracleConnection(qlhsutConnectionString))
+                //{
+                //    try
+                //    {
+                //        con.Open();
+                //        MessageBox.Show("Kết nối với cơ sở dữ liệu thành công!");
+                //    }
+                //    catch (OracleException ex)
+                //    {
+                //        MessageBox.Show("Lỗi kết nối: " + ex.Message);
+                //    }
+                //}
 
                 if (txtRole.Text == "Quản trị viên")
                 {
@@ -137,6 +137,8 @@ namespace UI_winform
                             Session.Instance.OracleConnection = con;
                             MessageBox.Show("Connect với tư cách là Doanh nghiệp thành công!");
                             this.Hide();
+                            HomePage DNHomePage = new HomePage(this);
+                            DNHomePage.Show();
                         }
                         else if (result == 2)
                         {
@@ -148,6 +150,8 @@ namespace UI_winform
                             Session.Instance.OracleConnection = con;
                             MessageBox.Show("Connect với tư cách là Ứng viên thành công!");
                             this.Hide();
+                            HomePage UVHomePage = new HomePage(this);
+                            UVHomePage.Show();
                         }
                         else if (result == 3)
                         {
@@ -160,13 +164,15 @@ namespace UI_winform
                             Session.Instance.OracleConnection = con;
                             MessageBox.Show("Connect với tư cách là Nhân viên thành công!");
                             this.Hide();
+                            EmployeePage NVHomePage = new EmployeePage();
+                            NVHomePage.Show();
                         }
                     }
                 }
             }
             catch (OracleException ex)
             {
-                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!ha");
+                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!");
             }
         }
 
