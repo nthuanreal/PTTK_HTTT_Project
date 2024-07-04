@@ -27,10 +27,11 @@
       + [x] Đổi mật khẩu
   - Doanh nghiệp
       + [x] Đăng ký thành viên
-      + [x] HOME
-      + [ ] 
-      + [ ] 
-      + [ ] 
+      + [x] HOME 
+      + [x] Đăng ký đăng tuyển (1,2,tạo phiếu)
+      + [ ] Cập nhật thông tin DN (required for HOME)
+      + [ ] Thanh Toán
+      + [ ] Chiến lược
   - Ứng viên
       + [x] Đăng ký thành viên 
       + [x] HOME
@@ -43,7 +44,7 @@
       + [ ] 
       + [ ] 
       + [ ] 
-
+      
 
 ------------------------------------------------------------------------------------------
 30/6/2024 Tasks: 

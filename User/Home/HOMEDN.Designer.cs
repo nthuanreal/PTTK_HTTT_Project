@@ -178,6 +178,7 @@
             button3.TabIndex = 5;
             button3.Text = "THANH TOÁN";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button4
             // 
@@ -191,6 +192,7 @@
             button4.TabIndex = 6;
             button4.Text = "DÀNH RIÊNG CHO BẠN";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // panel2
             // 
@@ -214,6 +216,7 @@
             button6.TabIndex = 8;
             button6.Text = "CẬP NHẬT";
             button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // button5
             // 
@@ -227,6 +230,7 @@
             button5.TabIndex = 7;
             button5.Text = "ĐỔI MẬT KHẨU";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // tableLayoutPanel2
             // 
