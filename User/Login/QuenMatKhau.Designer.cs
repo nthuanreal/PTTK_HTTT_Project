@@ -75,10 +75,10 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(175, 39);
+            lblTitle.Font = new Font("Cascadia Code", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(123, 17);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(269, 35);
+            lblTitle.Size = new Size(391, 62);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "QUÊN MẬT KHẨU";
             // 
@@ -105,7 +105,7 @@
             lblEmailValidation.AutoSize = true;
             lblEmailValidation.ForeColor = Color.Red;
             lblEmailValidation.ImageAlign = ContentAlignment.TopRight;
-            lblEmailValidation.Location = new Point(123, 277);
+            lblEmailValidation.Location = new Point(431, 210);
             lblEmailValidation.Name = "lblEmailValidation";
             lblEmailValidation.Size = new Size(73, 20);
             lblEmailValidation.TabIndex = 3;
@@ -116,7 +116,7 @@
             // linkNotReceivedEmail
             // 
             linkNotReceivedEmail.AutoSize = true;
-            linkNotReceivedEmail.Location = new Point(36, 381);
+            linkNotReceivedEmail.Location = new Point(317, 277);
             linkNotReceivedEmail.Name = "linkNotReceivedEmail";
             linkNotReceivedEmail.Size = new Size(187, 20);
             linkNotReceivedEmail.TabIndex = 4;
@@ -127,7 +127,7 @@
             // btnSubmit
             // 
             btnSubmit.BackColor = Color.FromArgb(250, 135, 135);
-            btnSubmit.Location = new Point(246, 310);
+            btnSubmit.Location = new Point(240, 322);
             btnSubmit.Name = "btnSubmit";
             btnSubmit.Size = new Size(126, 39);
             btnSubmit.TabIndex = 5;

@@ -100,10 +100,10 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblTitle.Location = new Point(201, 36);
+            lblTitle.Font = new Font("Cascadia Code", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(171, 27);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(235, 35);
+            lblTitle.Size = new Size(298, 52);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "ĐỔI MẬT KHẨU";
             // 

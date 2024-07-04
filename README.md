@@ -1,13 +1,12 @@
 Đồ án môn học PTTK HTTT 2024,
-Giai đoạn 3,
-Thiết kế giao diện Winform UI.
+HỆ THỐNG QUẢN LÝ HỒ SƠ ỨNG TUYỂN CỦA CÔNG TY ABC
 
 Login key: 
-    - username: admin 
-    - password: password
-
-Notes: Đây chỉ là phần giao diện, xử lý backend chưa được hoàn thiện do thiếu database nên tạm thời
-chưa thể truyền dữ liệu.
+    - DBA:          QLHSUT
+    - DOANH_NGHIEP: 2000X
+    - UNG_VIEN:     11000X
+    - NHAN_VIEN:    9000X
+    - X: 1 -> 5
 
 
 **Special Requirement**:
@@ -19,7 +18,33 @@ chưa thể truyền dữ liệu.
     - WindowStyle:
         + Min/MaximizeBox: False (Với các chức năng điền thông tin)
 
+------------------------------------------------------------------------------------------
+04/07/2024 Tasks: check ui
+  - Người dùng chung
+      + [x] Login
+      + [x] Quên mật khẩu
+      + [ ] Đổi mật khẩu
+  - Doanh nghiệp
+      + [x] Đăng ký thành viên
+      + [ ] 
+      + [ ] 
+      + [ ] 
+      + [ ] 
+  - Ứng viên
+      + [x] Đăng ký thành viên 
+      + [ ] 
+      + [ ] 
+      + [ ] 
+      + [ ] 
+  - Nhân viên
+      + [ ] 
+      + [ ] 
+      + [ ] 
+      + [ ] 
+      + [ ] 
 
+
+------------------------------------------------------------------------------------------
 30/6/2024 Tasks: 
   - [x] Hoàn thành DoiMatKhau
   - [x] Chỉnh sửa window size của các form

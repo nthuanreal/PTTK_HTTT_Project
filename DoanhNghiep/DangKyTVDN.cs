@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using UI_winform.DAO;
 
 namespace UI_winform
 {
@@ -42,7 +44,7 @@ namespace UI_winform
         {
             //IMPLEMENTATION
             //===========================
-            if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
+            /*if (string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text))
             {
                 MessageBox.Show("Tên đăng nhập và mật khẩu không được để trống", "ĐĂNG KÝ THẤT BẠI", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -53,7 +55,18 @@ namespace UI_winform
                 this.Close();
             }
             //===========================
+            */
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+        
     }
 }

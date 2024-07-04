@@ -96,7 +96,7 @@ namespace UI_winform
                     con.Open();
                     Session.Instance.OracleConnection = con;
                     MessageBox.Show("Connect với tư cách là quản trị viên thành công!");
-                    this.Hide();
+                    MessageBox.Show("Chưa phát hành chức năng DBA! ");
                 }
                 else
                 {
