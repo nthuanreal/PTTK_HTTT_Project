@@ -54,9 +54,9 @@
             textBox7 = new TextBox();
             textBox8 = new TextBox();
             label4 = new Label();
-            comboBox1 = new ComboBox();
+            diemComboBox = new ComboBox();
             label5 = new Label();
-            button1 = new Button();
+            danhGiaBtn = new Button();
             button2 = new Button();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -320,33 +320,34 @@
             label4.TabIndex = 3;
             label4.Text = "ĐÁNH GIÁ";
             // 
-            // comboBox1
+            // diemComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Không đạt", "1", "2", "3", "4", "5" });
-            comboBox1.Location = new Point(183, 611);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(159, 33);
-            comboBox1.TabIndex = 4;
+            diemComboBox.FormattingEnabled = true;
+            diemComboBox.Items.AddRange(new object[] { "Không đạt", "1", "2", "3", "4", "5" });
+            diemComboBox.Location = new Point(183, 611);
+            diemComboBox.Name = "diemComboBox";
+            diemComboBox.Size = new Size(159, 33);
+            diemComboBox.TabIndex = 4;
             // 
             // label5
             // 
             label5.AutoSize = true;
             label5.Location = new Point(348, 615);
             label5.Name = "label5";
-            label5.Size = new Size(39, 25);
+            label5.Size = new Size(29, 25);
             label5.TabIndex = 5;
-            label5.Text = "/10";
+            label5.Text = "/5";
             // 
-            // button1
+            // danhGiaBtn
             // 
-            button1.BackColor = Color.IndianRed;
-            button1.Location = new Point(524, 605);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 44);
-            button1.TabIndex = 6;
-            button1.Text = "Đánh giá";
-            button1.UseVisualStyleBackColor = false;
+            danhGiaBtn.BackColor = Color.IndianRed;
+            danhGiaBtn.Location = new Point(524, 605);
+            danhGiaBtn.Name = "danhGiaBtn";
+            danhGiaBtn.Size = new Size(94, 44);
+            danhGiaBtn.TabIndex = 6;
+            danhGiaBtn.Text = "Đánh giá";
+            danhGiaBtn.UseVisualStyleBackColor = false;
+            danhGiaBtn.Click += button1_Click;
             // 
             // button2
             // 
@@ -357,6 +358,7 @@
             button2.TabIndex = 7;
             button2.Text = "Thiếu giấy tờ";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // ChiTietHoSo
             // 
@@ -364,9 +366,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1041, 707);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(danhGiaBtn);
             Controls.Add(label5);
-            Controls.Add(comboBox1);
+            Controls.Add(diemComboBox);
             Controls.Add(label4);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(label1);
@@ -394,9 +396,9 @@
         private Label maHoSoTxt;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label4;
-        private ComboBox comboBox1;
+        private ComboBox diemComboBox;
         private Label label5;
-        private Button button1;
+        private Button danhGiaBtn;
         private Button button2;
         private Label label6;
         private Label label7;

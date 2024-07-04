@@ -14,7 +14,7 @@ namespace UI_winform.NhanVien.controls
 {
     public partial class HoSoUngVien : UserControl
     {
-        private static Dictionary<string, string> TRANGTHAI = new Dictionary<string, string>() { { "0", "Chưa duyệt" }, { "1", "Đã duyệt" } };
+        private static Dictionary<string, string> TRANGTHAI = new Dictionary<string, string>() { { "0", "Chưa duyệt" }, { "1", "Đã duyệt" }, { "2", "Đã duyệt" }, { "3", "Đã duyệt" }, { "4", "Đã duyệt" }, { "5", "Đã duyệt" } };
 
         public HoSoUngVien()
         {

@@ -37,5 +37,21 @@ namespace UI_winform.DAO
                 
             return data;
         }
+
+        public int ExecuteNonQuery(string query, object[] parameter = null)
+        {
+            int data = 0;
+
+            OracleConnection connection = new OracleConnection();
+
+            connection.ConnectionString = _connectionString;
+            connection.Open();
+            OracleCommand command = new OracleCommand(query, connection);
+            data = command.ExecuteNonQuery();
+            connection.Close();
+
+
+            return data;
+        }
     }
 }

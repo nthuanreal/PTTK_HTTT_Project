@@ -36,13 +36,39 @@ namespace UI_winform.NhanVien
             }
             DataRow row = data.Rows[0];
             maHoSoTxt.Text = row["MAHS"].ToString();
-            congTyTxt.Text = row["TENDN"].ToString() ;
+            congTyTxt.Text = row["TENDN"].ToString();
             hoTenUngVien.Text = row["HOTEN"].ToString();
             ngaySinhTxt.Text = row["NGSINH"].ToString();
             diaChiTxt.Text = row["DIACHI"].ToString();
             emailTxt.Text = row["EMAIL"].ToString();
             sdtTxt.Text = row["SDT"].ToString();
             trinhDoTxt.Text = row["TRINHDO"].ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string? diem = diemComboBox.SelectedItem?.ToString();
+
+            if (diem != null)
+            {
+                if (diem == "Không đạt")
+                {
+                    diem = "0";
+                }
+
+                string sql = $"update qlhsut.qlhsut_ho_so_ung_tuyen\r\nset trangthaiduyet = {diem}\r\nwhere mahs = {maHs}";
+                int data = DataProvider.Instance.ExecuteNonQuery(sql);
+                MessageBox.Show("Thành Công");
+                this.Close();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string sql = $"update qlhsut.qlhsut_ho_so_ung_tuyen\r\nset trangthaiduyet = -1\r\nwhere mahs = {maHs}";
+            int data = DataProvider.Instance.ExecuteNonQuery(sql);
+            MessageBox.Show("Thành Công");
+            this.Close();
         }
     }
 }
