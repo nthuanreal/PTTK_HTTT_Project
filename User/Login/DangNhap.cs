@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using static System.Collections.Specialized.BitVector32;
 using UI_winform.utils;
+using UI_winform.User.Home;
 
 namespace UI_winform
 {
@@ -137,7 +138,7 @@ namespace UI_winform
                             Session.Instance.OracleConnection = con;
                             MessageBox.Show("Connect với tư cách là Doanh nghiệp thành công!");
                             this.Hide();
-                            HomePage DNHomePage = new HomePage(this);
+                            HOMEDN DNHomePage = new HOMEDN();
                             DNHomePage.Show();
                         }
                         else if (result == 2)
@@ -150,7 +151,7 @@ namespace UI_winform
                             Session.Instance.OracleConnection = con;
                             MessageBox.Show("Connect với tư cách là Ứng viên thành công!");
                             this.Hide();
-                            HomePage UVHomePage = new HomePage(this);
+                            HOMEUV UVHomePage = new HOMEUV();
                             UVHomePage.Show();
                         }
                         else if (result == 3)

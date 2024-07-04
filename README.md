@@ -27,18 +27,18 @@
       + [x] Đổi mật khẩu
   - Doanh nghiệp
       + [x] Đăng ký thành viên
-      + [ ] 
+      + [x] HOME
       + [ ] 
       + [ ] 
       + [ ] 
   - Ứng viên
       + [x] Đăng ký thành viên 
-      + [ ] 
+      + [x] HOME
       + [ ] 
       + [ ] 
       + [ ] 
   - Nhân viên
-      + [ ] 
+      + [ ] HOME
       + [ ] 
       + [ ] 
       + [ ] 
