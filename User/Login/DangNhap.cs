@@ -209,13 +209,9 @@ namespace UI_winform
         {
             this.Hide();
             QuenMatKhau forgotPasswordForm = new QuenMatKhau();
-            forgotPasswordForm.FormClosed += (s, args) => this.Close();
+            forgotPasswordForm.FormClosed += (s, args) => this.Show();
             forgotPasswordForm.Show();
         }
 
-        private void txtRole_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -460,11 +460,8 @@
         private Label label9;
         private Label label10;
         private Label label11;
-        private Label label13;
-        private Label label14;
         private Label NgaySinh_Label;
         private Label DiaChi;
-        private Label label19;
         private Label label8;
         private Label label20;
         private Label DiaChiNDD_Label;

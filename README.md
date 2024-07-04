@@ -47,28 +47,13 @@
 
 ------------------------------------------------------------------------------------------
 30/6/2024 Tasks: 
-  - [x] Hoàn thành DoiMatKhau
-  - [x] Chỉnh sửa window size của các form
-     + [x] DangKyDangTuyen1,2
-     + [x] PhieuDKDangTuyen
-     + [x] DangKyTVDN
-
-     + [x] TraCuuHoSo
-
-     + [x] DangKyTVUV
-     + [x] NopHoSo1,2 (Link 2 màn hình lại)
-     + [x] TraCuuViTriUngTuyen
-
-     + [x] QuenMatKhau (Cần đồng bộ với Đăng nhập ~ Cùng size ~)
-     + [x] CapNhatThongTin
-     + [x] DangNhap
-     + [x] DoiMatKhau
-
-  - [x] Thay đổi: chuyển màn hình -> hiện cửa sổ popup của các màn hình:
-     + [x] CapNhatThongTin (Cần đổi tên tab)
-     + [x] DangKyDangTuyen1 -> DangKyDangTuyen2 -> LapPhieuDKDangTuyen (Close)
-     + [x] DangKyTK (UV/DN)
   - [ ] Chỉnh sửa box chọn trình độ (dktvuv)
   - [ ] Chỉnh sửa box chọn giới tính (dktvuv)
-  - [ ] Đổi tên các component cho phù hợp convention: label1 -> labelTitle/labelChangePassword
+
+
+
+
+
+Note:
+  - Đổi tên các component cho phù hợp convention: label1 -> labelTitle/labelChangePassword
   - [ ] Thêm hình avt trong thông tin chung

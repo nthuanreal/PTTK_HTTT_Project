@@ -150,6 +150,7 @@
             button1.TabIndex = 3;
             button1.Text = "THÔNG TIN THÀNH VIÊN";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -163,6 +164,7 @@
             button2.TabIndex = 4;
             button2.Text = "ĐĂNG KÝ ĐĂNG TUYỂN";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button3
             // 

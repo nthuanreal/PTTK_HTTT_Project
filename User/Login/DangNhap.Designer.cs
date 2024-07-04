@@ -67,7 +67,6 @@
             txtRole.Name = "txtRole";
             txtRole.Size = new Size(229, 33);
             txtRole.TabIndex = 10;
-            txtRole.SelectedIndexChanged += txtRole_SelectedIndexChanged;
             // 
             // IblRole
             // 
