@@ -1,8 +1,8 @@
 Đồ án môn học PTTK HTTT 2024
 
-**HỆ THỐNG QUẢN LÝ HỒ SƠ ỨNG TUYỂN CỦA CÔNG TY ABC
+**HỆ THỐNG QUẢN LÝ HỒ SƠ ỨNG TUYỂN CỦA CÔNG TY ABC**
 
-**Login key: 
+**Login key:** 
   - DBA:          QLHSUT
   - DOANH_NGHIEP: 2000X
   - UNG_VIEN:     11000X
@@ -20,7 +20,7 @@
         + Min/MaximizeBox: False (Với các chức năng điền thông tin)
 
 ------------------------------------------------------------------------------------------
-**04/07/2024 Tasks: check ui
+**04/07/2024 Tasks: check ui**
   - Người dùng chung
       + [x] Login
       + [x] Quên mật khẩu
