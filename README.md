@@ -1,12 +1,13 @@
-Đồ án môn học PTTK HTTT 2024,
-HỆ THỐNG QUẢN LÝ HỒ SƠ ỨNG TUYỂN CỦA CÔNG TY ABC
+Đồ án môn học PTTK HTTT 2024
 
-Login key: 
-    - DBA:          QLHSUT
-    - DOANH_NGHIEP: 2000X
-    - UNG_VIEN:     11000X
-    - NHAN_VIEN:    9000X
-    - X: 1 -> 5
+**HỆ THỐNG QUẢN LÝ HỒ SƠ ỨNG TUYỂN CỦA CÔNG TY ABC
+
+**Login key: 
+  - DBA:          QLHSUT
+  - DOANH_NGHIEP: 2000X
+  - UNG_VIEN:     11000X
+  - NHAN_VIEN:    9000X
+  - X: 1 -> 5
 
 
 **Special Requirement**:
@@ -19,11 +20,11 @@ Login key:
         + Min/MaximizeBox: False (Với các chức năng điền thông tin)
 
 ------------------------------------------------------------------------------------------
-04/07/2024 Tasks: check ui
+**04/07/2024 Tasks: check ui
   - Người dùng chung
       + [x] Login
       + [x] Quên mật khẩu
-      + [ ] Đổi mật khẩu
+      + [x] Đổi mật khẩu
   - Doanh nghiệp
       + [x] Đăng ký thành viên
       + [ ] 
