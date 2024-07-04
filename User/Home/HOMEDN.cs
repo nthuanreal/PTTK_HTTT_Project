@@ -22,7 +22,9 @@ namespace UI_winform.User.Home
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            DangNhap newWindow = new DangNhap();
+            this.FormClosing += (s, args) => newWindow.Show();
+            this.Close();
         }
 
         private void HOMEDN_Load(object sender, EventArgs e)

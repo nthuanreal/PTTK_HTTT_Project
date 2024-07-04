@@ -152,6 +152,7 @@
             button3.TabIndex = 3;
             button3.Text = "Nộp hồ sơ";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -166,6 +167,7 @@
             button2.TabIndex = 2;
             button2.Text = "Tra cứu tuyển dụng";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -180,6 +182,7 @@
             button1.TabIndex = 0;
             button1.Text = "Thông tin thành viên";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // pictureBox4
             // 
@@ -224,6 +227,7 @@
             button5.TabIndex = 4;
             button5.Text = "CẬP NHẬT";
             button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
             // 
             // button4
             // 
@@ -237,6 +241,7 @@
             button4.TabIndex = 3;
             button4.Text = "ĐỔI MẬT KHẨU";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // tableLayoutPanel2
             // 

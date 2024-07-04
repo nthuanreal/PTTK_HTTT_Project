@@ -16,6 +16,10 @@ namespace UI_winform
     public partial class CapNhatThongTinUV : Form
     {
         public int mauv;
+        public CapNhatThongTinUV()
+        {
+            InitializeComponent();
+        }
         public CapNhatThongTinUV(int Mauv)
         {
             InitializeComponent();

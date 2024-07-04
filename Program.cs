@@ -14,7 +14,7 @@ namespace UI_winform
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new DangNhap());
-            Application.Run(new HOMEDN());
+            Application.Run(new HOMEUV());
         }
     }
 }

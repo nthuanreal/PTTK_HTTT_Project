@@ -17,6 +17,10 @@ namespace UI_winform
     {
         public int mauv, madt;
         private NopHoSo02 nopHoSo02;
+        public NopHoSo01()
+        {
+            InitializeComponent();
+        }
         public NopHoSo01(int MaUV, int MaDT)
         {
             InitializeComponent();

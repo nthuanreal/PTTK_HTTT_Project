@@ -24,7 +24,7 @@
   - Người dùng chung
       + [x] Login
       + [x] Quên mật khẩu
-      + [x] Đổi mật khẩu
+      + [x] Đổi mật khẩu 
   - Doanh nghiệp
       + [x] Đăng ký thành viên
       + [x] HOME 
