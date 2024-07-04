@@ -1,6 +1,6 @@
 ﻿namespace UI_winform
 {
-    partial class TraCuuViTriUngTuyen
+    partial class HoSoCuaToi
     {
         /// <summary>
         /// Required designer variable.
@@ -34,22 +34,17 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             button1 = new Button();
             label5 = new Label();
-            label1 = new Label();
             bindingSource1 = new BindingSource(components);
-            label2 = new Label();
             label3 = new Label();
             textBox2 = new TextBox();
-            comboBox1 = new ComboBox();
             dataGridView1 = new DataGridView();
             panelNavbar = new Panel();
             button2 = new Button();
             label9 = new Label();
-            textBox1 = new TextBox();
-            textBox3 = new TextBox();
-            optionsPanel = new Panel();
-            button5 = new Button();
-            button4 = new Button();
             button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            optionsPanel = new Panel();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelNavbar.SuspendLayout();
@@ -59,14 +54,13 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(250, 135, 135);
-            button1.Location = new Point(1052, 440);
+            button1.Location = new Point(1050, 240);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(129, 42);
             button1.TabIndex = 31;
             button1.Text = "Tìm kiếm";
             button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
             // 
             // label5
             // 
@@ -78,30 +72,10 @@
             label5.TabIndex = 20;
             label5.Text = "TÌM KIẾM";
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(1002, 163);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(48, 25);
-            label1.TabIndex = 32;
-            label1.Text = "Vị trí";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new Point(1000, 238);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(99, 25);
-            label2.TabIndex = 34;
-            label2.Text = "Mức lương";
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(1004, 328);
+            label3.Location = new Point(1002, 128);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(76, 25);
@@ -110,21 +84,11 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(1004, 355);
+            textBox2.Location = new Point(1002, 155);
             textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(158, 31);
             textBox2.TabIndex = 35;
-            // 
-            // comboBox1
-            // 
-            comboBox1.BackColor = Color.FromArgb(255, 176, 176);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Nhân viên chính thức", "Bán thời gian", "Thực tập sinh", "Tất cả" });
-            comboBox1.Location = new Point(1000, 191);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(222, 33);
-            comboBox1.TabIndex = 38;
             // 
             // dataGridView1
             // 
@@ -200,25 +164,44 @@
             label9.Location = new Point(17, 8);
             label9.Margin = new Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new Size(465, 43);
+            label9.Size = new Size(294, 43);
             label9.TabIndex = 8;
-            label9.Text = "THÔNG TIN ĐĂNG TUYỂN";
+            label9.Text = "HỒ SƠ CỦA TÔI";
             // 
-            // textBox1
+            // button3
             // 
-            textBox1.Location = new Point(1002, 275);
-            textBox1.Margin = new Padding(2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(97, 31);
-            textBox1.TabIndex = 54;
+            button3.BackColor = Color.FromArgb(250, 135, 135);
+            button3.Location = new Point(4, 3);
+            button3.Margin = new Padding(2);
+            button3.Name = "button3";
+            button3.Size = new Size(201, 42);
+            button3.TabIndex = 58;
+            button3.Text = "Cập nhật thông tin";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
-            // textBox3
+            // button4
             // 
-            textBox3.Location = new Point(1103, 275);
-            textBox3.Margin = new Padding(2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(94, 31);
-            textBox3.TabIndex = 55;
+            button4.BackColor = Color.FromArgb(250, 135, 135);
+            button4.Location = new Point(4, 49);
+            button4.Margin = new Padding(2);
+            button4.Name = "button4";
+            button4.Size = new Size(201, 42);
+            button4.TabIndex = 59;
+            button4.Text = "Đăng tuyển";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(250, 135, 135);
+            button5.Location = new Point(4, 95);
+            button5.Margin = new Padding(2);
+            button5.Name = "button5";
+            button5.Size = new Size(201, 42);
+            button5.TabIndex = 60;
+            button5.Text = "Đăng xuất";
+            button5.UseVisualStyleBackColor = false;
             // 
             // optionsPanel
             // 
@@ -235,63 +218,23 @@
             optionsPanel.TabIndex = 57;
             optionsPanel.Visible = false;
             // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(250, 135, 135);
-            button5.Location = new Point(4, 95);
-            button5.Margin = new Padding(2);
-            button5.Name = "button5";
-            button5.Size = new Size(201, 42);
-            button5.TabIndex = 60;
-            button5.Text = "Đăng xuất";
-            button5.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            button4.BackColor = Color.FromArgb(250, 135, 135);
-            button4.Location = new Point(4, 49);
-            button4.Margin = new Padding(2);
-            button4.Name = "button4";
-            button4.Size = new Size(201, 42);
-            button4.TabIndex = 59;
-            button4.Text = "Hồ sơ của tôi";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
-            // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(250, 135, 135);
-            button3.Location = new Point(4, 3);
-            button3.Margin = new Padding(2);
-            button3.Name = "button3";
-            button3.Size = new Size(201, 42);
-            button3.TabIndex = 58;
-            button3.Text = "Cập nhật thông tin";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
-            // TraCuuViTriUngTuyen
+            // HoSoCuaToi
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1228, 941);
             Controls.Add(optionsPanel);
-            Controls.Add(textBox3);
-            Controls.Add(textBox1);
             Controls.Add(panelNavbar);
             Controls.Add(dataGridView1);
-            Controls.Add(comboBox1);
             Controls.Add(label3);
             Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(button1);
             Controls.Add(label5);
             Margin = new Padding(2);
             MinimumSize = new Size(1244, 986);
-            Name = "TraCuuViTriUngTuyen";
+            Name = "HoSoCuaToi";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "TRA CỨU VỊ TRÍ ỨNG TUYỂN";
+            Text = "HoSoCuaToi";
             Load += TraCuuViTriUngTuyen_Load;
             ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -306,24 +249,19 @@
 
         private Button button1;
         private Label label5;
-        private Label label1;
         private BindingSource bindingSource1;
-        private Label label2;
         private Label label3;
         private TextBox textBox2;
-        private ComboBox comboBox1;
         private DataGridView dataGridView1;
         private Panel panelNavbar;
         private Label label9;
-        private TextBox textBox1;
-        private TextBox textBox3;
-        private Button button2;
         private Button dropdownButton;
-        private Panel optionsPanel;
         private List<string> options;
-        private Button button5;
-        private Button button4;
+        private Button button2;
         private Button button3;
+        private Button button4;
+        private Button button5;
+        private Panel optionsPanel;
     }
     
 }

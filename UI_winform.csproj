@@ -20,7 +20,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="UngVien\CapNhatThongTinUV.cs">
+    <Compile Update="UngVien\NopBangCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UngVien\NopHoSo03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UngVien\HoSoCuaToi.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

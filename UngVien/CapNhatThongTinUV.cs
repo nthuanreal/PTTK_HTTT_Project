@@ -56,6 +56,9 @@ namespace UI_winform
                 update_ttuv();
                 MessageBox.Show("Đã cập nhật");
                 LoadData();
+                TraCuuViTriUngTuyen tcvt = new TraCuuViTriUngTuyen(mauv);
+                tcvt.Show();
+                this.Hide();
             }
             catch (Exception ex)
             {

@@ -207,7 +207,7 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(250, 135, 135);
-            button1.Location = new Point(264, 609);
+            button1.Location = new Point(264, 593);
             button1.Margin = new Padding(4);
             button1.Name = "button1";
             button1.Size = new Size(151, 55);
@@ -264,7 +264,7 @@
             panel1.TabIndex = 37;
             panel1.Paint += panel1_Paint;
             // 
-            // CapNhatThongTin
+            // CapNhatThongTinUV
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -277,7 +277,7 @@
             MinimumSize = new Size(1244, 986);
             Name = "CapNhatThongTinUV";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "NopHoSo";
+            Text = "CapNhatThongTin";
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
             panel1.ResumeLayout(false);

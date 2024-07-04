@@ -11,7 +11,9 @@ namespace UI_winform
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            //Application.Run(new NopHoSo03(110004,120004));
             Application.Run(new TraCuuViTriUngTuyen(110004));
+
         }
     }
 }

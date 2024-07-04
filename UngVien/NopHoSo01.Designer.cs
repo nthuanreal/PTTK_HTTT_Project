@@ -53,7 +53,7 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
+            button1.BackColor = Color.FromArgb(250, 135, 135);
             button1.Location = new Point(726, 691);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
@@ -217,7 +217,7 @@
             // 
             // btnExt
             // 
-            btnExt.BackColor = Color.FromArgb(250, 135, 135);
+            btnExt.BackColor = SystemColors.ActiveCaption;
             btnExt.Location = new Point(560, 691);
             btnExt.Margin = new Padding(4);
             btnExt.Name = "btnExt";

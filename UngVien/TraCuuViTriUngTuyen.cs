@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI_winform.DAO;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace UI_winform
 {
@@ -17,18 +18,22 @@ namespace UI_winform
         public TraCuuViTriUngTuyen(int maUV)
         {
             InitializeComponent();
-            Load_data();
+            string query = "select MADT, DN_DANGTUYEN, VITRI_UNGTUYEN, SOLUONG, MOTA FROM QLHSUT.QLHSUT_THONG_TIN_DANG_TUYEN";
+            Load_data(query);
+            selectData();
             BeautifyDataGridView();
             this.maUV = maUV;
         }
 
-        private void Load_data()
+        private void Load_data(string query)
         {
             //, YEUCAU_UNGVIEN, LUONG
-            string query = "select MADT, DN_DANGTUYEN, VITRI_UNGTUYEN, SOLUONG, MOTA FROM QLHSUT.QLHSUT_THONG_TIN_DANG_TUYEN";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-           
+
             dataGridView1.DataSource = data;
+        }
+        private void selectData()
+        {
             DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
             buttonColumn.HeaderText = "Action";
             buttonColumn.Text = "ứng tuyển";
@@ -38,21 +43,58 @@ namespace UI_winform
         }
         private void BeautifyDataGridView()
         {
-           
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Check if the clicked column is the button column and a valid row
-            // Retrieve MADT value from the clicked row
             DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
             int madtValue = Convert.ToInt32(selectedRow.Cells["MADT"].Value);
-
-            // Example action: Show MADT value in a message box
-            MessageBox.Show($"MADT value clicked: {madtValue}");
-            NopHoSo01 hs01 = new NopHoSo01(maUV,madtValue);
+            // MessageBox.Show($"MADT value clicked: {madtValue}");
+            NopHoSo01 hs01 = new NopHoSo01(maUV, madtValue);
             this.Hide();
             hs01.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int LUONG_MIN = 0, LUONG_MAX = 999999999;
+            if (textBox2.Text != "")
+            {
+                LUONG_MIN = Convert.ToInt32(textBox2.Text);
+            }
+            if (textBox3.Text != "")
+            {
+                LUONG_MAX = Convert.ToInt32(textBox3.Text);
+            }
+            string query = $"select MADT, DN_DANGTUYEN, VITRI_UNGTUYEN, SOLUONG, MOTA FROM QLHSUT.QLHSUT_THONG_TIN_DANG_TUYEN WHERE VITRI_UNGTUYEN LIKE '%{comboBox1.Text}%' AND LUONG >= {LUONG_MIN} AND LUONG <= {LUONG_MAX}" +
+                $"AND MOTA LIKE '%{textBox1.Text}%'";
+            Load_data(query);
+        }
+
+        private void TraCuuViTriUngTuyen_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DropdownButton_Click(object sender, EventArgs e)
+        {
+            // Toggle visibility of options panel
+            optionsPanel.Visible = !optionsPanel.Visible;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            CapNhatThongTinUV cntt = new CapNhatThongTinUV(maUV);
+            this.Hide();
+            cntt.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HoSoCuaToi hsct = new HoSoCuaToi(maUV);
+            hsct.Show();
+            this.Hide();
         }
     }
 }
