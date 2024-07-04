@@ -21,6 +21,8 @@
         private void InitializeComponent()
         {
             panelLogin = new Panel();
+            txtRole = new ComboBox();
+            IblRole = new Label();
             btnTogglePassword = new Button();
             lblLogin = new Label();
             lblUsername = new Label();
@@ -38,6 +40,8 @@
             // 
             panelLogin.BackColor = Color.FromArgb(217, 217, 217);
             panelLogin.BorderStyle = BorderStyle.FixedSingle;
+            panelLogin.Controls.Add(txtRole);
+            panelLogin.Controls.Add(IblRole);
             panelLogin.Controls.Add(btnTogglePassword);
             panelLogin.Controls.Add(lblLogin);
             panelLogin.Controls.Add(lblUsername);
@@ -48,11 +52,32 @@
             panelLogin.Controls.Add(linkRegisterApplicant);
             panelLogin.Controls.Add(linkRegisterEmployer);
             panelLogin.Controls.Add(txtPassword);
-            panelLogin.Location = new Point(82, 64);
+            panelLogin.Location = new Point(82, 28);
             panelLogin.Name = "panelLogin";
-            panelLogin.Size = new Size(620, 420);
+            panelLogin.Size = new Size(620, 494);
             panelLogin.TabIndex = 0;
             panelLogin.TabStop = true;
+            // 
+            // txtRole
+            // 
+            txtRole.Font = new Font("Segoe UI", 11F);
+            txtRole.FormattingEnabled = true;
+            txtRole.Items.AddRange(new object[] { "Quản trị viên", "Doanh nghiệp", "Ứng viên", "Nhân viên" });
+            txtRole.Location = new Point(233, 251);
+            txtRole.Name = "txtRole";
+            txtRole.Size = new Size(229, 33);
+            txtRole.TabIndex = 10;
+            txtRole.SelectedIndexChanged += txtRole_SelectedIndexChanged;
+            // 
+            // IblRole
+            // 
+            IblRole.AutoSize = true;
+            IblRole.Font = new Font("Segoe UI", 12F);
+            IblRole.Location = new Point(156, 252);
+            IblRole.Name = "IblRole";
+            IblRole.Size = new Size(69, 28);
+            IblRole.TabIndex = 9;
+            IblRole.Text = "Vai trò";
             // 
             // btnTogglePassword
             // 
@@ -61,7 +86,7 @@
             btnTogglePassword.FlatAppearance.BorderSize = 0;
             btnTogglePassword.FlatStyle = FlatStyle.Flat;
             btnTogglePassword.Font = new Font("Microsoft Sans Serif", 8.25F);
-            btnTogglePassword.Location = new Point(437, 210);
+            btnTogglePassword.Location = new Point(435, 195);
             btnTogglePassword.Name = "btnTogglePassword";
             btnTogglePassword.Size = new Size(25, 25);
             btnTogglePassword.TabIndex = 5;
@@ -74,7 +99,7 @@
             // 
             lblLogin.AutoSize = true;
             lblLogin.Font = new Font("Arial", 18F, FontStyle.Bold);
-            lblLogin.Location = new Point(213, 44);
+            lblLogin.Location = new Point(214, 20);
             lblLogin.Name = "lblLogin";
             lblLogin.Size = new Size(196, 35);
             lblLogin.TabIndex = 6;
@@ -84,7 +109,7 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F);
-            lblUsername.Location = new Point(156, 101);
+            lblUsername.Location = new Point(156, 87);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(94, 28);
             lblUsername.TabIndex = 0;
@@ -94,7 +119,7 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F);
-            lblPassword.Location = new Point(156, 174);
+            lblPassword.Location = new Point(156, 160);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(94, 28);
             lblPassword.TabIndex = 1;
@@ -103,7 +128,7 @@
             // txtUsername
             // 
             txtUsername.Font = new Font("Segoe UI", 11F);
-            txtUsername.Location = new Point(156, 132);
+            txtUsername.Location = new Point(156, 118);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(306, 32);
             txtUsername.TabIndex = 2;
@@ -112,7 +137,7 @@
             // 
             btnLogin.BackColor = Color.FromArgb(250, 135, 135);
             btnLogin.FlatAppearance.BorderColor = Color.Black;
-            btnLogin.Location = new Point(244, 285);
+            btnLogin.Location = new Point(233, 346);
             btnLogin.Margin = new Padding(0);
             btnLogin.Name = "btnLogin";
             btnLogin.Size = new Size(132, 33);
@@ -124,7 +149,7 @@
             // linkForgotPassword
             // 
             linkForgotPassword.AutoSize = true;
-            linkForgotPassword.Location = new Point(346, 240);
+            linkForgotPassword.Location = new Point(344, 305);
             linkForgotPassword.Name = "linkForgotPassword";
             linkForgotPassword.Size = new Size(116, 20);
             linkForgotPassword.TabIndex = 5;
@@ -135,7 +160,7 @@
             // linkRegisterApplicant
             // 
             linkRegisterApplicant.AutoSize = true;
-            linkRegisterApplicant.Location = new Point(97, 346);
+            linkRegisterApplicant.Location = new Point(97, 426);
             linkRegisterApplicant.Name = "linkRegisterApplicant";
             linkRegisterApplicant.Size = new Size(254, 20);
             linkRegisterApplicant.TabIndex = 7;
@@ -146,7 +171,7 @@
             // linkRegisterEmployer
             // 
             linkRegisterEmployer.AutoSize = true;
-            linkRegisterEmployer.Location = new Point(97, 377);
+            linkRegisterEmployer.Location = new Point(97, 457);
             linkRegisterEmployer.Name = "linkRegisterEmployer";
             linkRegisterEmployer.Size = new Size(345, 20);
             linkRegisterEmployer.TabIndex = 8;
@@ -157,7 +182,7 @@
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 11F);
-            txtPassword.Location = new Point(156, 205);
+            txtPassword.Location = new Point(156, 191);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(306, 32);
             txtPassword.TabIndex = 3;
@@ -204,5 +229,7 @@
 
 
         protected internal Button btnTogglePassword;
+        private ComboBox txtRole;
+        private Label IblRole;
     }
 }

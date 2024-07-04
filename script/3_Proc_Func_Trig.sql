@@ -1,7 +1,43 @@
 --------------------------------------------------------------------------------
 -- STORE PROCEDURE
 --------------------------------------------------------------------------------
+--
 
+CREATE OR REPLACE PROCEDURE QLHSUT.USER_LOGIN
+    (USRNAME VARCHAR2, USR_ROLE NVARCHAR2, CNT OUT INTEGER)
+AS
+    LaDN NUMBER;
+    LaUV NUMBER;
+    LaNV NUMBER;
+
+BEGIN
+    CNT := 0;
+    
+    IF USR_ROLE = N'Doanh nghiệp' THEN
+        SELECT COUNT(*) INTO LaDN FROM QLHSUT.QLHSUT_DOANH_NGHIEP WHERE TO_CHAR(MADN) = USRNAME;
+    END IF;
+    
+    IF USR_ROLE = N'Ứng viên' THEN
+        SELECT COUNT(*) INTO LaUV FROM QLHSUT.QLHSUT_UNG_VIEN WHERE TO_CHAR(MAUV) = USRNAME;
+    END IF;
+    
+    IF USR_ROLE = N'Nhân viên' THEN
+        SELECT COUNT(*) INTO LaNV FROM QLHSUT.QLHSUT_NHAN_VIEN WHERE TO_CHAR(MANV) = USRNAME;
+    END IF;
+    
+    IF (LaDN = 1) THEN
+        CNT := 1;
+    END IF;
+    IF (LaUV = 1) THEN
+        CNT := 2;
+    END IF;
+    IF (LaNV = 1) THEN
+        CNT := 3;
+    END IF;  
+    
+END;
+/
+SELECT USERNAME FROM DBA_USERS;
 
 --------------------------------------------------------------------------------
 -- FUNCTION
