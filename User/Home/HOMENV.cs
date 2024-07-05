@@ -16,5 +16,12 @@ namespace UI_winform.User.Home
         {
             InitializeComponent();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DangNhap newWindow = new DangNhap();
+            this.FormClosing += (s, args) => newWindow.Show();
+            this.Close();
+        }
     }
 }

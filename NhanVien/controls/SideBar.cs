@@ -21,5 +21,15 @@ namespace UI_winform.controls
         {
 
         }
+
+        private void hoSoBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void giaHanBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

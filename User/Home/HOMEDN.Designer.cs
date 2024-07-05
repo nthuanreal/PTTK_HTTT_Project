@@ -111,11 +111,11 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel1.Controls.Add(button1, 0, 2);
             tableLayoutPanel1.Controls.Add(button2, 0, 3);
             tableLayoutPanel1.Controls.Add(button3, 0, 4);
             tableLayoutPanel1.Controls.Add(button4, 0, 5);
+            tableLayoutPanel1.Controls.Add(pictureBox2, 0, 0);
             tableLayoutPanel1.Location = new Point(0, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
@@ -132,9 +132,11 @@
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = SystemColors.GradientInactiveCaption;
+            pictureBox2.Image = Properties.Resources.user1;
             pictureBox2.Location = new Point(43, 30);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(80, 80);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 2;
             pictureBox2.TabStop = false;
             // 

@@ -188,9 +188,11 @@
             // 
             pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.BackColor = SystemColors.InactiveCaption;
+            pictureBox4.Image = Properties.Resources.user;
             pictureBox4.Location = new Point(46, 20);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(80, 80);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 4;
             pictureBox4.TabStop = false;
             pictureBox4.WaitOnLoad = true;
@@ -199,10 +201,12 @@
             // 
             pictureBox3.Anchor = AnchorStyles.Top;
             pictureBox3.BackColor = SystemColors.ActiveCaption;
+            pictureBox3.Image = Properties.Resources.user;
             pictureBox3.InitialImage = Properties.Resources.user;
             pictureBox3.Location = new Point(359, 91);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(125, 125);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 6;
             pictureBox3.TabStop = false;
             // 

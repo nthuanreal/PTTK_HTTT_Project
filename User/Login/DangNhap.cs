@@ -165,7 +165,7 @@ namespace UI_winform
                             Session.Instance.OracleConnection = con;
                             MessageBox.Show("Connect với tư cách là Nhân viên thành công!");
                             this.Hide();
-                            EmployeePage NVHomePage = new EmployeePage();
+                            HOMENV NVHomePage = new HOMENV();
                             NVHomePage.Show();
                         }
                     }
