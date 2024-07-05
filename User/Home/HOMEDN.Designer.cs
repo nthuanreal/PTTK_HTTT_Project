@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
-            linkLabel1 = new LinkLabel();
+            DangXuat_Link = new LinkLabel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            TTTV_Btn = new Button();
-            DKDT_Btn = new Button();
-            TT_Btn = new Button();
-            DRCB_Btn = new Button();
+            TTNDD_Btn = new Button();
             pictureBox2 = new PictureBox();
+            TTTV_Btn = new Button();
+            DRCB_Btn = new Button();
+            TT_Btn = new Button();
+            DKDT_Btn = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel1 = new Panel();
             label1 = new Label();
@@ -58,7 +59,6 @@
             CapNhat_Btn = new Button();
             Huy_Btn = new Button();
             pictureBox1 = new PictureBox();
-            TTNDD_Btn = new Button();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -84,7 +84,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = SystemColors.Control;
-            splitContainer1.Panel1.Controls.Add(linkLabel1);
+            splitContainer1.Panel1.Controls.Add(DangXuat_Link);
             splitContainer1.Panel1.Controls.Add(tableLayoutPanel1);
             // 
             // splitContainer1.Panel2
@@ -96,22 +96,22 @@
             splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 0;
             // 
-            // linkLabel1
+            // DangXuat_Link
             // 
-            linkLabel1.ActiveLinkColor = Color.White;
-            linkLabel1.Anchor = AnchorStyles.Bottom;
-            linkLabel1.AutoSize = true;
-            linkLabel1.BorderStyle = BorderStyle.Fixed3D;
-            linkLabel1.Cursor = Cursors.AppStarting;
-            linkLabel1.Font = new Font("Cascadia Code", 18F);
-            linkLabel1.Location = new Point(4, 883);
-            linkLabel1.Margin = new Padding(4, 0, 4, 0);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(211, 49);
-            linkLabel1.TabIndex = 4;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Đăng xuất";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            DangXuat_Link.ActiveLinkColor = Color.White;
+            DangXuat_Link.Anchor = AnchorStyles.Bottom;
+            DangXuat_Link.AutoSize = true;
+            DangXuat_Link.BorderStyle = BorderStyle.Fixed3D;
+            DangXuat_Link.Cursor = Cursors.AppStarting;
+            DangXuat_Link.Font = new Font("Cascadia Code", 18F);
+            DangXuat_Link.Location = new Point(4, 883);
+            DangXuat_Link.Margin = new Padding(4, 0, 4, 0);
+            DangXuat_Link.Name = "DangXuat_Link";
+            DangXuat_Link.Size = new Size(211, 49);
+            DangXuat_Link.TabIndex = 4;
+            DangXuat_Link.TabStop = true;
+            DangXuat_Link.Text = "Đăng xuất";
+            DangXuat_Link.LinkClicked += DangXuat_Link_LinkClicked;
             // 
             // tableLayoutPanel1
             // 
@@ -138,6 +138,34 @@
             tableLayoutPanel1.Size = new Size(209, 748);
             tableLayoutPanel1.TabIndex = 3;
             // 
+            // TTNDD_Btn
+            // 
+            TTNDD_Btn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TTNDD_Btn.BackColor = Color.LightCoral;
+            TTNDD_Btn.FlatStyle = FlatStyle.Popup;
+            TTNDD_Btn.Font = new Font("Cascadia Code", 12F);
+            TTNDD_Btn.Location = new Point(4, 392);
+            TTNDD_Btn.Margin = new Padding(4);
+            TTNDD_Btn.Name = "TTNDD_Btn";
+            TTNDD_Btn.Size = new Size(201, 80);
+            TTNDD_Btn.TabIndex = 4;
+            TTNDD_Btn.Text = "THÔNG TIN ĐẠI DIỆN";
+            TTNDD_Btn.UseVisualStyleBackColor = false;
+            TTNDD_Btn.Click += TTNDD_Btn_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.BackColor = SystemColors.GradientInactiveCaption;
+            pictureBox2.Image = Properties.Resources.user1;
+            pictureBox2.Location = new Point(54, 37);
+            pictureBox2.Margin = new Padding(4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(100, 100);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
             // TTTV_Btn
             // 
             TTTV_Btn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -152,36 +180,6 @@
             TTTV_Btn.Text = "THÔNG TIN THÀNH VIÊN";
             TTTV_Btn.UseVisualStyleBackColor = false;
             TTTV_Btn.Click += TTTV_Btn_Click;
-            // 
-            // DKDT_Btn
-            // 
-            DKDT_Btn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            DKDT_Btn.BackColor = Color.LightCoral;
-            DKDT_Btn.FlatStyle = FlatStyle.Popup;
-            DKDT_Btn.Font = new Font("Cascadia Code", 12F);
-            DKDT_Btn.Location = new Point(4, 480);
-            DKDT_Btn.Margin = new Padding(4);
-            DKDT_Btn.Name = "DKDT_Btn";
-            DKDT_Btn.Size = new Size(201, 80);
-            DKDT_Btn.TabIndex = 4;
-            DKDT_Btn.Text = "ĐĂNG KÝ ĐĂNG TUYỂN";
-            DKDT_Btn.UseVisualStyleBackColor = false;
-            DKDT_Btn.Click += DKDT_Btn_Click;
-            // 
-            // TT_Btn
-            // 
-            TT_Btn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            TT_Btn.BackColor = Color.LightCoral;
-            TT_Btn.FlatStyle = FlatStyle.Popup;
-            TT_Btn.Font = new Font("Cascadia Code", 12F);
-            TT_Btn.Location = new Point(4, 568);
-            TT_Btn.Margin = new Padding(4);
-            TT_Btn.Name = "TT_Btn";
-            TT_Btn.Size = new Size(201, 80);
-            TT_Btn.TabIndex = 5;
-            TT_Btn.Text = "THANH TOÁN";
-            TT_Btn.UseVisualStyleBackColor = false;
-            TT_Btn.Click += TT_Btn_Click;
             // 
             // DRCB_Btn
             // 
@@ -198,18 +196,35 @@
             DRCB_Btn.UseVisualStyleBackColor = false;
             DRCB_Btn.Click += DRCB_Btn_Click;
             // 
-            // pictureBox2
+            // TT_Btn
             // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.BackColor = SystemColors.GradientInactiveCaption;
-            pictureBox2.Image = Properties.Resources.user1;
-            pictureBox2.Location = new Point(54, 37);
-            pictureBox2.Margin = new Padding(4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(100, 100);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 2;
-            pictureBox2.TabStop = false;
+            TT_Btn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TT_Btn.BackColor = Color.LightCoral;
+            TT_Btn.FlatStyle = FlatStyle.Popup;
+            TT_Btn.Font = new Font("Cascadia Code", 12F);
+            TT_Btn.Location = new Point(4, 568);
+            TT_Btn.Margin = new Padding(4);
+            TT_Btn.Name = "TT_Btn";
+            TT_Btn.Size = new Size(201, 80);
+            TT_Btn.TabIndex = 5;
+            TT_Btn.Text = "THANH TOÁN";
+            TT_Btn.UseVisualStyleBackColor = false;
+            TT_Btn.Click += TT_Btn_Click;
+            // 
+            // DKDT_Btn
+            // 
+            DKDT_Btn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DKDT_Btn.BackColor = Color.LightCoral;
+            DKDT_Btn.FlatStyle = FlatStyle.Popup;
+            DKDT_Btn.Font = new Font("Cascadia Code", 12F);
+            DKDT_Btn.Location = new Point(4, 480);
+            DKDT_Btn.Margin = new Padding(4);
+            DKDT_Btn.Name = "DKDT_Btn";
+            DKDT_Btn.Size = new Size(201, 80);
+            DKDT_Btn.TabIndex = 4;
+            DKDT_Btn.Text = "ĐĂNG KÝ ĐĂNG TUYỂN";
+            DKDT_Btn.UseVisualStyleBackColor = false;
+            DKDT_Btn.Click += DKDT_Btn_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -494,21 +509,6 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // TTNDD_Btn
-            // 
-            TTNDD_Btn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            TTNDD_Btn.BackColor = Color.LightCoral;
-            TTNDD_Btn.FlatStyle = FlatStyle.Popup;
-            TTNDD_Btn.Font = new Font("Cascadia Code", 12F);
-            TTNDD_Btn.Location = new Point(4, 392);
-            TTNDD_Btn.Margin = new Padding(4);
-            TTNDD_Btn.Name = "TTNDD_Btn";
-            TTNDD_Btn.Size = new Size(201, 80);
-            TTNDD_Btn.TabIndex = 4;
-            TTNDD_Btn.Text = "THÔNG TIN ĐẠI DIỆN";
-            TTNDD_Btn.UseVisualStyleBackColor = false;
-            TTNDD_Btn.Click += TTNDD_Btn_Click;
-            // 
             // HOMEDN
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -518,6 +518,7 @@
             Margin = new Padding(4);
             Name = "HOMEDN";
             Text = "HOMEDN";
+            FormClosed += HOMEDN_FormClosed;
             Load += HOMEDN_Load;
             splitContainer1.Panel1.ResumeLayout(false);
             splitContainer1.Panel1.PerformLayout();
@@ -546,7 +547,7 @@
         private Button DKDT_Btn;
         private Button TT_Btn;
         private Button DRCB_Btn;
-        private LinkLabel linkLabel1;
+        private LinkLabel DangXuat_Link;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel1;
         private Label label1;

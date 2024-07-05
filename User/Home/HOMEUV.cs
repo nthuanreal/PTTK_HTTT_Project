@@ -15,16 +15,56 @@ namespace UI_winform.User.Home
 {
     public partial class HOMEUV : Form
     {
-        public HOMEUV()
+        DangNhap CurLogin = new DangNhap();
+        bool isLogout = false;
+        public HOMEUV(DangNhap curLogin)
         {
             InitializeComponent();
+            CurLogin = curLogin;
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void DangXuat_Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            DangNhap newWindow = new DangNhap();
-            this.FormClosing += (s, args) => newWindow.Show();
+            isLogout = true;
             this.Close();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
+
+            if (e.CloseReason == CloseReason.WindowsShutDown) return;
+            DialogResult dg;
+            if (isLogout)
+            {
+                dg = MessageBox.Show("Bạn có muốn đăng xuất không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+            else
+            {
+                dg = MessageBox.Show("Bạn có muốn kết thúc chương trình không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            }
+            switch (dg)
+            {
+                case DialogResult.No:
+                    e.Cancel = true;
+                    break;
+                default:
+                    if (isLogout)
+                    {
+                        CurLogin.con.Close();
+                        CurLogin.Show();
+                    }
+                    break;
+            }
+        }
+
+
+        private void HOMEUV_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!isLogout)
+            {
+                Application.Exit();
+            }
         }
 
 
@@ -59,5 +99,6 @@ namespace UI_winform.User.Home
             CapNhatThongTinUV newPage = new CapNhatThongTinUV();
             newPage.ShowDialog();
         }
+
     }
 }
