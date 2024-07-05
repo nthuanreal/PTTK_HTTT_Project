@@ -1,27 +1,27 @@
 ﻿using Oracle.ManagedDataAccess.Client;
-using UI_winform.DoanhNghiep.controls;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using UI_winform.User.Login;
 using UI_winform.utils;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
-namespace UI_winform.User.Home
+namespace UI_winform.DoanhNghiep.controls
 {
-    public partial class HOMEDN : Form
+    public partial class ThongTinDN : UserControl
     {
-        UI_winform.DoanhNghiep.DoanhNghiep dn = new UI_winform.DoanhNghiep.DoanhNghiep();
-        public HOMEDN()
+        DoanhNghiep dn = new DoanhNghiep();
+        public ThongTinDN()
         {
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            DangNhap newWindow = new DangNhap();
-            this.FormClosing += (s, args) => newWindow.Show();
-            this.Close();
-        }
-
-        private void HOMEDN_Load(object sender, EventArgs e)
+        private void ThongTinDN_Load(object sender, EventArgs e)
         {
             dn.getInfo(Session.Instance.Username);
             TenDN_TxtBox.Text = dn.tendn;
@@ -37,50 +37,6 @@ namespace UI_winform.User.Home
             DiaChi_TxtBox.ReadOnly = true;
             SDT_TxtBox.ReadOnly = true;
             Email_TxtBox.ReadOnly = true;
-        }
-
-        //Thông tin thành viên
-        private void TTTV_Btn_Click(object sender, EventArgs e)
-        {
-            ThongTinDN TTTV = new ThongTinDN();
-            splitContainer1.Panel2.Controls.Clear();
-            splitContainer1.Panel2.Controls.Add(TTTV);
-            TTTV.Dock = DockStyle.Fill;
-            TTTV.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            TTTV.Size = splitContainer1.Panel2.ClientSize;
-        }
-
-        private void TTNDD_Btn_Click(object sender, EventArgs e)
-        {
-            ThongTinNDD TTTNDD = new ThongTinNDD();
-            splitContainer1.Panel2.Controls.Clear();
-            splitContainer1.Panel2.Controls.Add(TTTNDD);
-            TTTNDD.Dock = DockStyle.Fill;
-            TTTNDD.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            TTTNDD.Size = splitContainer1.Panel2.ClientSize;
-        }
-
-        //Đăng ký đăng tuyển
-        private void DKDT_Btn_Click(object sender, EventArgs e)
-        {
-            DangKyDangTuyen1 newPage = new DangKyDangTuyen1();
-            newPage.Show();
-        }
-
-
-        //Thanh toán
-        private void TT_Btn_Click(object sender, EventArgs e)
-        {
-            //ThanhToan newPage = new ThanhToan();
-            //newPage.Show();
-        }
-
-
-        //Chiến lược
-        private void DRCB_Btn_Click(object sender, EventArgs e)
-        {
-            //ChienLuoc newPage = new ChienLuoc();
-            //newPage.Show();
         }
 
         private void DoiMK_Btn_Click(object sender, EventArgs e)
@@ -152,12 +108,5 @@ namespace UI_winform.User.Home
             SDT_TxtBox.ReadOnly = true;
             Email_TxtBox.ReadOnly = true;
         }
-
-
-
-        //private void HOMEDN_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    Application.Exit();
-        //}
     }
 }
