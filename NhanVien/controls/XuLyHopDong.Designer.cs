@@ -72,6 +72,7 @@
             button1.TabIndex = 19;
             button1.Text = "Duyệt Tài Khoản";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 

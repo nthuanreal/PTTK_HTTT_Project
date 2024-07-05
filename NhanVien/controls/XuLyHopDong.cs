@@ -34,5 +34,10 @@ namespace UI_winform.NhanVien.controls
         {
             navigationControl.Display(0);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

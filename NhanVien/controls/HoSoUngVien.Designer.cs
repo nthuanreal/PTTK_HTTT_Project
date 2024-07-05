@@ -107,13 +107,14 @@
             searchBtn.TabIndex = 35;
             searchBtn.Text = "Tra cứu";
             searchBtn.UseVisualStyleBackColor = false;
+            searchBtn.Click += searchBtn_Click;
             // 
             // comboBox1
             // 
             comboBox1.BackColor = Color.FromArgb(255, 176, 176);
             comboBox1.Font = new Font("Segoe UI", 10.2F);
             comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Đã ký", "Chưa ký", "Ký gia hạn" });
+            comboBox1.Items.AddRange(new object[] { "Chưa duyệt", "Đã duyệt", "Chưa đủ giấy tờ" });
             comboBox1.Location = new Point(107, 30);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(164, 31);
