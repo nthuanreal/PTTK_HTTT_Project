@@ -9,28 +9,29 @@ namespace UI_winform.Utils
 {
     public class NavigationControl
     {
-        List <UserControl> controls = new List<UserControl>();
-        Panel panel;
+        List <UserControl> _controls;
+        Panel _panel;
 
         public NavigationControl(List<UserControl> controls, Panel panel) {
-            this.panel = panel;
-            this.controls = controls;
+            this._panel = panel;
+            this._controls = controls;
+            AddUserControls();
         }
 
         private void AddUserControls()
         {
-            for (int i = 0; i < controls.Count; i++)
+            for (int i = 0; i < _controls.Count; i++)
             {
-                controls[i].Dock = DockStyle.Fill;
-                panel.Controls.Add(controls[i]);
+                _controls[i].Dock = DockStyle.Fill;
+                _panel.Controls.Add(_controls[i]);
             }
         }
 
         public void Display(int index)
         {
-            if (index < controls.Count())
+            if (index < _controls.Count())
             {
-                controls[index].BringToFront();
+                _controls[index].BringToFront();
             }
         }
     }

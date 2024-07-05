@@ -98,6 +98,7 @@
             Margin = new Padding(4);
             Name = "TaiKhoanListItem";
             Size = new Size(978, 80);
+            Load += TaiKhoanListItem_Load;
             ResumeLayout(false);
             PerformLayout();
         }

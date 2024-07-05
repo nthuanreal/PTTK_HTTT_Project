@@ -8,6 +8,5 @@ Các thông tin cập nhật hay thông tin muốn cập nhật về database, v
 
 
 Văn:
-- Bảng ứng viên: thêm trường da_duyet = {0, 1} cho UC nhân viên duyệt tài khoản cho ứng viên
 - Bảng hợp đồng: thêm trường TINHTRANG = {đã duyệt, chưa duyệt, gia hạn}
-- Bảng hồ sơ ứng tuyển: 0 -> Chưa duyệt, -1 -> thiếu hồ sơ, > 0 -> Đã duyệt
+- Bảng hồ sơ ứng tuyển: 0 -> Chưa duyệt, -1 -> thiếu hồ sơ, >0 -> Đã duyệt
