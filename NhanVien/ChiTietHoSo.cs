@@ -57,7 +57,7 @@ namespace UI_winform.NhanVien
                 }
 
                 string sql = $"update qlhsut.qlhsut_ho_so_ung_tuyen\r\nset trangthaiduyet = {diem}\r\nwhere mahs = {maHs}";
-                int data = DataProvider.Instance.ExecuteNonQuery(sql);
+                DataProvider.Instance.ExecuteNonQuery(sql);
                 MessageBox.Show("Thành Công");
                 this.Close();
             }
@@ -66,7 +66,7 @@ namespace UI_winform.NhanVien
         private void button2_Click(object sender, EventArgs e)
         {
             string sql = $"update qlhsut.qlhsut_ho_so_ung_tuyen\r\nset trangthaiduyet = -1\r\nwhere mahs = {maHs}";
-            int data = DataProvider.Instance.ExecuteNonQuery(sql);
+            DataProvider.Instance.ExecuteNonQuery(sql);
             MessageBox.Show("Thành Công");
             this.Close();
         }

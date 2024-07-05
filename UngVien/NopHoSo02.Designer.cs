@@ -29,92 +29,119 @@
         private void InitializeComponent()
         {
             button1 = new Button();
-            textBox4 = new TextBox();
             textBox1 = new TextBox();
-            label5 = new Label();
             label1 = new Label();
             button2 = new Button();
+            panelNavbar = new Panel();
+            label9 = new Label();
+            label2 = new Label();
+            textBox2 = new TextBox();
+            panelNavbar.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
-            button1.Location = new Point(506, 383);
+            button1.BackColor = Color.FromArgb(250, 135, 135);
+            button1.Location = new Point(629, 579);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(103, 34);
+            button1.Size = new Size(129, 42);
             button1.TabIndex = 31;
-            button1.Text = "Đăng ký";
+            button1.Text = "Nộp";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(30, 225);
-            textBox4.Margin = new Padding(2);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(207, 27);
-            textBox4.TabIndex = 26;
-            // 
             // textBox1
             // 
-            textBox1.Location = new Point(30, 48);
+            textBox1.Location = new Point(42, 121);
             textBox1.Margin = new Padding(2);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(617, 128);
+            textBox1.Size = new Size(770, 159);
             textBox1.TabIndex = 23;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(30, 193);
-            label5.Margin = new Padding(2, 0, 2, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(197, 20);
-            label5.TabIndex = 20;
-            label5.Text = "Chứng từ, bằng cấp (nếu có)";
+            textBox1.Text = "Thông tin hồ sơ";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 18);
+            label1.Location = new Point(42, 85);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(182, 20);
+            label1.Size = new Size(224, 25);
             label1.TabIndex = 16;
             label1.Text = "Thông tin hồ sơ ứng tuyển";
             // 
             // button2
             // 
             button2.BackColor = SystemColors.ActiveCaption;
-            button2.Location = new Point(292, 383);
+            button2.Location = new Point(420, 579);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(103, 34);
+            button2.Size = new Size(129, 42);
             button2.TabIndex = 32;
             button2.Text = "Quay lại";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // panelNavbar
+            // 
+            panelNavbar.BackColor = Color.FromArgb(250, 135, 135);
+            panelNavbar.BorderStyle = BorderStyle.FixedSingle;
+            panelNavbar.Controls.Add(label9);
+            panelNavbar.Location = new Point(0, 0);
+            panelNavbar.Margin = new Padding(4);
+            panelNavbar.Name = "panelNavbar";
+            panelNavbar.Size = new Size(1227, 72);
+            panelNavbar.TabIndex = 53;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Arial", 18F, FontStyle.Bold);
+            label9.Location = new Point(20, 14);
+            label9.Margin = new Padding(4, 0, 4, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(225, 43);
+            label9.TabIndex = 8;
+            label9.Text = "NỘP HỒ SƠ";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(45, 295);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 25);
+            label2.TabIndex = 54;
+            label2.Text = "Link CV";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(48, 332);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(764, 31);
+            textBox2.TabIndex = 55;
+            // 
             // NopHoSo02
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 753);
+            ClientSize = new Size(1228, 941);
+            Controls.Add(textBox2);
+            Controls.Add(label2);
+            Controls.Add(panelNavbar);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(textBox4);
             Controls.Add(textBox1);
-            Controls.Add(label5);
             Controls.Add(label1);
             Margin = new Padding(2);
             MaximizeBox = false;
             MinimizeBox = false;
-            MinimumSize = new Size(1000, 800);
+            MinimumSize = new Size(1244, 986);
             Name = "NopHoSo02";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "NopHoSo";
+            panelNavbar.ResumeLayout(false);
+            panelNavbar.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -122,10 +149,12 @@
         #endregion
 
         private Button button1;
-        private TextBox textBox4;
         private TextBox textBox1;
-        private Label label5;
         private Label label1;
         private Button button2;
+        private Panel panelNavbar;
+        private Label label9;
+        private Label label2;
+        private TextBox textBox2;
     }
 }

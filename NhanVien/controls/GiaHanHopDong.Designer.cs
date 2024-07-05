@@ -82,7 +82,6 @@
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.AutoScroll = true;
-            flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel2.Location = new Point(9, 298);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(731, 219);

@@ -39,6 +39,7 @@ namespace UI_winform.NhanVien.controls
             {
                 DataRow row = data.Rows[i];
                 hopDongListItems[i] = new HopDongListItem();
+                hopDongListItems[i].Width = flowLayoutPanel1.Width;
 
                 decimal maHopDong = (decimal)row["MAHOPDONG"];
                 DateTime ngayLap = (DateTime)row["NGAYKI"];
@@ -118,7 +119,8 @@ namespace UI_winform.NhanVien.controls
 
         private void GiaHanBtn_Click(object sender, EventArgs e)
         {
-
+            ChonGiaHanHopDong chonGiaHanHopDong = new ChonGiaHanHopDong();
+            chonGiaHanHopDong.ShowDialog();
         }
     }
 }
