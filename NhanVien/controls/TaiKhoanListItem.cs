@@ -17,13 +17,8 @@ namespace UI_winform.NhanVien.controls
             InitializeComponent();
         }
 
-        public TaiKhoanListItem(string maDn)
-        {
-            MaDn = maDn;
-            InitializeComponent();
-        }
-
         #region Properties
+
         private string _maDn;
         private string _tenDoanhNghiep;
         private string _maSoThue;
@@ -31,14 +26,28 @@ namespace UI_winform.NhanVien.controls
         [Category("Custom Props")]
         public string MaDn { get => _maDn; set => _maDn = value; }
         [Category("Custom Props")]
-        public string TenDoanhNghiep { get => _tenDoanhNghiep; set => _tenDoanhNghiep = value; }
+        public string TenDoanhNghiep
+        {
+            get { return _tenDoanhNghiep; }
+            set { _tenDoanhNghiep = value; tenDoanhNghiepTxt.Text = value; }
+        }
         [Category("Custom Props")]
-        public string MaSoThue { get => _maSoThue; set => _maSoThue = value; }
-
+        public string MaSoThue
+        {
+            get { return _maSoThue; }
+            set { _maSoThue = value; maSoThueTxt.Text = value; }
+        }
+        #endregion
 
         private void TaiKhoanListItem_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void TaiKhoanListItem_Click(object sender, EventArgs e)
+        {
+            ThongTinDoanhNghep thongTinDoanhNghep = new ThongTinDoanhNghep(_maDn);
+            thongTinDoanhNghep.ShowDialog();
         }
     }
 }

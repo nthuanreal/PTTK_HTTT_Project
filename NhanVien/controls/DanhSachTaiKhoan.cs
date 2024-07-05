@@ -16,6 +16,7 @@ namespace UI_winform.NhanVien.controls
         public DanhSachTaiKhoan()
         {
             InitializeComponent();
+            populateItems();
         }
 
         private void populateItems()
@@ -27,6 +28,14 @@ namespace UI_winform.NhanVien.controls
             for (int i = 0; i < data.Rows.Count; i++)
             {
                 DataRow row = data.Rows[i];
+                taiKhoanListItems[i] = new TaiKhoanListItem
+                {
+                    MaDn = ((decimal)row["MADN"]).ToString(),
+                    TenDoanhNghiep = row["TENDN"].ToString(),
+                    MaSoThue = row["MASOTHUE"].ToString()
+                };
+                
+                flowLayoutPanel1.Controls.Add(taiKhoanListItems[i]);
 
             }
         }
