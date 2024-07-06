@@ -52,11 +52,11 @@
             lblCompanyName = new Label();
             lblTaxID = new Label();
             txtCompanyName = new TextBox();
-            txtRepresentative = new TextBox();
             txtAddress = new TextBox();
+            txtTaxID = new TextBox();
             txtPhone = new TextBox();
             txtEmail = new TextBox();
-            txtTaxID = new TextBox();
+            txtRepresentative = new TextBox();
             label1 = new Label();
             btnCancel = new Button();
             btnRegister = new Button();
@@ -252,6 +252,7 @@
             checkBox2.TabIndex = 15;
             checkBox2.Text = "Nữ";
             checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // tableLayoutPanel1
             // 
@@ -265,11 +266,11 @@
             tableLayoutPanel1.Controls.Add(lblCompanyName, 0, 0);
             tableLayoutPanel1.Controls.Add(lblTaxID, 0, 1);
             tableLayoutPanel1.Controls.Add(txtCompanyName, 1, 0);
-            tableLayoutPanel1.Controls.Add(txtRepresentative, 1, 2);
-            tableLayoutPanel1.Controls.Add(txtAddress, 1, 1);
+            tableLayoutPanel1.Controls.Add(txtAddress, 1, 2);
+            tableLayoutPanel1.Controls.Add(txtTaxID, 1, 1);
             tableLayoutPanel1.Controls.Add(txtPhone, 1, 3);
             tableLayoutPanel1.Controls.Add(txtEmail, 1, 4);
-            tableLayoutPanel1.Controls.Add(txtTaxID, 1, 5);
+            tableLayoutPanel1.Controls.Add(txtRepresentative, 1, 5);
             tableLayoutPanel1.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(100, 134);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -358,21 +359,21 @@
             txtCompanyName.Size = new Size(342, 32);
             txtCompanyName.TabIndex = 2;
             // 
-            // txtRepresentative
-            // 
-            txtRepresentative.Font = new Font("Segoe UI", 11F);
-            txtRepresentative.Location = new Point(188, 83);
-            txtRepresentative.Name = "txtRepresentative";
-            txtRepresentative.Size = new Size(342, 32);
-            txtRepresentative.TabIndex = 6;
-            // 
             // txtAddress
             // 
             txtAddress.Font = new Font("Segoe UI", 11F);
-            txtAddress.Location = new Point(188, 42);
+            txtAddress.Location = new Point(188, 83);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(342, 32);
-            txtAddress.TabIndex = 8;
+            txtAddress.TabIndex = 6;
+            // 
+            // txtTaxID
+            // 
+            txtTaxID.Font = new Font("Segoe UI", 11F);
+            txtTaxID.Location = new Point(188, 42);
+            txtTaxID.Name = "txtTaxID";
+            txtTaxID.Size = new Size(342, 32);
+            txtTaxID.TabIndex = 8;
             // 
             // txtPhone
             // 
@@ -390,13 +391,13 @@
             txtEmail.Size = new Size(342, 32);
             txtEmail.TabIndex = 12;
             // 
-            // txtTaxID
+            // txtRepresentative
             // 
-            txtTaxID.Font = new Font("Segoe UI", 11F);
-            txtTaxID.Location = new Point(188, 209);
-            txtTaxID.Name = "txtTaxID";
-            txtTaxID.Size = new Size(342, 32);
-            txtTaxID.TabIndex = 4;
+            txtRepresentative.Font = new Font("Segoe UI", 11F);
+            txtRepresentative.Location = new Point(188, 209);
+            txtRepresentative.Name = "txtRepresentative";
+            txtRepresentative.Size = new Size(342, 32);
+            txtRepresentative.TabIndex = 4;
             // 
             // label1
             // 
@@ -488,11 +489,11 @@
         private Label lblCompanyName;
         private TextBox txtCompanyName;
         private Label lblTaxID;
-        private TextBox txtTaxID;
-        private Label lblRepresentative;
         private TextBox txtRepresentative;
-        private Label lblAddress;
+        private Label lblRepresentative;
         private TextBox txtAddress;
+        private Label lblAddress;
+        private TextBox txtTaxID;
         private Label lblPhone;
         private TextBox txtPhone;
         private Label lblEmail;

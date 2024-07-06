@@ -173,7 +173,7 @@ namespace UI_winform
             }
             catch (OracleException ex)
             {
-                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!");
+                MessageBox.Show("TÊN ĐĂNG NHẬP hoặc MẬT KHẨU không hợp lệ!", ex.Message);
             }
         }
 

@@ -57,7 +57,7 @@ namespace UI_winform
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Có lỗi xảy ra trong quá trình đăng ký, vui lòng thức hiện lại.");
+                    MessageBox.Show("Có lỗi xảy ra trong quá trình đăng ký, vui lòng thức hiện lại.",ex.Message);
                 }
             }
             else
