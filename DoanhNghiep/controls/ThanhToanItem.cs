@@ -13,18 +13,30 @@ namespace UI_winform.DoanhNghiep
     public partial class ThanhToanItem : UserControl
     {
         public ThanhToanItem()
-        { 
+        {
             InitializeComponent();
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        ThongTinThanhToan thanhtoan = new ThongTinThanhToan();
+        public ThanhToanItem(ThongTinThanhToan thanhtoan)
         {
-
+            InitializeComponent();
+            this.thanhtoan = thanhtoan;
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void ThanhToanItem_Load(object sender, EventArgs e)
         {
+            MTT_TxtBox.Text = thanhtoan.matt;
+            MPQC_TxtBox.Text = thanhtoan.mapqc;
+            DTT_TxtBox.Text = thanhtoan.dotthanhtoan;
+            Tien_TxtBox.Text = thanhtoan.tongtien;
+            TT_TxtBox.Text = thanhtoan.tinhtrang;
 
+            MTT_TxtBox.ReadOnly = true;
+            MPQC_TxtBox.ReadOnly = true;
+            DTT_TxtBox.ReadOnly = true;
+            Tien_TxtBox.ReadOnly = true;
+            TT_TxtBox.ReadOnly = true;
         }
     }
 }

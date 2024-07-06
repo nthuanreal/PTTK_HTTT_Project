@@ -78,19 +78,6 @@ namespace UI_winform
 
                 string qlhsutConnectionString = @$"DATA SOURCE={hostname}:{port}/XEPDB1;DBA Privilege=SYSDBA; USER ID=" + qlhsut + ";PASSWORD=" + pwd;
 
-                using (OracleConnection con = new OracleConnection(qlhsutConnectionString))
-                {
-                    try
-                    {
-                        con.Open();
-                        MessageBox.Show("Kết nối với cơ sở dữ liệu thành công!");
-                    }
-                    catch (OracleException ex)
-                    {
-                        MessageBox.Show("Lỗi kết nối: " + ex.Message);
-                    }
-                }
-
                 if (txtRole.Text == "Quản trị viên")
                 {
                     connectionString = @$"DATA SOURCE={hostname}:{port}/XEPDB1;DBA Privilege=SYSDBA; USER ID=" + txtUsername.Text + ";PASSWORD=" + txtPassword.Text;

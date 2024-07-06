@@ -139,7 +139,7 @@ namespace UI_winform.User.Home
         //Chiến lược
         private void DRCB_Btn_Click(object sender, EventArgs e)
         {
-            UuDai uuDai = new UuDai();
+            UuDai uuDai = new UuDai(this);
             splitContainer1.Panel2.Controls.Clear();
             splitContainer1.Panel2.Controls.Add(uuDai);
             uuDai.Dock = DockStyle.Fill;
