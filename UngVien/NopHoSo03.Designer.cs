@@ -149,6 +149,7 @@
             Controls.Add(panelNavbar);
             Controls.Add(button1);
             Controls.Add(label5);
+            ForeColor = Color.Black;
             Margin = new Padding(2);
             MinimumSize = new Size(1244, 986);
             Name = "NopHoSo03";

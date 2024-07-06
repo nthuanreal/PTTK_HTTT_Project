@@ -88,7 +88,7 @@
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.Navy;
             dataGridViewCellStyle2.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
@@ -115,6 +115,7 @@
             dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dataGridView1.Size = new Size(1007, 237);
             dataGridView1.TabIndex = 55;
+            dataGridView1.ForeColor = Color.Black;
             // 
             // DanhSachBangCap
             // 

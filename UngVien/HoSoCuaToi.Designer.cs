@@ -40,6 +40,8 @@
             dataGridView1 = new DataGridView();
             panelNavbar = new Panel();
             label9 = new Label();
+            label1 = new Label();
+            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelNavbar.SuspendLayout();
@@ -49,13 +51,14 @@
             // 
             button1.BackColor = Color.FromArgb(250, 135, 135);
             button1.ForeColor = SystemColors.Desktop;
-            button1.Location = new Point(1050, 240);
+            button1.Location = new Point(1008, 312);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(129, 42);
             button1.TabIndex = 31;
             button1.Text = "Tìm kiếm";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label5
             // 
@@ -72,7 +75,7 @@
             // 
             label3.AutoSize = true;
             label3.ForeColor = SystemColors.Desktop;
-            label3.Location = new Point(1002, 128);
+            label3.Location = new Point(1008, 233);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(76, 25);
@@ -81,7 +84,7 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(1002, 155);
+            textBox2.Location = new Point(1008, 260);
             textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(158, 31);
@@ -102,7 +105,7 @@
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.Navy;
             dataGridViewCellStyle2.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
@@ -153,16 +156,41 @@
             label9.TabIndex = 8;
             label9.Text = "HỒ SƠ CỦA TÔI";
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.ForeColor = SystemColors.Desktop;
+            label1.Location = new Point(1008, 146);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(139, 25);
+            label1.TabIndex = 54;
+            label1.Text = "Trạng thái duyệt";
+            // 
+            // comboBox1
+            // 
+            comboBox1.BackColor = Color.FromArgb(255, 176, 176);
+            comboBox1.ForeColor = Color.Black;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "0", "1", "2", "3", "4", "5", "Tất cả" });
+            comboBox1.Location = new Point(1008, 183);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(222, 33);
+            comboBox1.TabIndex = 55;
+            // 
             // HoSoCuaToi
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(comboBox1);
+            Controls.Add(label1);
             Controls.Add(panelNavbar);
             Controls.Add(dataGridView1);
             Controls.Add(label3);
             Controls.Add(textBox2);
             Controls.Add(button1);
             Controls.Add(label5);
+            ForeColor = Color.Black;
             Margin = new Padding(2);
             MinimumSize = new Size(1244, 986);
             Name = "HoSoCuaToi";
@@ -187,6 +215,8 @@
         private Label label9;
         private Button dropdownButton;
         private List<string> options;
+        private Label label1;
+        private ComboBox comboBox1;
     }
     
 }

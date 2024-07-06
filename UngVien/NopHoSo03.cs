@@ -23,8 +23,6 @@ namespace UI_winform
             InitializeComponent();
             load_data();
         }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             HOMEUV mainForm = (HOMEUV)this.ParentForm;

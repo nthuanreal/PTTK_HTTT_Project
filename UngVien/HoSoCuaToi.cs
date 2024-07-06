@@ -41,5 +41,22 @@ namespace UI_winform
             ungvien.SwitchUserControl(new DanhSachBangCap(madtValue, maUV));
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string tths = textBox2.Text.ToString();
+            string trangthai = comboBox1.Text.ToString();
+            string reload = "";
+            object[] parameters = { maUV, $"%{tths}%", $"%{trangthai}%" };
+            if (trangthai != "Tất cả")
+            {
+                reload = "select * FROM QLHSUT.QLHSUT_HO_SO_UNG_TUYEN where MAUV = :mauv AND THONGTIN_HS LIKE :tths AND TRANGTHAIDUYET LIKE :trangthai";
+            }
+            else
+            {
+                reload = "select * FROM QLHSUT.QLHSUT_HO_SO_UNG_TUYEN where MAUV = :mauv AND THONGTIN_HS LIKE :tths";
+            }
+            DataTable data = DataProvider.Instance.ExecuteQuery(reload, parameters);
+            dataGridView1.DataSource = data;
+        }
     }
 }

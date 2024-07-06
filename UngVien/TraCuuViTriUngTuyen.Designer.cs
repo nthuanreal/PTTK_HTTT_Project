@@ -55,16 +55,15 @@
             // 
             button1.BackColor = Color.FromArgb(250, 135, 135);
             button1.Location = new Point(1052, 440);
-            button1.BackColor = Color.FromArgb(250, 135, 135);
-            button1.Location = new Point(1052, 440);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(129, 42);
             button1.TabIndex = 31;
             button1.Text = "Tìm kiếm";
-            button1.UseVisualStyleBackColor = false;
+            //button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             button1.Click += button1_Click;
+            button1.ForeColor = Color.Black;
             // 
             // label5
             // 
@@ -75,6 +74,7 @@
             label5.Size = new Size(87, 25);
             label5.TabIndex = 20;
             label5.Text = "TÌM KIẾM";
+            label5.ForeColor = Color.Black;
             // 
             // label1
             // 
@@ -85,6 +85,7 @@
             label1.Size = new Size(48, 25);
             label1.TabIndex = 32;
             label1.Text = "Vị trí";
+            label1.ForeColor = Color.Black;
             // 
             // label2
             // 
@@ -95,6 +96,7 @@
             label2.Size = new Size(99, 25);
             label2.TabIndex = 34;
             label2.Text = "Mức lương";
+            label2.ForeColor = Color.Black;
             // 
             // label3
             // 
@@ -106,6 +108,7 @@
             label3.Size = new Size(76, 25);
             label3.TabIndex = 36;
             label3.Text = "Từ khóa";
+            label3.ForeColor = Color.Black;
             // 
             // textBox3
             // 
@@ -114,6 +117,7 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(158, 31);
             textBox3.TabIndex = 35;
+            textBox3.ForeColor = Color.Black;
             // 
             // comboBox1
             // 
@@ -125,13 +129,12 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(222, 33);
             comboBox1.TabIndex = 38;
+            comboBox1.ForeColor = Color.Black;
             // 
             // dataGridView1
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = Color.LightGray;
-            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle1.BackColor = Color.LightGray;
             dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -143,29 +146,13 @@
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.Navy;
             dataGridViewCellStyle2.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.Navy;
-            dataGridViewCellStyle2.Font = new Font("Tahoma", 9F, FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeight = 30;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = Color.LightBlue;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -187,6 +174,7 @@
             dataGridView1.Size = new Size(957, 475);
             dataGridView1.TabIndex = 40;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.ForeColor = Color.Black;
             // 
             // panelNavbar
             // 
