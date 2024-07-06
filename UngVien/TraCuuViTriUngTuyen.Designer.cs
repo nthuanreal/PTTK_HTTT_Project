@@ -32,6 +32,9 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             button1 = new Button();
             label5 = new Label();
             label1 = new Label();
@@ -42,16 +45,20 @@
             comboBox1 = new ComboBox();
             dataGridView1 = new DataGridView();
             panelNavbar = new Panel();
+            button2 = new Button();
             label9 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelNavbar.SuspendLayout();
+            optionsPanel.SuspendLayout();
             SuspendLayout();
             // 
             // button1
             // 
+            button1.BackColor = Color.FromArgb(250, 135, 135);
+            button1.Location = new Point(1052, 440);
             button1.BackColor = Color.FromArgb(250, 135, 135);
             button1.Location = new Point(1052, 440);
             button1.Margin = new Padding(2);
@@ -60,6 +67,7 @@
             button1.TabIndex = 31;
             button1.Text = "Tìm kiếm";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             button1.Click += button1_Click;
             // 
             // label5
@@ -96,6 +104,7 @@
             // 
             label3.AutoSize = true;
             label3.Location = new Point(1004, 328);
+            label3.Location = new Point(1004, 328);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(76, 25);
@@ -113,6 +122,7 @@
             // comboBox1
             // 
             comboBox1.BackColor = Color.FromArgb(255, 176, 176);
+            comboBox1.BackColor = Color.FromArgb(255, 176, 176);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Nhân viên chính thức", "Bán thời gian", "Thực tập sinh", "Tất cả" });
             comboBox1.Location = new Point(1000, 191);
@@ -124,6 +134,8 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.LightGray;
+            dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridViewCellStyle1.BackColor = Color.LightGray;
             dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -140,8 +152,24 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.Navy;
+            dataGridViewCellStyle2.Font = new Font("Tahoma", 9F, FontStyle.Bold);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridView1.ColumnHeadersHeight = 30;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = Color.LightBlue;
+            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
             dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = Color.White;
             dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
@@ -168,12 +196,25 @@
             // 
             panelNavbar.BackColor = Color.FromArgb(250, 135, 135);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
+            panelNavbar.Controls.Add(button2);
             panelNavbar.Controls.Add(label9);
             panelNavbar.Location = new Point(1, 0);
             panelNavbar.Margin = new Padding(4);
             panelNavbar.Name = "panelNavbar";
             panelNavbar.Size = new Size(1243, 72);
             panelNavbar.TabIndex = 53;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(250, 135, 135);
+            button2.Location = new Point(1088, 0);
+            button2.Margin = new Padding(2);
+            button2.Name = "button2";
+            button2.Size = new Size(137, 68);
+            button2.TabIndex = 56;
+            button2.Text = "Profile";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += DropdownButton_Click;
             // 
             // label9
             // 
@@ -225,6 +266,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
+            optionsPanel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -247,5 +289,6 @@
         private Button dropdownButton;
         private List<string> options;
     }
+    
     
 }

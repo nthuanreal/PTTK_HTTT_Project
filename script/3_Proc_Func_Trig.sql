@@ -172,3 +172,12 @@ BEGIN
         RAISE_APPLICATION_ERROR(-20013, 'Không thể xóa doanh nghiệp vì còn hợp đồng chưa hết hạn.');
     END IF;
 END;
+/
+-- Trigger xóa người đại diện sau khi xóa doanh nghiệp
+CREATE OR REPLACE TRIGGER QLHSUT.TRG_DELETE_XOA_NGUOI_DAI_DIEN
+AFTER DELETE ON QLHSUT.QLHSUT_DOANH_NGHIEP
+FOR EACH ROW
+BEGIN
+    DELETE FROM QLHSUT.qlhsut_nguoi_dai_dien WHERE MANDD = :OLD.NDD;
+END;
+/

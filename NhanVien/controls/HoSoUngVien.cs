@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,8 @@ namespace UI_winform.NhanVien.controls
 {
     public partial class HoSoUngVien : UserControl
     {
-        private static Dictionary<string, string> TRANGTHAI = new Dictionary<string, string>() { { "0", "Chưa duyệt" }, { "1", "Đã duyệt" } };
-
+        private static Dictionary<string, string> TRANGTHAI = new Dictionary<string, string>() { { "-1", "Chưa đủ giấy tờ" }, { "0", "Chưa duyệt" }, { "1", "Đã duyệt" }, { "2", "Đã duyệt" }, { "3", "Đã duyệt" }, { "4", "Đã duyệt" }, { "5", "Đã duyệt" } };
+        
         public HoSoUngVien()
         {
             InitializeComponent();
@@ -28,15 +29,17 @@ namespace UI_winform.NhanVien.controls
             if (filter != null)
             {
                 if (filter == "Chưa duyệt")
-                    query = $"select hs.mahs, dn.tendn, ttdt.vitri_ungtuyen, hs.trangthaiduyet\r\nfrom qlhsut.qlhsut_ho_so_ung_tuyen hs\r\njoin qlhsut.qlhsut_phieu_quang_cao pqc on hs.mapqc = pqc.mapqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen ttdt on ttdt.madt = hd.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on ttdt.dn_dangtuyen = dn.madn where trangthaiduyet = '{filter}' or trangthaiduyet is NULL";
+                    query = $"select hs.mahs, dn.tendn, ttdt.vitri_ungtuyen, hs.trangthaiduyet\r\nfrom qlhsut.qlhsut_ho_so_ung_tuyen hs\r\njoin qlhsut.qlhsut_phieu_quang_cao pqc on hs.mapqc = pqc.mapqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen ttdt on ttdt.madt = hd.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on ttdt.dn_dangtuyen = dn.madn where trangthaiduyet = 0 or trangthaiduyet is NULL";                    
+                else if (filter == "Chưa đủ giấy tờ")
+                    query = $"select hs.mahs, dn.tendn, ttdt.vitri_ungtuyen, hs.trangthaiduyet\r\nfrom qlhsut.qlhsut_ho_so_ung_tuyen hs\r\njoin qlhsut.qlhsut_phieu_quang_cao pqc on hs.mapqc = pqc.mapqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen ttdt on ttdt.madt = hd.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on ttdt.dn_dangtuyen = dn.madn where trangthaiduyet < 0 or trangthaiduyet is NULL";
                 else
-                    query = $"select hs.mahs, dn.tendn, ttdt.vitri_ungtuyen, hs.trangthaiduyet\r\nfrom qlhsut.qlhsut_ho_so_ung_tuyen hs\r\njoin qlhsut.qlhsut_phieu_quang_cao pqc on hs.mapqc = pqc.mapqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen ttdt on ttdt.madt = hd.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on ttdt.dn_dangtuyen = dn.madn where tinhtrang = '{filter}'";
+                    query = $"select hs.mahs, dn.tendn, ttdt.vitri_ungtuyen, hs.trangthaiduyet\r\nfrom qlhsut.qlhsut_ho_so_ung_tuyen hs\r\njoin qlhsut.qlhsut_phieu_quang_cao pqc on hs.mapqc = pqc.mapqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen ttdt on ttdt.madt = hd.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on ttdt.dn_dangtuyen = dn.madn where trangthaiduyet > 0";
             }
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             int n = data.Rows.Count;
             HoSoUngVienItem[] hopDongListItems = new HoSoUngVienItem[n];
-            
+
             if (flowLayoutPanel1.Controls.Count > 0)
             {
                 flowLayoutPanel1.Controls.Clear();
@@ -52,7 +55,7 @@ namespace UI_winform.NhanVien.controls
                 string viTri = (string)row["VITRI_UNGTUYEN"];
                 decimal trangThai = (decimal)row["TRANGTHAIDUYET"];
 
-                
+
                 hopDongListItems[i].MaHs = maHS.ToString();
                 hopDongListItems[i].TenDn = tenDN;
                 hopDongListItems[i].ViTri = viTri;
@@ -60,6 +63,13 @@ namespace UI_winform.NhanVien.controls
 
                 flowLayoutPanel1.Controls.Add(hopDongListItems[i]);
             }
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+
+            string? tinhTrang = comboBox1.SelectedItem?.ToString();
+            populateItems( tinhTrang );
         }
     }
 }

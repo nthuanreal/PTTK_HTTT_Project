@@ -45,7 +45,14 @@ namespace UI_winform
 
         private void giaHanBtn_Click(object sender, EventArgs e)
         {
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(new GiaHanHopDong());
+        }
 
+        private void hopDongBtn_Click(object sender, EventArgs e)
+        {
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(new XuLyHopDong());
         }
 
         private void hopDongBtn_Click(object sender, EventArgs e)
@@ -53,6 +60,5 @@ namespace UI_winform
 
         }
     }
-
 
 }

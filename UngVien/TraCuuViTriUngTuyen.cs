@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI_winform.DAO;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace UI_winform
 {
@@ -23,6 +24,7 @@ namespace UI_winform
             Load_data(query);
         }
 
+        private void Load_data(string query)
         private void Load_data(string query)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery(query);

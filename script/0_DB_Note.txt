@@ -5,4 +5,8 @@
 -----------------------------------------------------------
 
 Các thông tin cập nhật hay thông tin muốn cập nhật về database, vui lòng cập nhật trong file này:
-Tạo 1 store procedure USER_LOGIN phục vụ login
+
+
+Văn:
+- Bảng hợp đồng: thêm trường TINHTRANG = {đã duyệt, chưa duyệt, gia hạn}
+- Bảng hồ sơ ứng tuyển: 0 -> Chưa duyệt, -1 -> thiếu hồ sơ, >0 -> Đã duyệt

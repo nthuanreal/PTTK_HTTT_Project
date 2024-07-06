@@ -392,6 +392,7 @@
             button4.UseVisualStyleBackColor = false;
             // 
             // CapNhatThongTinUV
+            // CapNhatThongTinUV
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;

@@ -36,6 +36,8 @@
             label9 = new Label();
             label2 = new Label();
             textBox2 = new TextBox();
+            label2 = new Label();
+            textBox2 = new TextBox();
             panelNavbar.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,16 +45,20 @@
             // 
             button1.BackColor = Color.FromArgb(250, 135, 135);
             button1.Location = new Point(629, 579);
+            button1.BackColor = Color.FromArgb(250, 135, 135);
+            button1.Location = new Point(629, 579);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(129, 42);
             button1.TabIndex = 31;
+            button1.Text = "Nộp";
             button1.Text = "Nộp";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBox1
             // 
+            textBox1.Location = new Point(42, 121);
             textBox1.Location = new Point(42, 121);
             textBox1.Margin = new Padding(2);
             textBox1.Multiline = true;
@@ -65,6 +71,7 @@
             // 
             label1.AutoSize = true;
             label1.Location = new Point(42, 85);
+            label1.Location = new Point(42, 85);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(224, 25);
@@ -74,6 +81,7 @@
             // button2
             // 
             button2.BackColor = SystemColors.ActiveCaption;
+            button2.Location = new Point(420, 579);
             button2.Location = new Point(420, 579);
             button2.Margin = new Padding(2);
             button2.Name = "button2";
@@ -121,6 +129,22 @@
             textBox2.Size = new Size(764, 31);
             textBox2.TabIndex = 55;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(45, 295);
+            label2.Name = "label2";
+            label2.Size = new Size(70, 25);
+            label2.TabIndex = 54;
+            label2.Text = "Link CV";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(48, 332);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(764, 31);
+            textBox2.TabIndex = 55;
+            // 
             // NopHoSo02
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -150,6 +174,8 @@
         private Button button2;
         private Panel panelNavbar;
         private Label label9;
+        private Label label2;
+        private TextBox textBox2;
         private Label label2;
         private TextBox textBox2;
     }
