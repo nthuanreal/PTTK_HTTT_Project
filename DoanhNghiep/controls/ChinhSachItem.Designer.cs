@@ -132,11 +132,11 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 137F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 55F));
             tableLayoutPanel1.Controls.Add(ngayHetHanTxt, 5, 0);
-            tableLayoutPanel1.Controls.Add(ngayLapTxt, 1, 0);
             tableLayoutPanel1.Controls.Add(tinhTrangTxt, 3, 0);
             tableLayoutPanel1.Controls.Add(label4, 4, 0);
             tableLayoutPanel1.Controls.Add(label3, 2, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
+            tableLayoutPanel1.Controls.Add(ngayLapTxt, 1, 0);
             tableLayoutPanel1.Location = new Point(3, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;

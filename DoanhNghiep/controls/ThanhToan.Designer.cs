@@ -66,13 +66,6 @@
             label1.TabIndex = 0;
             label1.Text = "THÔNG TIN THANH TOÁN";
             // 
-            // thanhToanItem1
-            // 
-            thanhToanItem1.Location = new Point(17, 13);
-            thanhToanItem1.Name = "thanhToanItem1";
-            thanhToanItem1.Size = new Size(546, 120);
-            thanhToanItem1.TabIndex = 4;
-            // 
             // panel2
             // 
             panel2.Controls.Add(thanhToanItem1);
@@ -80,7 +73,13 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(545, 686);
             panel2.TabIndex = 3;
-
+            // 
+            // thanhToanItem1
+            // 
+            thanhToanItem1.Location = new Point(13, 208);
+            thanhToanItem1.Name = "thanhToanItem1";
+            thanhToanItem1.Size = new Size(546, 120);
+            thanhToanItem1.TabIndex = 4;
             // 
             // panel3
             // 

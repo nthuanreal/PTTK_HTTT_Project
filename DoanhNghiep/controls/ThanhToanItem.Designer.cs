@@ -53,7 +53,7 @@
             panel1.Controls.Add(label1);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(546, 120);
+            panel1.Size = new Size(528, 120);
             panel1.TabIndex = 0;
             // 
             // label7
@@ -144,7 +144,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
             Name = "ThanhToanItem";
-            Size = new Size(545, 120);
+            Size = new Size(528, 120);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
