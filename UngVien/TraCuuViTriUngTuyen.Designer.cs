@@ -32,9 +32,7 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            
             button1 = new Button();
             label5 = new Label();
             label1 = new Label();
@@ -45,14 +43,12 @@
             comboBox1 = new ComboBox();
             dataGridView1 = new DataGridView();
             panelNavbar = new Panel();
-            button2 = new Button();
             label9 = new Label();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panelNavbar.SuspendLayout();
-            optionsPanel.SuspendLayout();
             SuspendLayout();
             // 
             // button1
@@ -196,26 +192,13 @@
             // 
             panelNavbar.BackColor = Color.FromArgb(250, 135, 135);
             panelNavbar.BorderStyle = BorderStyle.FixedSingle;
-            panelNavbar.Controls.Add(button2);
             panelNavbar.Controls.Add(label9);
             panelNavbar.Location = new Point(1, 0);
             panelNavbar.Margin = new Padding(4);
             panelNavbar.Name = "panelNavbar";
             panelNavbar.Size = new Size(1243, 72);
             panelNavbar.TabIndex = 53;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(250, 135, 135);
-            button2.Location = new Point(1088, 0);
-            button2.Margin = new Padding(2);
-            button2.Name = "button2";
-            button2.Size = new Size(137, 68);
-            button2.TabIndex = 56;
-            button2.Text = "Profile";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += DropdownButton_Click;
-            // 
+            //
             // label9
             // 
             label9.AutoSize = true;
@@ -266,7 +249,6 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
-            optionsPanel.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }

@@ -55,10 +55,7 @@ namespace UI_winform
             splitContainer1.Panel2.Controls.Add(new XuLyHopDong());
         }
 
-        private void hopDongBtn_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 
 }

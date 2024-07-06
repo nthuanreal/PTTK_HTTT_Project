@@ -25,7 +25,6 @@ namespace UI_winform
         }
 
         private void Load_data(string query)
-        private void Load_data(string query)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             dataGridView1.DataSource = data;

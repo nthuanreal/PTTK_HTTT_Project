@@ -176,7 +176,5 @@
         private Label label9;
         private Label label2;
         private TextBox textBox2;
-        private Label label2;
-        private TextBox textBox2;
     }
 }
