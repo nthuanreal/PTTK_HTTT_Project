@@ -92,7 +92,7 @@
             splitContainer1.Panel2.Controls.Add(tableLayoutPanel2);
             splitContainer1.Panel2.Controls.Add(pictureBox1);
             splitContainer1.Size = new Size(1228, 941);
-            splitContainer1.SplitterDistance = 212;
+            splitContainer1.SplitterDistance = 211;
             splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 0;
             // 
@@ -104,7 +104,7 @@
             DangXuat_Link.BorderStyle = BorderStyle.Fixed3D;
             DangXuat_Link.Cursor = Cursors.AppStarting;
             DangXuat_Link.Font = new Font("Cascadia Code", 18F);
-            DangXuat_Link.Location = new Point(4, 883);
+            DangXuat_Link.Location = new Point(3, 883);
             DangXuat_Link.Margin = new Padding(4, 0, 4, 0);
             DangXuat_Link.Name = "DangXuat_Link";
             DangXuat_Link.Size = new Size(211, 49);
@@ -240,7 +240,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 10F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 70F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
-            tableLayoutPanel2.Size = new Size(1011, 941);
+            tableLayoutPanel2.Size = new Size(1012, 941);
             tableLayoutPanel2.TabIndex = 11;
             // 
             // panel1
@@ -251,7 +251,7 @@
             panel1.Location = new Point(4, 4);
             panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1003, 86);
+            panel1.Size = new Size(1004, 86);
             panel1.TabIndex = 8;
             // 
             // label1
@@ -295,7 +295,7 @@
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6672249F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6672249F));
             tableLayoutPanel4.RowStyles.Add(new RowStyle(SizeType.Percent, 16.66722F));
-            tableLayoutPanel4.Size = new Size(1003, 650);
+            tableLayoutPanel4.Size = new Size(1004, 650);
             tableLayoutPanel4.TabIndex = 9;
             // 
             // Email_TxtBox
@@ -437,7 +437,7 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 30F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 35F));
-            tableLayoutPanel3.Size = new Size(1005, 183);
+            tableLayoutPanel3.Size = new Size(1006, 183);
             tableLayoutPanel3.TabIndex = 10;
             // 
             // DoiMK_Btn
@@ -448,7 +448,7 @@
             DoiMK_Btn.Location = new Point(301, 64);
             DoiMK_Btn.Margin = new Padding(0);
             DoiMK_Btn.Name = "DoiMK_Btn";
-            DoiMK_Btn.Size = new Size(180, 54);
+            DoiMK_Btn.Size = new Size(181, 54);
             DoiMK_Btn.TabIndex = 0;
             DoiMK_Btn.Text = "Đổi Mật Khẩu";
             DoiMK_Btn.UseVisualStyleBackColor = false;
@@ -459,10 +459,10 @@
             ChinhSua_Btn.BackColor = Color.LightCoral;
             ChinhSua_Btn.Dock = DockStyle.Fill;
             ChinhSua_Btn.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            ChinhSua_Btn.Location = new Point(521, 64);
+            ChinhSua_Btn.Location = new Point(522, 64);
             ChinhSua_Btn.Margin = new Padding(0);
             ChinhSua_Btn.Name = "ChinhSua_Btn";
-            ChinhSua_Btn.Size = new Size(180, 54);
+            ChinhSua_Btn.Size = new Size(181, 54);
             ChinhSua_Btn.TabIndex = 1;
             ChinhSua_Btn.Text = "Chỉnh Sửa";
             ChinhSua_Btn.UseVisualStyleBackColor = false;
@@ -473,10 +473,10 @@
             CapNhat_Btn.BackColor = Color.MediumSeaGreen;
             CapNhat_Btn.Dock = DockStyle.Fill;
             CapNhat_Btn.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            CapNhat_Btn.Location = new Point(526, 5);
+            CapNhat_Btn.Location = new Point(527, 5);
             CapNhat_Btn.Margin = new Padding(5);
             CapNhat_Btn.Name = "CapNhat_Btn";
-            CapNhat_Btn.Size = new Size(170, 54);
+            CapNhat_Btn.Size = new Size(171, 54);
             CapNhat_Btn.TabIndex = 2;
             CapNhat_Btn.Text = "Cập Nhật";
             CapNhat_Btn.UseVisualStyleBackColor = false;
@@ -491,7 +491,7 @@
             Huy_Btn.Location = new Point(306, 5);
             Huy_Btn.Margin = new Padding(5);
             Huy_Btn.Name = "Huy_Btn";
-            Huy_Btn.Size = new Size(170, 54);
+            Huy_Btn.Size = new Size(171, 54);
             Huy_Btn.TabIndex = 3;
             Huy_Btn.Text = "Hủy";
             Huy_Btn.UseVisualStyleBackColor = false;
@@ -505,7 +505,7 @@
             pictureBox1.Location = new Point(450, 138);
             pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(0, 156);
+            pictureBox1.Size = new Size(1, 156);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -538,8 +538,6 @@
         }
 
         #endregion
-
-        private SplitContainer splitContainer1;
         private PictureBox pictureBox1;
         private TableLayoutPanel tableLayoutPanel1;
         private PictureBox pictureBox2;
@@ -570,5 +568,6 @@
         private Button CapNhat_Btn;
         private Button Huy_Btn;
         private Button TTNDD_Btn;
+        public SplitContainer splitContainer1;
     }
 }

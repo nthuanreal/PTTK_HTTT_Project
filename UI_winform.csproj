@@ -9,9 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="DoanhNghiep\DangKyDangTuyen2.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="NhanVien\controls\HoSoUngVienItem.cs">
       <SubType>UserControl</SubType>
     </Compile>

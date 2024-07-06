@@ -2,7 +2,6 @@
 using UI_winform.DoanhNghiep.controls;
 using UI_winform.User.Login;
 using UI_winform.utils;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace UI_winform.User.Home
 {
@@ -15,6 +14,11 @@ namespace UI_winform.User.Home
         {
             InitializeComponent();
             CurLogin = curLogin;
+        }
+
+        public HOMEDN()
+        {
+            InitializeComponent();
         }
 
         private void DangXuat_Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -101,10 +105,21 @@ namespace UI_winform.User.Home
         }
 
         //Đăng ký đăng tuyển
+        DangKyDT1 DKDT1;
         private void DKDT_Btn_Click(object sender, EventArgs e)
         {
-            DangKyDangTuyen1 newPage = new DangKyDangTuyen1();
-            newPage.Show();
+            DKDT1 = new DangKyDT1(this);
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(DKDT1);
+            DKDT1.Dock = DockStyle.Fill;
+            DKDT1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DKDT1.Size = splitContainer1.Panel2.ClientSize;
+            //setDKTD1Size();
+        }
+
+        public DangKyDT1 getDKDT1()
+        {
+            return this.DKDT1;
         }
 
 
