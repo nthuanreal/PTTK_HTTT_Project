@@ -15,6 +15,7 @@ namespace UI_winform.Utils
         public NavigationControl(List<UserControl> controls, Panel panel) {
             this.panel = panel;
             this.controls = controls;
+            AddUserControls();
         }
 
         private void AddUserControls()

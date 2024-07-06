@@ -10,34 +10,54 @@ using System.Windows.Forms;
 using UI_winform.DAO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace UI_winform
 {
-    public partial class NopHoSo02 : Form
+    public partial class NopHoSo02 : UserControl
     {
-        private NopHoSo01 NopHoSo01;
-        public NopHoSo02(NopHoSo01 copy)
+        public int mauv, madt, mahs;
+        public NopHoSo02(int mauv, int madt)
         {
-            this.NopHoSo01 = copy;
+            this.mauv = mauv;
+            this.madt = madt;
             InitializeComponent();
             load_data();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            this.NopHoSo01.Show();
+            HOMEUV mainForm = (HOMEUV)this.ParentForm;
+            mainForm.SwitchUserControl(new NopHoSo01(mauv, madt));
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-            this.NopHoSo01.Close();
-            this.Close();
+            insert_data();
+            HOMEUV mainForm = (HOMEUV)this.ParentForm;
+            mainForm.SwitchUserControl(new NopHoSo03(mauv, mahs));
+        }
+        private void insert_data()
+        {
+            this.mahs = GetRowCount("QLHSUT.QLHSUT_HO_SO_UNG_TUYEN") + 120001;
+            int mahs = this.mahs;
+            int mauv = this.mauv;
+            int mapqc = this.madt;
+            string thongtin_hs = textBox2.Text.ToString();
+            string sql = "INSERT INTO \"QLHSUT\".\"QLHSUT_HO_SO_UNG_TUYEN\" (MAHS, MAUV, MAPQC, THONGTIN_HS) VALUES (:mahs, :mauv, :mapqc, :thongtin_hs)";
+            object[] parameters = { mahs, mauv, mapqc, thongtin_hs };
+            DataProvider.Instance.ExecuteNonQuery(sql, parameters);
+        }
+        public int GetRowCount(string tableName)
+        {
+            string query = $"SELECT COUNT(*) FROM {tableName}";
+            return Convert.ToInt32(DataProvider.Instance.ExecuteQuery(query).Rows[0][0]);
         }
         private void load_data()
         {
-            object[] parameters = { this.NopHoSo01.madt };
+            object[] parameters = { this.madt };
             string query = "select MADT, DN_DANGTUYEN, VITRI_UNGTUYEN, SOLUONG, MOTA, YEUCAU_UNGVIEN, LUONG FROM QLHSUT.QLHSUT_THONG_TIN_DANG_TUYEN where MADT = :MADT";
             DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
             string MADT, DN_DANGTUYEN, VITRI_UNGTUYEN, SOLUONG, MOTA, YEUCAU_UNGVIEN, LUONG;

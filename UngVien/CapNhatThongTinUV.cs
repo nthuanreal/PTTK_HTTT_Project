@@ -13,13 +13,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UI_winform
 {
-    public partial class CapNhatThongTinUV : Form
+    public partial class CapNhatThongTinUV : UserControl
     {
         public int mauv;
-        public CapNhatThongTinUV()
-        {
-            InitializeComponent();
-        }
         public CapNhatThongTinUV(int Mauv)
         {
             InitializeComponent();
@@ -53,19 +49,7 @@ namespace UI_winform
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                update_ttuv();
-                MessageBox.Show("Đã cập nhật");
-                LoadData();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"An error occurred: {ex.Message}");
-            }
-        }
+        
         private void update_ttuv()
         {
             string HOTEN = textBox1.Text;
@@ -75,7 +59,7 @@ namespace UI_winform
             string EMAIL = textBox4.Text;
             string TRINHDO = comboBox1.Text;
             string GIOITINH = checkBox1.Checked ? "Nam" : "Nữ";
-            object[] parameters = { HOTEN, NGAYSINH, GIOITINH, SDT, DIACHI, EMAIL,TRINHDO ,mauv };
+            object[] parameters = { HOTEN, NGAYSINH, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO, mauv };
             string updateQuery = "UPDATE QLHSUT.QLHSUT_UNG_VIEN " +
                                  "SET HOTEN = :HOTEN, " +
                                  "NGSINH = TO_DATE(:NGAYSINH, 'YYYY-MM-DD'), " +
@@ -88,11 +72,28 @@ namespace UI_winform
             DataProvider.Instance.ExecuteNonQuery(updateQuery, parameters);
 
         }
-       
+
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                update_ttuv();
+                MessageBox.Show("Đã cập nhật");
+                LoadData();
+                // TraCuuViTriUngTuyen tcvt = new TraCuuViTriUngTuyen(mauv);
+                //tcvt.Show();
+                //this.Hide();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+            }
         }
     }
 }

@@ -151,7 +151,7 @@ namespace UI_winform
                             Session.Instance.OracleConnection = con;
                             MessageBox.Show("Connect với tư cách là Ứng viên thành công!");
                             this.Hide();
-                            HOMEUV UVHomePage = new HOMEUV();
+                            HOMEUV UVHomePage = new HOMEUV(110004);
                             UVHomePage.Show();
                         }
                         else if (result == 3)
