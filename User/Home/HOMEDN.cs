@@ -1,4 +1,5 @@
 ﻿using Oracle.ManagedDataAccess.Client;
+using UI_winform.DoanhNghiep;
 using UI_winform.DoanhNghiep.controls;
 using UI_winform.User.Login;
 using UI_winform.utils;
@@ -126,16 +127,24 @@ namespace UI_winform.User.Home
         //Thanh toán
         private void TT_Btn_Click(object sender, EventArgs e)
         {
-            //ThanhToan newPage = new ThanhToan();
-            //newPage.Show();
+            ThanhToan thanhToan = new ThanhToan();
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(thanhToan);
+            thanhToan.Dock = DockStyle.Fill;
+            thanhToan.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            thanhToan.Size = splitContainer1.Panel2.ClientSize;
         }
 
 
         //Chiến lược
         private void DRCB_Btn_Click(object sender, EventArgs e)
         {
-            //ChienLuoc newPage = new ChienLuoc();
-            //newPage.Show();
+            UuDai uuDai = new UuDai();
+            splitContainer1.Panel2.Controls.Clear();
+            splitContainer1.Panel2.Controls.Add(uuDai);
+            uuDai.Dock = DockStyle.Fill;
+            uuDai.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            uuDai.Size = splitContainer1.Panel2.ClientSize;
         }
 
         private void DoiMK_Btn_Click(object sender, EventArgs e)

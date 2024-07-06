@@ -461,7 +461,6 @@
         private Label label10;
         private Label label11;
         private Label NgaySinh_Label;
-        private Label DiaChi;
         private Label label8;
         private Label label20;
         private Label DiaChiNDD_Label;

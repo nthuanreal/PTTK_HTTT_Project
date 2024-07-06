@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI_winform.DoanhNghiep;
 
 namespace UI_winform.DoanhNghiep
 {

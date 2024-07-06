@@ -8,16 +8,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace UI_winform.DoanhNghiep.ThanhToan
+namespace UI_winform.DoanhNghiep
 {
     public partial class ThanhToanItem : UserControl
     {
         public ThanhToanItem()
-        {
+        { 
             InitializeComponent();
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }

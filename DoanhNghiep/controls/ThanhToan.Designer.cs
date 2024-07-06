@@ -31,16 +31,18 @@
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
+            thanhToanItem1 = new ThanhToanItem();
             panel3 = new Panel();
+            comboBox2 = new ComboBox();
+            label5 = new Label();
             searchBtn = new Button();
             comboBox1 = new ComboBox();
             label4 = new Label();
             label3 = new Label();
             textBox1 = new TextBox();
             label2 = new Label();
-            comboBox2 = new ComboBox();
-            label5 = new Label();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
@@ -64,12 +66,21 @@
             label1.TabIndex = 0;
             label1.Text = "THÔNG TIN THANH TOÁN";
             // 
+            // thanhToanItem1
+            // 
+            thanhToanItem1.Location = new Point(17, 13);
+            thanhToanItem1.Name = "thanhToanItem1";
+            thanhToanItem1.Size = new Size(546, 120);
+            thanhToanItem1.TabIndex = 4;
+            // 
             // panel2
             // 
+            panel2.Controls.Add(thanhToanItem1);
             panel2.Location = new Point(15, 100);
             panel2.Name = "panel2";
             panel2.Size = new Size(545, 686);
             panel2.TabIndex = 3;
+
             // 
             // panel3
             // 
@@ -85,6 +96,27 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(385, 686);
             panel3.TabIndex = 4;
+            // 
+            // comboBox2
+            // 
+            comboBox2.BackColor = Color.FromArgb(255, 176, 176);
+            comboBox2.Font = new Font("Segoe UI", 11F);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Mã thanh toán", "Ngày giao dịch" });
+            comboBox2.Location = new Point(164, 123);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(183, 33);
+            comboBox2.TabIndex = 37;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 11F);
+            label5.Location = new Point(44, 126);
+            label5.Name = "label5";
+            label5.Size = new Size(93, 25);
+            label5.TabIndex = 36;
+            label5.Text = "Thông tin";
             // 
             // searchBtn
             // 
@@ -145,27 +177,6 @@
             label2.TabIndex = 0;
             label2.Text = "Tìm kiếm";
             // 
-            // comboBox2
-            // 
-            comboBox2.BackColor = Color.FromArgb(255, 176, 176);
-            comboBox2.Font = new Font("Segoe UI", 11F);
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Mã thanh toán", "Ngày giao dịch" });
-            comboBox2.Location = new Point(164, 123);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(183, 33);
-            comboBox2.TabIndex = 37;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 11F);
-            label5.Location = new Point(44, 126);
-            label5.Name = "label5";
-            label5.Size = new Size(93, 25);
-            label5.TabIndex = 36;
-            label5.Text = "Thông tin";
-            // 
             // ThanhToan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -177,6 +188,7 @@
             Size = new Size(968, 800);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ResumeLayout(false);
@@ -196,5 +208,6 @@
         private Label label4;
         private ComboBox comboBox2;
         private Label label5;
+        private ThanhToanItem thanhToanItem1;
     }
 }
