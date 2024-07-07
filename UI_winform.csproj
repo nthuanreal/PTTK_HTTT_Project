@@ -12,6 +12,12 @@
     <Compile Update="NhanVien\controls\HoSoUngVienItem.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="NhanVien\HoaDonThanhToanTraGop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NhanVien\HoaDonThanhToan1Lan.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
