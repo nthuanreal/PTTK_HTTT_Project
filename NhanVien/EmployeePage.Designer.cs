@@ -99,7 +99,6 @@
             hopDongBtn.TabIndex = 3;
             hopDongBtn.Text = "XỬ LÝ HỢP ĐỒNG";
             hopDongBtn.UseVisualStyleBackColor = false;
-            hopDongBtn.Click += hopDongBtn_Click;
             // 
             // xuLyHopDong1
             // 

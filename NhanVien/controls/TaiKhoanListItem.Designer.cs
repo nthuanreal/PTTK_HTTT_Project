@@ -33,13 +33,14 @@
             maSoThueTxt = new Label();
             AcceptBtn = new Button();
             ignoreBtn = new Button();
+            label1 = new Label();
             SuspendLayout();
             // 
             // tenDoanhNghiepTxt
             // 
             tenDoanhNghiepTxt.AutoSize = true;
             tenDoanhNghiepTxt.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tenDoanhNghiepTxt.Location = new Point(14, 9);
+            tenDoanhNghiepTxt.Location = new Point(155, 10);
             tenDoanhNghiepTxt.Name = "tenDoanhNghiepTxt";
             tenDoanhNghiepTxt.Size = new Size(153, 25);
             tenDoanhNghiepTxt.TabIndex = 0;
@@ -67,7 +68,7 @@
             // 
             AcceptBtn.BackColor = Color.FromArgb(195, 226, 130);
             AcceptBtn.FlatAppearance.BorderSize = 0;
-            AcceptBtn.Location = new Point(772, 26);
+            AcceptBtn.Location = new Point(749, 25);
             AcceptBtn.Name = "AcceptBtn";
             AcceptBtn.Size = new Size(94, 32);
             AcceptBtn.TabIndex = 3;
@@ -78,17 +79,28 @@
             // 
             ignoreBtn.BackColor = Color.FromArgb(228, 102, 102);
             ignoreBtn.FlatAppearance.BorderSize = 0;
-            ignoreBtn.Location = new Point(872, 26);
+            ignoreBtn.Location = new Point(849, 25);
             ignoreBtn.Name = "ignoreBtn";
             ignoreBtn.Size = new Size(94, 32);
             ignoreBtn.TabIndex = 4;
             ignoreBtn.Text = "Từ chối";
             ignoreBtn.UseVisualStyleBackColor = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(14, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(125, 25);
+            label1.TabIndex = 5;
+            label1.Text = "Doanh nghiệp";
+            // 
             // TaiKhoanListItem
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonFace;
+            Controls.Add(label1);
             Controls.Add(ignoreBtn);
             Controls.Add(AcceptBtn);
             Controls.Add(maSoThueTxt);
@@ -97,7 +109,9 @@
             Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4);
             Name = "TaiKhoanListItem";
-            Size = new Size(978, 80);
+            Size = new Size(963, 80);
+            Load += TaiKhoanListItem_Load;
+            Click += TaiKhoanListItem_Click;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -109,5 +123,6 @@
         private Label maSoThueTxt;
         private Button AcceptBtn;
         private Button ignoreBtn;
+        private Label label1;
     }
 }

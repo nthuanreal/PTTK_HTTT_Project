@@ -53,7 +53,7 @@
             // 
             // button1
             // 
-            button1.BackColor = SystemColors.ActiveCaption;
+            button1.BackColor = Color.FromArgb(250, 135, 135);
             button1.Location = new Point(726, 691);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
@@ -70,6 +70,8 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(258, 31);
             dateTimePicker1.TabIndex = 30;
+            dateTimePicker1.ForeColor = System.Drawing.Color.Black;
+
             // 
             // checkBox2
             // 
@@ -81,6 +83,8 @@
             checkBox2.TabIndex = 28;
             checkBox2.Text = "Nữ";
             checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.ForeColor = System.Drawing.Color.Black;
+
             // 
             // checkBox1
             // 
@@ -92,6 +96,8 @@
             checkBox1.TabIndex = 27;
             checkBox1.Text = "Nam";
             checkBox1.UseVisualStyleBackColor = true;
+            checkBox1.ForeColor = System.Drawing.Color.Black;
+
             // 
             // textBox4
             // 
@@ -100,6 +106,8 @@
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(258, 31);
             textBox4.TabIndex = 26;
+            textBox4.ForeColor = System.Drawing.Color.Black;
+
             // 
             // textBox3
             // 
@@ -108,6 +116,8 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(258, 31);
             textBox3.TabIndex = 25;
+            textBox3.ForeColor = System.Drawing.Color.Black;
+
             // 
             // textBox2
             // 
@@ -116,6 +126,8 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(258, 31);
             textBox2.TabIndex = 24;
+            textBox2.ForeColor = System.Drawing.Color.Black;
+
             // 
             // textBox1
             // 
@@ -124,6 +136,8 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(258, 31);
             textBox1.TabIndex = 23;
+            textBox1.ForeColor = System.Drawing.Color.Black;
+
             // 
             // label7
             // 
@@ -134,6 +148,8 @@
             label7.Size = new Size(78, 25);
             label7.TabIndex = 22;
             label7.Text = "Giới tính";
+            label7.ForeColor = System.Drawing.Color.Black;
+
             // 
             // label6
             // 
@@ -144,6 +160,8 @@
             label6.Size = new Size(76, 25);
             label6.TabIndex = 21;
             label6.Text = "Trình độ";
+            label6.ForeColor = System.Drawing.Color.Black;
+
             // 
             // label5
             // 
@@ -154,6 +172,8 @@
             label5.Size = new Size(54, 25);
             label5.TabIndex = 20;
             label5.Text = "Email";
+            label5.ForeColor = System.Drawing.Color.Black;
+
             // 
             // label4
             // 
@@ -164,6 +184,8 @@
             label4.Size = new Size(44, 25);
             label4.TabIndex = 19;
             label4.Text = "SĐT";
+            label4.ForeColor = System.Drawing.Color.Black;
+
             // 
             // label3
             // 
@@ -174,6 +196,8 @@
             label3.Size = new Size(65, 25);
             label3.TabIndex = 18;
             label3.Text = "Địa chỉ";
+            label3.ForeColor = System.Drawing.Color.Black;
+
             // 
             // label2
             // 
@@ -184,6 +208,8 @@
             label2.Size = new Size(91, 25);
             label2.TabIndex = 17;
             label2.Text = "Ngày sinh";
+            label2.ForeColor = System.Drawing.Color.Black;
+
             // 
             // label1
             // 
@@ -194,6 +220,8 @@
             label1.Size = new Size(66, 25);
             label1.TabIndex = 16;
             label1.Text = "Họ tên";
+            label1.ForeColor = System.Drawing.Color.Black;
+
             // 
             // label8
             // 
@@ -205,6 +233,8 @@
             label8.Size = new Size(358, 45);
             label8.TabIndex = 32;
             label8.Text = "THÔNG TIN CÁ NHÂN";
+            label8.ForeColor = System.Drawing.Color.Black;
+
             // 
             // comboBox1
             // 
@@ -214,10 +244,12 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(182, 33);
             comboBox1.TabIndex = 33;
+            comboBox1.ForeColor = System.Drawing.Color.Black;
+
             // 
             // btnExt
             // 
-            btnExt.BackColor = Color.FromArgb(250, 135, 135);
+            btnExt.BackColor = SystemColors.ActiveCaption;
             btnExt.Location = new Point(560, 691);
             btnExt.Margin = new Padding(4);
             btnExt.Name = "btnExt";
@@ -226,6 +258,8 @@
             btnExt.Text = "Hủy";
             btnExt.UseVisualStyleBackColor = false;
             btnExt.Click += btnExt_Click;
+            btnExt.ForeColor = System.Drawing.Color.Black;
+
             // 
             // panelNavbar
             // 
@@ -235,8 +269,10 @@
             panelNavbar.Location = new Point(0, 0);
             panelNavbar.Margin = new Padding(4);
             panelNavbar.Name = "panelNavbar";
-            panelNavbar.Size = new Size(1227, 72);
+            panelNavbar.Size = new Size(1244, 72);
             panelNavbar.TabIndex = 52;
+            panelNavbar.ForeColor = System.Drawing.Color.Black;
+
             // 
             // label9
             // 
@@ -248,12 +284,13 @@
             label9.Size = new Size(225, 43);
             label9.TabIndex = 8;
             label9.Text = "NỘP HỒ SƠ";
+            label9.ForeColor = System.Drawing.Color.Black;
+
             // 
             // NopHoSo01
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1228, 941);
             Controls.Add(panelNavbar);
             Controls.Add(btnExt);
             Controls.Add(comboBox1);
@@ -274,12 +311,9 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Margin = new Padding(2);
-            MaximizeBox = false;
-            MinimizeBox = false;
             MinimumSize = new Size(1244, 986);
             Name = "NopHoSo01";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "NopHoSo";
+            Size = new Size(1244, 986);
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
             ResumeLayout(false);

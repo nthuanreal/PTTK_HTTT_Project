@@ -18,36 +18,36 @@ namespace UI_winform.NhanVien.controls
         }
 
         #region Properties
+
+        private string _maDn;
         private string _tenDoanhNghiep;
         private string _maSoThue;
 
-        //[Category("Custom Props")]
-        //public string MaHopDong
-        //{
-        //    get { return _maHopDong; }
-        //    set { _maHopDong = value; hopDongTxt.Text = value; }
-        //}
-
-        //[Category("Custom Props")]
-        //public string NgayLap
-        //{
-        //    get { return _ngayLap; }
-        //    set { _ngayLap = value; ngayLapTxt.Text = value; }
-        //}
-
-        //[Category("Custom Props")]
-        //public string TinhTrang
-        //{
-        //    get { return _tinhTrang; }
-        //    set { _tinhTrang = value; tinhTrangTxt.Text = value; }
-        //}
-
-        //[Category("Custom Props")]
-        //public string NgayHetHan
-        //{
-        //    get { return _ngayHetHan; }
-        //    set { _ngayHetHan = value; ngayHetHanTxt.Text = value; }
-        //}
+        [Category("Custom Props")]
+        public string MaDn { get => _maDn; set => _maDn = value; }
+        [Category("Custom Props")]
+        public string TenDoanhNghiep
+        {
+            get { return _tenDoanhNghiep; }
+            set { _tenDoanhNghiep = value; tenDoanhNghiepTxt.Text = value; }
+        }
+        [Category("Custom Props")]
+        public string MaSoThue
+        {
+            get { return _maSoThue; }
+            set { _maSoThue = value; maSoThueTxt.Text = value; }
+        }
         #endregion
+
+        private void TaiKhoanListItem_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TaiKhoanListItem_Click(object sender, EventArgs e)
+        {
+            ThongTinDoanhNghep thongTinDoanhNghep = new ThongTinDoanhNghep(_maDn);
+            thongTinDoanhNghep.ShowDialog();
+        }
     }
 }

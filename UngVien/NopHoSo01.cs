@@ -13,20 +13,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace UI_winform
 {
-    public partial class NopHoSo01 : Form
-    {
+    public partial class NopHoSo01 : UserControl {
         public int mauv, madt;
-        private NopHoSo02 nopHoSo02;
-        public NopHoSo01()
-        {
-            InitializeComponent();
-        }
         public NopHoSo01(int MaUV, int MaDT)
         {
             InitializeComponent();
             this.mauv = MaUV;
             this.madt = MaDT;
-            this.nopHoSo02 = new NopHoSo02(this);
             LoadData();
         }
         private void LoadData()
@@ -58,19 +51,14 @@ namespace UI_winform
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //IMPLEMENTATION
-            //===========================
-
-            //===========================
-            this.Hide();
-            this.nopHoSo02.Show();
+            HOMEUV mainForm = (HOMEUV)this.ParentForm;
+            mainForm.SwitchUserControl(new NopHoSo02(mauv, madt));
         }
 
         private void btnExt_Click(object sender, EventArgs e)
         {
-            TraCuuViTriUngTuyen tracuu = new TraCuuViTriUngTuyen(mauv);
-            this.Hide();
-            tracuu.Show();
+            HOMEUV mainForm = (HOMEUV)this.ParentForm;
+            mainForm.SwitchUserControl(new TraCuuViTriUngTuyen(mauv));
         }
     }
 }

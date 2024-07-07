@@ -24,13 +24,18 @@ namespace UI_winform.NhanVien.controls
         private void InitializeNavigationControl()
         {
             List<UserControl> controls = new List<UserControl>()
-            { new DanhSachHopDong()};
+            { new DanhSachTaiKhoan(),new DanhSachHopDong() };
             navigationControl = new NavigationControl(controls, panel1);
             navigationControl.Display(0);
 
         }
 
         private void button2_Click(object sender, EventArgs e)
+        {
+            navigationControl.Display(1);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             navigationControl.Display(0);
         }

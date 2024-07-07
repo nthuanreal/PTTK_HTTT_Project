@@ -79,3 +79,8 @@ GRANT EXECUTE ANY PROCEDURE TO RL_QLHSUT_UNGVIEN;
 GRANT EXECUTE ON dbms_random TO RL_QLHSUT_UNGVIEN;
 GRANT EXECUTE ANY PROCEDURE TO RL_QLHSUT_DOANHNGHIEP;
 GRANT EXECUTE ON dbms_random TO RL_QLHSUT_DOANHNGHIEP;
+
+
+Văn:
+- Bảng hợp đồng: thêm trường TINHTRANG = {đã duyệt, chưa duyệt, gia hạn}
+- Bảng hồ sơ ứng tuyển: 0 -> Chưa duyệt, -1 -> thiếu hồ sơ, >0 -> Đã duyệt

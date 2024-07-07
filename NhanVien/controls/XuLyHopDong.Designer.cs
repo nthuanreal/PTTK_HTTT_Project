@@ -32,11 +32,8 @@
             label6 = new Label();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
             panel1 = new Panel();
-            danhSachHopDong1 = new DanhSachHopDong();
             panelNavbar.SuspendLayout();
-            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panelNavbar
@@ -72,6 +69,7 @@
             button1.TabIndex = 19;
             button1.Text = "Duyệt Tài Khoản";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -85,40 +83,18 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button3
-            // 
-            button3.BackColor = SystemColors.ControlLight;
-            button3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(929, 90);
-            button3.Name = "button3";
-            button3.Size = new Size(174, 66);
-            button3.TabIndex = 21;
-            button3.Text = "Duyệt Tài Khoản";
-            button3.UseVisualStyleBackColor = false;
-            // 
             // panel1
             // 
-            panel1.Controls.Add(danhSachHopDong1);
             panel1.Location = new Point(3, 162);
             panel1.Name = "panel1";
             panel1.Size = new Size(1139, 612);
             panel1.TabIndex = 22;
-            // 
-            // danhSachHopDong1
-            // 
-            danhSachHopDong1.Dock = DockStyle.Fill;
-            danhSachHopDong1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            danhSachHopDong1.Location = new Point(0, 0);
-            danhSachHopDong1.Name = "danhSachHopDong1";
-            danhSachHopDong1.Size = new Size(1139, 612);
-            danhSachHopDong1.TabIndex = 0;
             // 
             // XuLyHopDong
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel1);
-            Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(panelNavbar);
@@ -126,7 +102,6 @@
             Size = new Size(1145, 777);
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -136,8 +111,6 @@
         private Label label6;
         private Button button1;
         private Button button2;
-        private Button button3;
         private Panel panel1;
-        private DanhSachHopDong danhSachHopDong1;
     }
 }
