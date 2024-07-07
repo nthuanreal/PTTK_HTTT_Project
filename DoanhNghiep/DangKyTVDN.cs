@@ -1,5 +1,7 @@
 ﻿
 using UI_winform.DAO;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace UI_winform
 {
@@ -37,7 +39,7 @@ namespace UI_winform
                 && txtCompanyName.Text != null
                 && txtEmail.Text != null
                 && txtPhone.Text != null
-                && txtRepresentative.Text != null
+                //&& txtRepresentative.Text != null
                 && txtTaxID.Text != null
                 && textBox1.Text != null
                 && dateTimePicker1.Value.ToString() != null
@@ -48,7 +50,8 @@ namespace UI_winform
                 try
                 {
                     int NDD = insert_Representative();
-                    insert_Company(NDD);
+                    int MADN = insert_Company(NDD);
+                    createCompanyAcc(MADN);
                     MessageBox.Show("Đăng ký thành công!");
                     this.Close();
                 }
@@ -97,7 +100,7 @@ namespace UI_winform
             DataProvider.Instance.ExecuteNonQuery(query, parameters);
             return MANDD;
         }
-        private void insert_Company(int NDD)
+        private int insert_Company(int NDD)
         {
             int MADN = GetNewID("QLHSUT.QLHSUT_DOANH_NGHIEP", "MADN");
 
@@ -113,11 +116,24 @@ namespace UI_winform
             // Parameters for the query
             object[] parameters = { MADN, TENDN, MASOTHUE, NDD, SDT, DIACHI, EMAIL };
             DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            return MADN;
         }
+
+        private void createCompanyAcc(int madn)
+        {
+            string username = madn.ToString();
+            string sql = $"CREATE USER \"{username}\" IDENTIFIED BY 123456";
+            DataProvider.Instance.ExecuteNonQuery(sql);
+            string grant_sql = $"GRANT CONNECT, RESOURCE, RESTRICTED SESSION TO \"{username}\"";
+            DataProvider.Instance.ExecuteNonQuery(grant_sql);
+            string grant_role = $"GRANT RL_QLHSUT_DOANHNGHIEP TO \"{username}\"";
+            DataProvider.Instance.ExecuteNonQuery(grant_role);
+        }
+
         public int GetNewID(string tableName, string idType)
         {
             string query = $"SELECT MIN(t1.{idType} + 1) FROM {tableName} t1 LEFT JOIN {tableName} t2 ON t1.{idType} + 1 = t2.{idType} WHERE t2.{idType} IS NULL";
-      
+            //MessageBox.Show(query);
             int x = Convert.ToInt32(DataProvider.Instance.ExecuteQuery(query).Rows[0][0]);
             return x;
         }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI_winform.DAO;
+using UI_winform.utils;
 
 namespace UI_winform.NhanVien
 {
@@ -56,7 +57,7 @@ namespace UI_winform.NhanVien
                     diem = "0";
                 }
 
-                string sql = $"update qlhsut.qlhsut_ho_so_ung_tuyen\r\nset trangthaiduyet = {diem}\r\nwhere mahs = {maHs}";
+                string sql = $"update qlhsut.qlhsut_ho_so_ung_tuyen\r\nset trangthaiduyet = {diem}, NVDUYET = {Session.Instance.Username}\r\nwhere mahs = {maHs}";
                 DataProvider.Instance.ExecuteNonQuery(sql);
                 MessageBox.Show("Thành Công");
                 this.Close();
@@ -65,7 +66,7 @@ namespace UI_winform.NhanVien
 
         private void button2_Click(object sender, EventArgs e)
         {
-            string sql = $"update qlhsut.qlhsut_ho_so_ung_tuyen\r\nset trangthaiduyet = -1\r\nwhere mahs = {maHs}";
+            string sql = $"update qlhsut.qlhsut_ho_so_ung_tuyen\r\nset trangthaiduyet = -1, NVDUYET = {Session.Instance.Username}\r\nwhere mahs = {maHs}";
             DataProvider.Instance.ExecuteNonQuery(sql);
             MessageBox.Show("Thành Công");
             this.Close();

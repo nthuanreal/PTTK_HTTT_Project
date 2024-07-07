@@ -102,14 +102,23 @@ namespace UI_winform.NhanVien
 
         private string GetCheckedRadioButton(GroupBox groupBox)
         {
+            string loaithanhtoan = "";
             foreach (Control control in groupBox.Controls)
             {
                 if (control is RadioButton radioButton && radioButton.Checked)
                 {
-                    return radioButton.Text;
+                    loaithanhtoan = radioButton.Text;
                 }
             }
-            return null;
+            if (loaithanhtoan == "Theo đợt")
+            {
+                loaithanhtoan = "Thanh toán theo đợt";
+            }
+            if (loaithanhtoan == "Toàn bộ")
+            {
+                loaithanhtoan = "Thanh toán một lần";
+            }
+            return loaithanhtoan;
         }
 
         private void XacNhan_Button_Click(object sender, EventArgs e)
@@ -135,7 +144,7 @@ namespace UI_winform.NhanVien
             {
                 string from, to, content;
                 from = "websitepttk@outlook.com";
-                to = "21120332@student.hcmus.edu.vn";
+                to = "21120347@student.hcmus.edu.vn";
                 content = "Yêu cầu đăng tuyển của quý khách trị giá: " + ThanhTien_Label.Text + " vnđ";
                 MailMessage mail = new MailMessage();
                 mail.To.Add(to);

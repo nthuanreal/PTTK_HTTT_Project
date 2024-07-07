@@ -96,11 +96,11 @@ namespace UI_winform.DoanhNghiep.controls
                 cmd4.CommandText = "QLHSUT.DN_THEM_HINHTHUCDT";
                 cmd4.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd4.Parameters.Add("V_MAHD", OracleDbType.Int32).Value = V_MAHOPDONG;
-
+                OracleParameter TENHINHTHUC = cmd4.Parameters.Add("V_TENHINHTHUC", OracleDbType.Varchar2);
                 string[] hinhthuc = phieuDKDT.hinhthucluachon.Split('|');
                 foreach (string item in hinhthuc)
                 {
-                    cmd4.Parameters.Add("V_TENHINHTHUC", OracleDbType.Varchar2).Value = item;
+                    TENHINHTHUC.Value = item;
                     cmd4.ExecuteNonQuery();
                 }
 
@@ -128,6 +128,14 @@ namespace UI_winform.DoanhNghiep.controls
             NgayBD_TxtBox.Text = phieuDKDT.ngaybd;
             NgayKT_TxtBox.Text = phieuDKDT.ngaykt;
             HTDT_TxtBox.Text = phieuDKDT.hinhthucluachon;
+
+            VTDT_TxtBox.ReadOnly = true;
+            SLDT_TxtBox.ReadOnly = true;
+            MTCV_TxtBox.ReadOnly = true;
+            YCUV_TxtBox.ReadOnly = true;
+            NgayBD_TxtBox.ReadOnly = true;
+            NgayKT_TxtBox.ReadOnly = true;
+            HTDT_TxtBox.ReadOnly = true;
         }
     }
 }

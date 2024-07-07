@@ -46,7 +46,6 @@
             checkBox2 = new CheckBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             lblAddress = new Label();
-            lblRepresentative = new Label();
             lblEmail = new Label();
             lblPhone = new Label();
             lblCompanyName = new Label();
@@ -56,7 +55,6 @@
             txtTaxID = new TextBox();
             txtPhone = new TextBox();
             txtEmail = new TextBox();
-            txtRepresentative = new TextBox();
             label1 = new Label();
             btnCancel = new Button();
             btnRegister = new Button();
@@ -80,9 +78,10 @@
             panelRegister.Controls.Add(btnCancel);
             panelRegister.Controls.Add(btnRegister);
             panelRegister.Controls.Add(panel1);
-            panelRegister.Location = new Point(126, 12);
+            panelRegister.Location = new Point(158, 15);
+            panelRegister.Margin = new Padding(4);
             panelRegister.Name = "panelRegister";
-            panelRegister.Size = new Size(746, 729);
+            panelRegister.Size = new Size(932, 911);
             panelRegister.TabIndex = 0;
             // 
             // panel2
@@ -90,9 +89,10 @@
             panel2.BackColor = SystemColors.ActiveCaption;
             panel2.Controls.Add(label2);
             panel2.Controls.Add(tableLayoutPanel2);
-            panel2.Location = new Point(-1, 396);
+            panel2.Location = new Point(-1, 495);
+            panel2.Margin = new Padding(4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(746, 269);
+            panel2.Size = new Size(932, 336);
             panel2.TabIndex = 1;
             // 
             // label2
@@ -101,9 +101,10 @@
             label2.Font = new Font("Bahnschrift SemiCondensed", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ActiveCaptionText;
             label2.ImageAlign = ContentAlignment.BottomRight;
-            label2.Location = new Point(33, 0);
+            label2.Location = new Point(41, 0);
+            label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(407, 45);
+            label2.Size = new Size(495, 54);
             label2.TabIndex = 21;
             label2.Text = "THÔNG TIN NGƯỜI ĐẠI DIỆN";
             // 
@@ -123,32 +124,34 @@
             tableLayoutPanel2.Controls.Add(textBox1, 1, 0);
             tableLayoutPanel2.Controls.Add(flowLayoutPanel1, 1, 1);
             tableLayoutPanel2.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tableLayoutPanel2.Location = new Point(101, 69);
+            tableLayoutPanel2.Location = new Point(126, 86);
+            tableLayoutPanel2.Margin = new Padding(4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 5;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 48.71795F));
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 51.28205F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(535, 200);
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 49F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel2.Size = new Size(669, 250);
             tableLayoutPanel2.TabIndex = 22;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 11F);
-            label3.Location = new Point(3, 73);
+            label3.Location = new Point(4, 93);
+            label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(100, 25);
+            label3.Size = new Size(113, 30);
             label3.TabIndex = 7;
             label3.Text = "Ngày sinh:";
             // 
@@ -156,9 +159,10 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 11F);
-            label5.Location = new Point(3, 157);
+            label5.Location = new Point(4, 197);
+            label5.Margin = new Padding(4, 0, 4, 0);
             label5.Name = "label5";
-            label5.Size = new Size(127, 25);
+            label5.Size = new Size(145, 30);
             label5.TabIndex = 11;
             label5.Text = "Số điện thoại:";
             // 
@@ -166,9 +170,10 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 11F);
-            label6.Location = new Point(3, 115);
+            label6.Location = new Point(4, 145);
+            label6.Margin = new Padding(4, 0, 4, 0);
             label6.Name = "label6";
-            label6.Size = new Size(74, 25);
+            label6.Size = new Size(82, 30);
             label6.TabIndex = 9;
             label6.Text = "Địa chỉ:";
             // 
@@ -176,68 +181,76 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 11F);
-            label7.Location = new Point(3, 0);
+            label7.Location = new Point(4, 0);
+            label7.Margin = new Padding(4, 0, 4, 0);
             label7.Name = "label7";
-            label7.Size = new Size(134, 25);
+            label7.Size = new Size(84, 30);
             label7.TabIndex = 1;
-            label7.Text = "Mã định danh:";
+            label7.Text = "Họ tên:";
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 11F);
-            label8.Location = new Point(3, 36);
+            label8.Location = new Point(4, 45);
+            label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(88, 25);
+            label8.Size = new Size(98, 30);
             label8.TabIndex = 3;
             label8.Text = "Giới tính:";
             // 
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 11F);
-            textBox4.Location = new Point(188, 118);
+            textBox4.Location = new Point(235, 149);
+            textBox4.Margin = new Padding(4);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(342, 32);
+            textBox4.Size = new Size(426, 37);
             textBox4.TabIndex = 10;
             // 
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 11F);
-            textBox5.Location = new Point(188, 160);
+            textBox5.Location = new Point(235, 201);
+            textBox5.Margin = new Padding(4);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(342, 32);
+            textBox5.Size = new Size(426, 37);
             textBox5.TabIndex = 12;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(188, 76);
+            dateTimePicker1.Location = new Point(235, 97);
+            dateTimePicker1.Margin = new Padding(4);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(342, 29);
+            dateTimePicker1.Size = new Size(426, 34);
             dateTimePicker1.TabIndex = 13;
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 11F);
-            textBox1.Location = new Point(188, 3);
+            textBox1.Location = new Point(235, 4);
+            textBox1.Margin = new Padding(4);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(342, 32);
+            textBox1.Size = new Size(426, 37);
             textBox1.TabIndex = 2;
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Controls.Add(checkBox1);
             flowLayoutPanel1.Controls.Add(checkBox2);
-            flowLayoutPanel1.Location = new Point(188, 39);
+            flowLayoutPanel1.Location = new Point(235, 49);
+            flowLayoutPanel1.Margin = new Padding(4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(342, 31);
+            flowLayoutPanel1.Size = new Size(428, 39);
             flowLayoutPanel1.TabIndex = 14;
             // 
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(3, 3);
+            checkBox1.Location = new Point(4, 4);
+            checkBox1.Margin = new Padding(4);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(68, 26);
+            checkBox1.Size = new Size(81, 31);
             checkBox1.TabIndex = 14;
             checkBox1.Text = "Nam";
             checkBox1.UseVisualStyleBackColor = true;
@@ -246,9 +259,10 @@
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(77, 3);
+            checkBox2.Location = new Point(93, 4);
+            checkBox2.Margin = new Padding(4);
             checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(56, 26);
+            checkBox2.Size = new Size(66, 31);
             checkBox2.TabIndex = 15;
             checkBox2.Text = "Nữ";
             checkBox2.UseVisualStyleBackColor = true;
@@ -260,7 +274,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 34.57944F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65.42056F));
             tableLayoutPanel1.Controls.Add(lblAddress, 0, 2);
-            tableLayoutPanel1.Controls.Add(lblRepresentative, 0, 5);
             tableLayoutPanel1.Controls.Add(lblEmail, 0, 4);
             tableLayoutPanel1.Controls.Add(lblPhone, 0, 3);
             tableLayoutPanel1.Controls.Add(lblCompanyName, 0, 0);
@@ -270,54 +283,46 @@
             tableLayoutPanel1.Controls.Add(txtTaxID, 1, 1);
             tableLayoutPanel1.Controls.Add(txtPhone, 1, 3);
             tableLayoutPanel1.Controls.Add(txtEmail, 1, 4);
-            tableLayoutPanel1.Controls.Add(txtRepresentative, 1, 5);
             tableLayoutPanel1.Font = new Font("Calibri", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            tableLayoutPanel1.Location = new Point(100, 134);
+            tableLayoutPanel1.Location = new Point(125, 168);
+            tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 48.71795F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 51.28205F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 42F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 39F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Size = new Size(535, 246);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 49F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 25F));
+            tableLayoutPanel1.Size = new Size(669, 308);
             tableLayoutPanel1.TabIndex = 20;
             // 
             // lblAddress
             // 
             lblAddress.AutoSize = true;
             lblAddress.Font = new Font("Segoe UI", 11F);
-            lblAddress.Location = new Point(3, 80);
+            lblAddress.Location = new Point(4, 102);
+            lblAddress.Margin = new Padding(4, 0, 4, 0);
             lblAddress.Name = "lblAddress";
-            lblAddress.Size = new Size(74, 25);
+            lblAddress.Size = new Size(82, 30);
             lblAddress.TabIndex = 7;
             lblAddress.Text = "Địa chỉ:";
-            // 
-            // lblRepresentative
-            // 
-            lblRepresentative.AutoSize = true;
-            lblRepresentative.Font = new Font("Segoe UI", 11F);
-            lblRepresentative.Location = new Point(3, 206);
-            lblRepresentative.Name = "lblRepresentative";
-            lblRepresentative.Size = new Size(141, 25);
-            lblRepresentative.TabIndex = 5;
-            lblRepresentative.Text = "Người đại diện:";
             // 
             // lblEmail
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI", 11F);
-            lblEmail.Location = new Point(3, 164);
+            lblEmail.Location = new Point(4, 206);
+            lblEmail.Margin = new Padding(4, 0, 4, 0);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(124, 25);
+            lblEmail.Size = new Size(139, 30);
             lblEmail.TabIndex = 11;
             lblEmail.Text = "Email liên hệ:";
             // 
@@ -325,9 +330,10 @@
             // 
             lblPhone.AutoSize = true;
             lblPhone.Font = new Font("Segoe UI", 11F);
-            lblPhone.Location = new Point(3, 122);
+            lblPhone.Location = new Point(4, 154);
+            lblPhone.Margin = new Padding(4, 0, 4, 0);
             lblPhone.Name = "lblPhone";
-            lblPhone.Size = new Size(127, 25);
+            lblPhone.Size = new Size(145, 30);
             lblPhone.TabIndex = 9;
             lblPhone.Text = "Số điện thoại:";
             // 
@@ -335,9 +341,10 @@
             // 
             lblCompanyName.AutoSize = true;
             lblCompanyName.Font = new Font("Segoe UI", 11F);
-            lblCompanyName.Location = new Point(3, 0);
+            lblCompanyName.Location = new Point(4, 0);
+            lblCompanyName.Margin = new Padding(4, 0, 4, 0);
             lblCompanyName.Name = "lblCompanyName";
-            lblCompanyName.Size = new Size(168, 25);
+            lblCompanyName.Size = new Size(192, 30);
             lblCompanyName.TabIndex = 1;
             lblCompanyName.Text = "Tên doanh nghiệp:";
             // 
@@ -345,59 +352,57 @@
             // 
             lblTaxID.AutoSize = true;
             lblTaxID.Font = new Font("Segoe UI", 11F);
-            lblTaxID.Location = new Point(3, 39);
+            lblTaxID.Location = new Point(4, 50);
+            lblTaxID.Margin = new Padding(4, 0, 4, 0);
             lblTaxID.Name = "lblTaxID";
-            lblTaxID.Size = new Size(110, 25);
+            lblTaxID.Size = new Size(126, 30);
             lblTaxID.TabIndex = 3;
             lblTaxID.Text = "Mã số thuế:";
             // 
             // txtCompanyName
             // 
             txtCompanyName.Font = new Font("Segoe UI", 11F);
-            txtCompanyName.Location = new Point(188, 3);
+            txtCompanyName.Location = new Point(235, 4);
+            txtCompanyName.Margin = new Padding(4);
             txtCompanyName.Name = "txtCompanyName";
-            txtCompanyName.Size = new Size(342, 32);
+            txtCompanyName.Size = new Size(426, 37);
             txtCompanyName.TabIndex = 2;
             // 
             // txtAddress
             // 
             txtAddress.Font = new Font("Segoe UI", 11F);
-            txtAddress.Location = new Point(188, 83);
+            txtAddress.Location = new Point(235, 106);
+            txtAddress.Margin = new Padding(4);
             txtAddress.Name = "txtAddress";
-            txtAddress.Size = new Size(342, 32);
+            txtAddress.Size = new Size(426, 37);
             txtAddress.TabIndex = 6;
             // 
             // txtTaxID
             // 
             txtTaxID.Font = new Font("Segoe UI", 11F);
-            txtTaxID.Location = new Point(188, 42);
+            txtTaxID.Location = new Point(235, 54);
+            txtTaxID.Margin = new Padding(4);
             txtTaxID.Name = "txtTaxID";
-            txtTaxID.Size = new Size(342, 32);
+            txtTaxID.Size = new Size(426, 37);
             txtTaxID.TabIndex = 8;
             // 
             // txtPhone
             // 
             txtPhone.Font = new Font("Segoe UI", 11F);
-            txtPhone.Location = new Point(188, 125);
+            txtPhone.Location = new Point(235, 158);
+            txtPhone.Margin = new Padding(4);
             txtPhone.Name = "txtPhone";
-            txtPhone.Size = new Size(342, 32);
+            txtPhone.Size = new Size(426, 37);
             txtPhone.TabIndex = 10;
             // 
             // txtEmail
             // 
             txtEmail.Font = new Font("Segoe UI", 11F);
-            txtEmail.Location = new Point(188, 167);
+            txtEmail.Location = new Point(235, 210);
+            txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(342, 32);
+            txtEmail.Size = new Size(426, 37);
             txtEmail.TabIndex = 12;
-            // 
-            // txtRepresentative
-            // 
-            txtRepresentative.Font = new Font("Segoe UI", 11F);
-            txtRepresentative.Location = new Point(188, 209);
-            txtRepresentative.Name = "txtRepresentative";
-            txtRepresentative.Size = new Size(342, 32);
-            txtRepresentative.TabIndex = 4;
             // 
             // label1
             // 
@@ -405,9 +410,10 @@
             label1.Font = new Font("Bahnschrift SemiCondensed", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.ImageAlign = ContentAlignment.BottomRight;
-            label1.Location = new Point(32, 83);
+            label1.Location = new Point(40, 104);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(397, 45);
+            label1.Size = new Size(486, 54);
             label1.TabIndex = 3;
             label1.Text = "THÔNG TIN DOANH NGHIỆP";
             label1.Click += label1_Click;
@@ -415,9 +421,10 @@
             // btnCancel
             // 
             btnCancel.BackColor = Color.FromArgb(250, 135, 135);
-            btnCancel.Location = new Point(236, 683);
+            btnCancel.Location = new Point(295, 854);
+            btnCancel.Margin = new Padding(4);
             btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(107, 38);
+            btnCancel.Size = new Size(134, 48);
             btnCancel.TabIndex = 13;
             btnCancel.Text = "HỦY";
             btnCancel.UseVisualStyleBackColor = false;
@@ -426,9 +433,10 @@
             // btnRegister
             // 
             btnRegister.BackColor = SystemColors.ActiveCaption;
-            btnRegister.Location = new Point(375, 681);
+            btnRegister.Location = new Point(469, 851);
+            btnRegister.Margin = new Padding(4);
             btnRegister.Name = "btnRegister";
-            btnRegister.Size = new Size(107, 38);
+            btnRegister.Size = new Size(134, 48);
             btnRegister.TabIndex = 14;
             btnRegister.Text = "ĐĂNG KÝ";
             btnRegister.UseVisualStyleBackColor = false;
@@ -440,29 +448,32 @@
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(lblTitle);
             panel1.Location = new Point(-1, -1);
+            panel1.Margin = new Padding(4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(746, 75);
+            panel1.Size = new Size(932, 93);
             panel1.TabIndex = 19;
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Bahnschrift SemiCondensed", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(21, 16);
+            lblTitle.Location = new Point(26, 20);
+            lblTitle.Margin = new Padding(4, 0, 4, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(706, 57);
+            lblTitle.Size = new Size(847, 69);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "ĐĂNG KÝ THÀNH VIÊN DOANH NGHIỆP";
             // 
             // DangKyTVDN
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(982, 753);
+            ClientSize = new Size(1228, 941);
             Controls.Add(panelRegister);
+            Margin = new Padding(4);
             MaximizeBox = false;
             MinimizeBox = false;
-            MinimumSize = new Size(1000, 800);
+            MinimumSize = new Size(1244, 986);
             Name = "DangKyTVDN";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "DangKyTVDN";
@@ -489,8 +500,6 @@
         private Label lblCompanyName;
         private TextBox txtCompanyName;
         private Label lblTaxID;
-        private TextBox txtRepresentative;
-        private Label lblRepresentative;
         private TextBox txtAddress;
         private Label lblAddress;
         private TextBox txtTaxID;

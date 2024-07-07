@@ -104,6 +104,7 @@
             DangXuat_Link.BorderStyle = BorderStyle.Fixed3D;
             DangXuat_Link.Cursor = Cursors.AppStarting;
             DangXuat_Link.Font = new Font("Cascadia Code", 18F);
+            DangXuat_Link.LinkColor = Color.Red;
             DangXuat_Link.Location = new Point(3, 883);
             DangXuat_Link.Margin = new Padding(4, 0, 4, 0);
             DangXuat_Link.Name = "DangXuat_Link";
@@ -505,7 +506,7 @@
             pictureBox1.Location = new Point(450, 138);
             pictureBox1.Margin = new Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1, 156);
+            pictureBox1.Size = new Size(0, 156);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 

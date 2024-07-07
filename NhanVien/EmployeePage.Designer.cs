@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             splitContainer1 = new SplitContainer();
+            linkLabel1 = new LinkLabel();
             giaHanBtn = new Button();
             hoSoBtn = new Button();
             hopDongBtn = new Button();
             xuLyHopDong1 = new NhanVien.controls.XuLyHopDong();
-            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -63,6 +63,20 @@
             splitContainer1.SplitterDistance = 195;
             splitContainer1.SplitterWidth = 5;
             splitContainer1.TabIndex = 0;
+            // 
+            // linkLabel1
+            // 
+            linkLabel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Cascadia Code SemiBold", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            linkLabel1.LinkColor = Color.Red;
+            linkLabel1.Location = new Point(2, 726);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(190, 43);
+            linkLabel1.TabIndex = 6;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Đăng xuất";
+            linkLabel1.LinkClicked += DangXuat_Link_LinkClicked;
             // 
             // giaHanBtn
             // 
@@ -112,19 +126,6 @@
             xuLyHopDong1.Size = new Size(1147, 778);
             xuLyHopDong1.TabIndex = 0;
             xuLyHopDong1.Load += xuLyHopDong1_Load;
-            // 
-            // linkLabel1
-            // 
-            linkLabel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            linkLabel1.AutoSize = true;
-            linkLabel1.Font = new Font("Cascadia Code SemiBold", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            linkLabel1.Location = new Point(2, 726);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(190, 43);
-            linkLabel1.TabIndex = 6;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Đăng xuất";
-            linkLabel1.LinkClicked += DangXuat_Link_LinkClicked;
             // 
             // EmployeePage
             // 

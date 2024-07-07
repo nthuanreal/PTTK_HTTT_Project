@@ -21,13 +21,13 @@ namespace UI_winform.NhanVien.controls
 
         private void populateItems(string? filter)
         {
-            string query = "select * from qlhsut_hop_dong_dang_tuyen";
+            string query = "select * from qlhsut.qlhsut_hop_dong_dang_tuyen";
             if (filter != null)
             {
                 if (filter == "Chưa duyệt")
-                    query = $"select * from qlhsut_hop_dong_dang_tuyen where tinhtrang = '{filter}' or tinhtrang is NULL";
+                    query = $"select * from qlhsut.qlhsut_hop_dong_dang_tuyen where tinhtrang = N'{filter}' or tinhtrang is NULL";
                 else
-                    query = $"select * from qlhsut_hop_dong_dang_tuyen where tinhtrang = '{filter}'";
+                    query = $"select * from qlhsut.qlhsut_hop_dong_dang_tuyen where tinhtrang = N'{filter}'";
             }
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
@@ -44,27 +44,31 @@ namespace UI_winform.NhanVien.controls
                 DataRow row = data.Rows[i];
                 hopDongListItems[i] = new HopDongListItem();
 
-                decimal maHopDong = (decimal)row["MAHOPDONG"];
-                DateTime ngayLap = (DateTime)row["NGAYKI"];
-                DateTime ngayHetHan;
+                hopDongListItems[i].MaHopDong = row["MAHOPDONG"] != DBNull.Value ? ((decimal)row["MAHOPDONG"]).ToString() : string.Empty;
+                hopDongListItems[i].NgayLap = row["NGAYKI"] != DBNull.Value ? ((DateTime)row["NGAYKI"]).ToString("yyyy/MM/dd") : string.Empty;
+                hopDongListItems[i].NgayHetHan = row["NGAYHETHAN"] != DBNull.Value ? ((DateTime)row["NGAYHETHAN"]).ToString("yyyy/MM/dd") : string.Empty;
+                hopDongListItems[i].TinhTrang = row["TINHTRANG"] != DBNull.Value ? (string)row["TINHTRANG"] : "Chưa duyệt";
+                //decimal maHopDong = (decimal)row["MAHOPDONG"];
+                //DateTime ngayLap = (DateTime)row["NGAYKI"];
+                //DateTime ngayHetHan;
 
-                if (row.IsNull("NGAYHETHAN"))
-                {
-                    ngayHetHan = DateTime.MinValue;
-                }
-                else
-                {
-                    ngayHetHan = (DateTime)row["NGAYHETHAN"];
-                }
+                //if (row.IsNull("NGAYHETHAN"))
+                //{
+                //    ngayHetHan = DateTime.MinValue;
+                //}
+                //else
+                //{
+                //    ngayHetHan = (DateTime)row["NGAYHETHAN"];
+                //}
 
-                string ngayHetHanStr = ngayHetHan == DateTime.MinValue ? "" : ngayHetHan.ToString("yyyy/MM/dd");
-                string ngayLapStr = ngayLap.ToString("yyyy/MM/dd");
-                string tinhTrang = row.IsNull("TINHTRANG") ? "Chưa duyệt" : (string)row["TINHTRANG"];
+                //string ngayHetHanStr = ngayHetHan == DateTime.MinValue ? "" : ngayHetHan.ToString("yyyy/MM/dd");
+                //string ngayLapStr = ngayLap.ToString("yyyy/MM/dd");
+                //string tinhTrang = row.IsNull("TINHTRANG") ? "Chưa duyệt" : (string)row["TINHTRANG"];
 
-                hopDongListItems[i].MaHopDong = maHopDong.ToString();
-                hopDongListItems[i].NgayLap = ngayLapStr;
-                hopDongListItems[i].NgayHetHan = ngayHetHanStr;
-                hopDongListItems[i].TinhTrang = tinhTrang;
+                //hopDongListItems[i].MaHopDong = maHopDong.ToString();
+                //hopDongListItems[i].NgayLap = ngayLapStr;
+                //hopDongListItems[i].NgayHetHan = ngayHetHanStr;
+                //hopDongListItems[i].TinhTrang = tinhTrang;
 
                 flowLayoutPanel1.Controls.Add(hopDongListItems[i]);
             }

@@ -6,7 +6,7 @@ namespace UI_winform.DoanhNghiep.controls
 {
     public partial class DangKyDT1 : UserControl
     {
-        HOMEDN home = new HOMEDN(); 
+        HOMEDN home = new HOMEDN();
         public DangKyDT1(HOMEDN Home)
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace UI_winform.DoanhNghiep.controls
                 string.IsNullOrWhiteSpace(MTCV_TxtBox.Text) ||
                 string.IsNullOrWhiteSpace(YCUV_TxtBox.Text))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin trước khi qua bước tiếp theo."); 
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin trước khi qua bước tiếp theo.");
                 return;
             }
 
@@ -62,6 +62,16 @@ namespace UI_winform.DoanhNghiep.controls
             DKDT2.Dock = DockStyle.Fill;
             DKDT2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             DKDT2.Size = home.splitContainer1.Panel2.ClientSize;
+        }
+
+        private void TTDT_Btn_Click(object sender, EventArgs e)
+        {
+            DSThongTinDangTuyen TTDT = new DSThongTinDangTuyen();
+            home.splitContainer1.Panel2.Controls.Clear();
+            home.splitContainer1.Panel2.Controls.Add(TTDT);
+            TTDT.Dock = DockStyle.Fill;
+            TTDT.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            TTDT.Size = home.splitContainer1.Panel2.ClientSize;
         }
     }
 }

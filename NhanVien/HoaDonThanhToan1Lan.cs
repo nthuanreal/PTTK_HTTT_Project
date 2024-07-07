@@ -40,20 +40,21 @@ namespace UI_winform.NhanVien
             if (data.Rows.Count > 0)
             {
                 DataRow row = data.Rows[0];
-                TenDoanhNghiep_Label.Text = row["TENDN"].ToString();
-                ViTriUngTuyen_Label.Text = row["VITRI_UNGTUYEN"].ToString();
-                soLuongUngTuyen_label.Text = ((decimal)row["SOLUONG"]).ToString();
-                moTaCongViec_label.Text = row["MOTA"].ToString();
-                MaSoThue_Label.Text = row["MASOTHUE"].ToString();
-                DiaChi_Label.Text = row["DIACHI"].ToString();
-                SDT_Label.Text = row["SDT"].ToString();
-                EmailLienHe_Label.Text = row["EMAIL"].ToString();
-                NguoiDaiDien_Label.Text = row["HOTEN"].ToString();
-                YeuCauUngVien_Label.Text = row["YEUCAU_UNGVIEN"].ToString();
-                From_Label.Text = ((DateTime)row["TG_BATDAU"]).ToString("dd-MM-yyyy");
-                To_Label.Text = ((DateTime)row["TG_KETTHUC"]).ToString("dd-MM-yyyy");
-                tinhTrangThanhToan_label.Text = (decimal)row["TRANGTHAI_THANHTOAN"] == 1 ? "Đã thanh toán" : "Chưa thanh toán";
-                xacNhanBtn.Visible = (decimal)row["TRANGTHAI_THANHTOAN"] == 0;
+                TenDoanhNghiep_Label.Text = row["TENDN"] != DBNull.Value ? row["TENDN"].ToString() : string.Empty;
+                ViTriUngTuyen_Label.Text = row["VITRI_UNGTUYEN"] != DBNull.Value ? row["VITRI_UNGTUYEN"].ToString() : string.Empty;
+                soLuongUngTuyen_label.Text = row["SOLUONG"] != DBNull.Value ? ((decimal)row["SOLUONG"]).ToString() : string.Empty;
+                moTaCongViec_label.Text = row["MOTA"] != DBNull.Value ? row["MOTA"].ToString() : string.Empty;
+                MaSoThue_Label.Text = row["MASOTHUE"] != DBNull.Value ? row["MASOTHUE"].ToString() : string.Empty;
+                DiaChi_Label.Text = row["DIACHI"] != DBNull.Value ? row["DIACHI"].ToString() : string.Empty;
+                SDT_Label.Text = row["SDT"] != DBNull.Value ? row["SDT"].ToString() : string.Empty;
+                EmailLienHe_Label.Text = row["EMAIL"] != DBNull.Value ? row["EMAIL"].ToString() : string.Empty;
+                NguoiDaiDien_Label.Text = row["HOTEN"] != DBNull.Value ? row["HOTEN"].ToString() : string.Empty;
+                YeuCauUngVien_Label.Text = row["YEUCAU_UNGVIEN"] != DBNull.Value ? row["YEUCAU_UNGVIEN"].ToString() : string.Empty;
+                From_Label.Text = row["TG_BATDAU"] != DBNull.Value ? ((DateTime)row["TG_BATDAU"]).ToString("dd-MM-yyyy") : string.Empty;
+                To_Label.Text = row["TG_KETTHUC"] != DBNull.Value ? ((DateTime)row["TG_KETTHUC"]).ToString("dd-MM-yyyy") : string.Empty;
+                tinhTrangThanhToan_label.Text = row["TRANGTHAI_THANHTOAN"] != DBNull.Value ? (decimal)row["TRANGTHAI_THANHTOAN"] == 1 ? "Đã thanh toán" : "Chưa thanh toán" : string.Empty;
+                xacNhanBtn.Visible = row["TRANGTHAI_THANHTOAN"] != DBNull.Value ? (decimal)row["TRANGTHAI_THANHTOAN"] == 0 : false;
+            
 
             }
             else

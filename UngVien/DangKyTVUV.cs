@@ -51,8 +51,9 @@ namespace UI_winform
             {
                 try
                 {
-                    insert_data();
-                    MessageBox.Show("Đăng ký thành công!");
+                    int mauv = insert_data();
+                    createCandidateAcc(mauv);
+                    MessageBox.Show("Đăng ký thành công! Vui lòng kiểm tra email để tiến hành đăng nhập.");
                     this.Close();
                 }
                 catch (Exception ex)
@@ -65,7 +66,7 @@ namespace UI_winform
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
             }
         }
-        private void insert_data()
+        private int insert_data()
         {
             String HOTEN = textBox1.Text;
             String ngaysinh = dateTimePicker1.Value.ToString("yyyy-MM-dd");
@@ -82,7 +83,7 @@ namespace UI_winform
             {
                 GIOITINH = "Nữ";
             }
-            int MAUV = GetRowCount("QLHSUT_UNG_VIEN") +1 + 110000;
+            int MAUV = GetRowCount("QLHSUT.QLHSUT_UNG_VIEN") + 1 + 110000;
             string query = @"INSERT INTO QLHSUT.QLHSUT_UNG_VIEN
                     (MAUV, HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO) 
                     VALUES(:MAUV, :HOTEN, TO_DATE(:NGSINH, 'YYYY-MM-DD'), :GIOITINH, :SDT, :DIACHI, :EMAIL, :TRINHDO)";
@@ -90,7 +91,20 @@ namespace UI_winform
             // Parameters for the query
             object[] parameters = { MAUV, HOTEN, ngaysinh, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO };
             DataProvider.Instance.ExecuteNonQuery(query, parameters);
+            return MAUV;
         }
+
+        private void createCandidateAcc(int mauv)
+        {
+            string username = mauv.ToString();
+            string sql = $"CREATE USER \"{username}\" IDENTIFIED BY 123456";
+            DataProvider.Instance.ExecuteNonQuery(sql);
+            string grant_sql = $"GRANT CONNECT, RESOURCE, RESTRICTED SESSION TO \"{username}\"";
+            DataProvider.Instance.ExecuteNonQuery(grant_sql);
+            string grant_role = $"GRANT RL_QLHSUT_UNGVIEN TO \"{username}\"";
+            DataProvider.Instance.ExecuteNonQuery(grant_role);
+        }
+
         public int GetRowCount(string tableName)
         {
             string query = $"SELECT COUNT(*) FROM {tableName}";

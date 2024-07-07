@@ -32,7 +32,8 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             button1 = new Button();
             label5 = new Label();
             label1 = new Label();
@@ -54,82 +55,79 @@
             // button1
             // 
             button1.BackColor = Color.FromArgb(250, 135, 135);
+            button1.ForeColor = Color.Black;
             button1.Location = new Point(1052, 440);
             button1.Margin = new Padding(2);
             button1.Name = "button1";
             button1.Size = new Size(129, 42);
             button1.TabIndex = 31;
             button1.Text = "Tìm kiếm";
-            //button1.UseVisualStyleBackColor = false;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            button1.Click += button1_Click;
-            button1.ForeColor = Color.Black;
             // 
             // label5
             // 
             label5.AutoSize = true;
+            label5.ForeColor = Color.Black;
             label5.Location = new Point(1050, 99);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
             label5.Size = new Size(87, 25);
             label5.TabIndex = 20;
             label5.Text = "TÌM KIẾM";
-            label5.ForeColor = Color.Black;
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.ForeColor = Color.Black;
             label1.Location = new Point(1002, 163);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
             label1.Size = new Size(48, 25);
             label1.TabIndex = 32;
             label1.Text = "Vị trí";
-            label1.ForeColor = Color.Black;
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.ForeColor = Color.Black;
             label2.Location = new Point(1000, 238);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
             label2.Size = new Size(99, 25);
             label2.TabIndex = 34;
             label2.Text = "Mức lương";
-            label2.ForeColor = Color.Black;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(1004, 328);
+            label3.ForeColor = Color.Black;
             label3.Location = new Point(1004, 328);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
             label3.Size = new Size(76, 25);
             label3.TabIndex = 36;
             label3.Text = "Từ khóa";
-            label3.ForeColor = Color.Black;
             // 
             // textBox3
             // 
+            textBox3.ForeColor = Color.Black;
             textBox3.Location = new Point(1004, 355);
             textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(158, 31);
             textBox3.TabIndex = 35;
-            textBox3.ForeColor = Color.Black;
             // 
             // comboBox1
             // 
             comboBox1.BackColor = Color.FromArgb(255, 176, 176);
-            comboBox1.BackColor = Color.FromArgb(255, 176, 176);
+            comboBox1.ForeColor = Color.Black;
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Nhân viên chính thức", "Bán thời gian", "Thực tập sinh", "Tất cả" });
             comboBox1.Location = new Point(1000, 191);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(222, 33);
             comboBox1.TabIndex = 38;
-            comboBox1.ForeColor = Color.Black;
             // 
             // dataGridView1
             // 
@@ -144,7 +142,7 @@
             dataGridView1.ClipboardCopyMode = DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.Navy;
+            dataGridViewCellStyle2.BackColor = Color.Pink;
             dataGridViewCellStyle2.Font = new Font("Tahoma", 9F, FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = Color.Black;
             dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
@@ -167,14 +165,24 @@
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = SystemColors.Control;
+            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowHeadersWidth = 62;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.ForeColor = Color.Black;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.RowTemplate.DefaultCellStyle.Padding = new Padding(0, 10, 0, 10);
             dataGridView1.RowTemplate.Height = 50;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dataGridView1.Size = new Size(957, 475);
             dataGridView1.TabIndex = 40;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            dataGridView1.ForeColor = Color.Black;
             // 
             // panelNavbar
             // 
@@ -186,7 +194,7 @@
             panelNavbar.Name = "panelNavbar";
             panelNavbar.Size = new Size(1243, 72);
             panelNavbar.TabIndex = 53;
-            //
+            // 
             // label9
             // 
             label9.AutoSize = true;

@@ -37,7 +37,7 @@ namespace UI_winform.controls
                 return;
             } else
             {
-                if (hinhThucThanhToan == null || hinhThucThanhToan == "" || hinhThucThanhToan == "Thanh toán toàn bộ")
+                if (hinhThucThanhToan == null || hinhThucThanhToan == "" || hinhThucThanhToan == "Thanh toán một lần")
                 {
                     HoaDonThanhToan1Lan hoaDonThanhToan1Lan = new HoaDonThanhToan1Lan(decimal.Parse(_maHopDong));
                     hoaDonThanhToan1Lan.ShowDialog();
@@ -47,9 +47,6 @@ namespace UI_winform.controls
                     MessageBox.Show("Trả góp");
                 }
             }
-
-            
-            
         }
 
         private string? getTinhTrangHopDong()
@@ -65,7 +62,7 @@ namespace UI_winform.controls
         }
         private string? getHinhThucThanhToan()
         {
-            string query = $"select * \r\nfrom qlhsut.qlhsut_phieu_quang_cao pqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen dt on hd.madt = dt.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on dt.dn_dangtuyen = dn.madn\r\njoin qlhsut.qlhsut_nguoi_dai_dien ndd on dn.ndd = ndd.mandd\r\nwhere hd.mahopdong = {_maHopDong}";
+            string query = $"select * \r\nfrom  qlhsut.qlhsut_phieu_quang_cao pqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen dt on hd.madt = dt.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on dt.dn_dangtuyen = dn.madn\r\njoin qlhsut.qlhsut_nguoi_dai_dien ndd on dn.ndd = ndd.mandd\r\nwhere hd.mahopdong = {_maHopDong}";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             if (data.Rows.Count == 1)
             {

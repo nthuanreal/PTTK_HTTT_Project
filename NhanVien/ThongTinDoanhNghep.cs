@@ -21,12 +21,12 @@ namespace UI_winform.NhanVien
         {
             MaDn = madn;
             InitializeComponent();
-            fetchData();
+            fetchData(MaDn);
         }
 
-        private void fetchData()
+        private void fetchData(string madn)
         {
-            string sql = "select dn.madn, dn.tendn, dn.email as emaildn, dn.masothue, dn.ndd, dn.sdt as sdtdn, dn.diachi as diachidn, ndd.hoten as hoten, ndd.ngsinh, ndd.gioitinh, ndd.diachi as diachindd, ndd.email as emailndd \r\nfrom qlhsut.qlhsut_doanh_nghiep dn join qlhsut.qlhsut_nguoi_dai_dien ndd on dn.ndd = ndd.mandd\r\nwhere dn.madn = 20001";
+            string sql = $"select dn.madn, dn.tendn, dn.email as emaildn, dn.masothue, dn.ndd, dn.sdt as sdtdn, dn.diachi as diachidn, ndd.hoten as hoten, ndd.ngsinh, ndd.gioitinh, ndd.diachi as diachindd, ndd.email as emailndd \r\nfrom qlhsut.qlhsut_doanh_nghiep dn join qlhsut.qlhsut_nguoi_dai_dien ndd on dn.ndd = ndd.mandd\r\nwhere TO_CHAR(dn.madn) = '{madn}'";
             DataTable dt = DataProvider.Instance.ExecuteQuery(sql);
             if (dt.Rows.Count == 0)
             {

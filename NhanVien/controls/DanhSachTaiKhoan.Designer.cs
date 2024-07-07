@@ -33,20 +33,22 @@
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.BackColor = SystemColors.ControlDarkDark;
-            flowLayoutPanel1.Location = new Point(0, 35);
+            flowLayoutPanel1.BackColor = SystemColors.Control;
+            flowLayoutPanel1.Location = new Point(0, 44);
+            flowLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(979, 565);
+            flowLayoutPanel1.Size = new Size(1224, 706);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // DanhSachTaiKhoan
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(flowLayoutPanel1);
-            MinimumSize = new Size(1137, 600);
+            Margin = new Padding(4, 4, 4, 4);
+            MinimumSize = new Size(1421, 750);
             Name = "DanhSachTaiKhoan";
-            Size = new Size(1137, 600);
+            Size = new Size(1421, 750);
             ResumeLayout(false);
         }
 

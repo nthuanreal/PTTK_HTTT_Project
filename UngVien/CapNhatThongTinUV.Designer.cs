@@ -390,8 +390,8 @@
             button4.TabIndex = 3;
             button4.Text = "ĐỔI MẬT KHẨU";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
-            // CapNhatThongTinUV
             // CapNhatThongTinUV
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);

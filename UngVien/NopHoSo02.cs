@@ -47,7 +47,7 @@ namespace UI_winform
             this.mahs = GetRowCount("QLHSUT.QLHSUT_HO_SO_UNG_TUYEN") + 120001;
             int mahs = this.mahs;
             int mauv = this.mauv;
-            int mapqc = this.madt;
+            int mapqc = getMAPQC();
             string thongtin_hs = textBox2.Text.ToString();
             string sql = "INSERT INTO \"QLHSUT\".\"QLHSUT_HO_SO_UNG_TUYEN\" (MAHS, MAUV, MAPQC, THONGTIN_HS) VALUES (:mahs, :mauv, :mapqc, :thongtin_hs)";
             object[] parameters = { mahs, mauv, mapqc, thongtin_hs };
@@ -58,6 +58,38 @@ namespace UI_winform
             string query = $"SELECT COUNT(*) FROM {tableName}";
             return Convert.ToInt32(DataProvider.Instance.ExecuteQuery(query).Rows[0][0]);
         }
+        private int getMAPQC()
+        {
+            //MessageBox.Show(this.madt.ToString()); // debug line
+
+            object[] parameters = { this.madt };
+            string query = "SELECT DISTINCT(MAHOPDONG) FROM QLHSUT.QLHSUT_HOP_DONG_DANG_TUYEN where MADT = :MADT";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
+            string MAHOPDONG = "";
+
+            if (data.Rows.Count > 0)
+            {
+                DataRow row = data.Rows[0];
+                MAHOPDONG = row["MAHOPDONG"].ToString();
+            }
+
+            //MessageBox.Show(MAHOPDONG); // debug line
+
+            object[] parameters2 = { MAHOPDONG };
+            string query2 = "SELECT DISTINCT(MAPQC) FROM QLHSUT.QLHSUT_PHIEU_QUANG_CAO where MAHOPDONG = :MAHOPDONG";
+            DataTable data2 = DataProvider.Instance.ExecuteQuery(query2, parameters2);
+            string MAPQC = "";
+
+            if (data2.Rows.Count > 0)
+            {
+                DataRow row2 = data2.Rows[0];
+                MAPQC = row2["MAPQC"].ToString();
+            }
+            //MessageBox.Show(MAPQC); // debug line
+
+            return int.Parse(MAPQC);
+        }
+
         private void load_data()
         {
             object[] parameters = { this.madt };
@@ -83,5 +115,6 @@ namespace UI_winform
                 textBox1.Text = content;
             }
         }
+
     }
 }

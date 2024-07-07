@@ -34,6 +34,7 @@ namespace UI_winform.NhanVien
         private void populateItem()
         {
             string query = $"select * \r\nfrom qlhsut.qlhsut_phieu_quang_cao pqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen dt on hd.madt = dt.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on dt.dn_dangtuyen = dn.madn\r\nwhere hd.mahopdong = {MaHd}";
+            //MessageBox.Show(MaHd.ToString()); // debug line
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             if (data.Rows.Count > 0)
             {
@@ -114,6 +115,11 @@ namespace UI_winform.NhanVien
             TaoHoaDonThanhToan taoHoaDonThanhToan = new TaoHoaDonThanhToan(MaHd);
             this.Close();
             taoHoaDonThanhToan.ShowDialog();
+        }
+
+        private void Huy_button_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using UI_winform.DAO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using UI_winform.User.Login;
 
 namespace UI_winform
 {
@@ -49,7 +50,7 @@ namespace UI_winform
             }
         }
 
-        
+
         private void update_ttuv()
         {
             string HOTEN = textBox1.Text;
@@ -94,6 +95,12 @@ namespace UI_winform
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DoiMatKhau doiMatKhau = new DoiMatKhau();
+            doiMatKhau.ShowDialog();
         }
     }
 }

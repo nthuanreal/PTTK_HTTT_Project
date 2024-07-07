@@ -10,6 +10,7 @@ namespace UI_winform.DoanhNghiep
 {
     public class PhieuDKDT
     {
+        public string madt;
         public string vitri;
         public string soluong;
         public string mota;
@@ -17,8 +18,11 @@ namespace UI_winform.DoanhNghiep
         public string ngaybd;
         public string ngaykt;
         public string hinhthucluachon;
+        public string mahopdong;
+        public string tinhtrangduyet;
         public PhieuDKDT()
         {
+            madt = "";
             vitri = "";
             soluong = "";
             mota = "";
@@ -26,6 +30,8 @@ namespace UI_winform.DoanhNghiep
             ngaybd = "";
             ngaykt = "";
             hinhthucluachon = "";
+            mahopdong = "";
+            tinhtrangduyet = "";
         }
     }
 }

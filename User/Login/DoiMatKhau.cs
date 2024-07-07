@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI_winform.DAO;
+using UI_winform.utils;
 
 namespace UI_winform.User.Login
 {
@@ -29,36 +31,35 @@ namespace UI_winform.User.Login
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtValidate())
+            if (textBoxCurrentPassword.Text == "" || txtNewPassword.Text == "" || textBoxConfirmPassword.Text == "")
             {
-                MessageBox.Show("Đổi mật khẩu thành công!");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Đổi mật khẩu thất bại!");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
                 return;
             }
-        }
-        private bool txtValidate()
-        {
-            this.lblValidation.Visible = true;
-            if(textBoxCurrentPassword.Text.Length == 0 || txtNewPassword.Text.Length==0 ||textBoxConfirmPassword.Text.Length==0)
+            if (textBoxCurrentPassword.Text != Session.Instance.Password)
             {
-                this.lblValidation.Text = "Vui lòng điền đầy đủ thông tin!";
-                return false;
+                MessageBox.Show("Thông tin mật khẩu hiện tại không đúng, vui lòng nhập lại!");
+                return;
             }
-            if(txtNewPassword.Text != textBoxConfirmPassword.Text)
+            if (textBoxConfirmPassword.Text != txtNewPassword.Text)
             {
-                this.lblValidation.Text = "Nhập lại mật khẩu phải khớp với mật khẩu mới!";
-                return false;
+                MessageBox.Show("Vui lòng xác nhận đúng mật khẩu mới!");
+                return;
             }
-            if (textBoxCurrentPassword.Text == txtNewPassword.Text) {
-                this.lblValidation.Text = "mật khẩu mới không được trùng với mật khẩu cũ!";
-                return false;
+
+            try
+            {
+                string change_pass = $"ALTER USER \"{Session.Instance.Username}\" IDENTIFIED BY \"{txtNewPassword.Text}\"";
+                DataProvider.Instance.ExecuteNonQuery(change_pass);
+                MessageBox.Show("Cập nhật mật khẩu thành công!");
+                this.Close();
             }
-            return true;
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cập nhật mật khẩu thất bại!"+ ex.Message);
+            }
         }
+
         private void linkBack_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
