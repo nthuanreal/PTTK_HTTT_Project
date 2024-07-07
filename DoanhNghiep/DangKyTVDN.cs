@@ -54,7 +54,7 @@ namespace UI_winform
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Có lỗi xảy ra trong quá trình đăng ký, vui lòng thức hiện lại.");
+                    MessageBox.Show("Có lỗi xảy ra trong quá trình đăng ký, vui lòng thức hiện lại." + ex.Message);
                 }
 
             }
@@ -66,12 +66,12 @@ namespace UI_winform
 
         private int insert_Representative()
         {
-            String HOTEN = textBox1.Text;
-            String NGSINH = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            String DIACHI = textBox4.Text;
-            String SDT = textBox5.Text;
-            String EMAIL = txtEmail.Text;
-            String GIOITINH;
+            string HOTEN = textBox1.Text;
+            string NGSINH = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+            string DIACHI = textBox4.Text;
+            string SDT = textBox5.Text;
+            string EMAIL = txtEmail.Text;
+            string GIOITINH;
             if (checkBox1.Checked || checkBox2.Checked)
             {
                 if (checkBox1.Checked)
@@ -87,10 +87,10 @@ namespace UI_winform
             {
                 GIOITINH = "Khác";
             }
-            int MANDD = GetNewID("QLHSUT_NGUOI_DAI_DIEN", "MANDD");
+            int MANDD = GetNewID("QLHSUT.QLHSUT_NGUOI_DAI_DIEN", "MANDD");
             string query = @"INSERT INTO QLHSUT.QLHSUT_NGUOI_DAI_DIEN
                     (MANDD, HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL) 
-                    VALUES(:MANDD, :HOTEN, TO_DATE(:NGSINH, 'YYYY-MM-DD'), :GIOITINH, :SDT, :DIACHI, :EMAIL)";
+                    VALUES(:MANDD, :HOTEN, TO_DATE(:NGSINH, 'yyyy-MM-dd'), :GIOITINH, :SDT, :DIACHI, :EMAIL)";
 
             // Parameters for the query
             object[] parameters = { MANDD, HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL };
@@ -99,13 +99,13 @@ namespace UI_winform
         }
         private void insert_Company(int NDD)
         {
-            int MADN = GetNewID("QLHSUT_DOANH_NGHIEP", "MADN");
+            int MADN = GetNewID("QLHSUT.QLHSUT_DOANH_NGHIEP", "MADN");
 
-            String TENDN = txtCompanyName.Text;
-            String MASOTHUE = txtTaxID.Text;
-            String DIACHI = txtAddress.Text;
-            String SDT = txtPhone.Text;
-            String EMAIL = txtEmail.Text;
+            string TENDN = txtCompanyName.Text;
+            string MASOTHUE = txtTaxID.Text;
+            string DIACHI = txtAddress.Text;
+            string SDT = txtPhone.Text;
+            string EMAIL = txtEmail.Text;
             string query = @"INSERT INTO QLHSUT.QLHSUT_DOANH_NGHIEP
                     (MADN, TENDN, MASOTHUE, NDD, SDT, DIACHI, EMAIL) 
                     VALUES(:MADN, :TENDN, :MASOTHUE, :NDD, :SDT, :DIACHI, :EMAIL)";
@@ -117,6 +117,7 @@ namespace UI_winform
         public int GetNewID(string tableName, string idType)
         {
             string query = $"SELECT MIN(t1.{idType} + 1) FROM {tableName} t1 LEFT JOIN {tableName} t2 ON t1.{idType} + 1 = t2.{idType} WHERE t2.{idType} IS NULL";
+            MessageBox.Show(query);
             int x = Convert.ToInt32(DataProvider.Instance.ExecuteQuery(query).Rows[0][0]);
             return x;
         }
