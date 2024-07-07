@@ -1,6 +1,6 @@
 ﻿namespace UI_winform.NhanVien
 {
-    partial class TaoHoaDonThanhToan
+    partial class HoaDonThanhToan1Lan
     {
         /// <summary>
         /// Required designer variable.

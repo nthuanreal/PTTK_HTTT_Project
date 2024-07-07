@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI_winform.NhanVien;
 
 namespace UI_winform.controls
 {
@@ -25,7 +26,8 @@ namespace UI_winform.controls
 
         private void HopDongListItem_Click(object sender, EventArgs e)
         {
-
+            PhieuDangKyQuangCao phieuDangKyQuangCao = new PhieuDangKyQuangCao(decimal.Parse(_maHopDong));
+            phieuDangKyQuangCao.ShowDialog();
         }
 
         [Category("Custom Props")]

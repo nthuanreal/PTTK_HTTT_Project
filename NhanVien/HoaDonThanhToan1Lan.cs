@@ -14,18 +14,18 @@ using UI_winform.DAO;
 
 namespace UI_winform.NhanVien
 {
-    public partial class TaoHoaDonThanhToan : Form
+    public partial class HoaDonThanhToan1Lan : Form
     {
         private decimal _maHd;
 
         public decimal MaHd { get => _maHd; set => _maHd = value; }
 
-        public TaoHoaDonThanhToan()
+        public HoaDonThanhToan1Lan()
         {
             InitializeComponent();
         }
 
-        public TaoHoaDonThanhToan(decimal maHd)
+        public HoaDonThanhToan1Lan(decimal maHd)
         {
             InitializeComponent();
             _maHd = maHd;
@@ -120,11 +120,14 @@ namespace UI_winform.NhanVien
                 string sql = $"update qlhsut.qlhsut_phieu_quang_cao\r\nset HINHTHUCTHANHTOAN = N'{hinhThuc}'\r\nwhere mahopdong = {MaHd}";
                 DataProvider.Instance.ExecuteNonQuery(sql);
                 sendEmail();
-                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi hệ thống");
+            }
+            finally
+            {
+                this.Close();
             }
 
         }
