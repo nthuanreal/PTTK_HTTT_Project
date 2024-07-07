@@ -117,7 +117,7 @@ namespace UI_winform
         public int GetNewID(string tableName, string idType)
         {
             string query = $"SELECT MIN(t1.{idType} + 1) FROM {tableName} t1 LEFT JOIN {tableName} t2 ON t1.{idType} + 1 = t2.{idType} WHERE t2.{idType} IS NULL";
-            MessageBox.Show(query);
+      
             int x = Convert.ToInt32(DataProvider.Instance.ExecuteQuery(query).Rows[0][0]);
             return x;
         }
