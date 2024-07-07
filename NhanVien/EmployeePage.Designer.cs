@@ -33,6 +33,7 @@
             hoSoBtn = new Button();
             hopDongBtn = new Button();
             xuLyHopDong1 = new NhanVien.controls.XuLyHopDong();
+            linkLabel1 = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
@@ -49,6 +50,7 @@
             // splitContainer1.Panel1
             // 
             splitContainer1.Panel1.BackColor = Color.Silver;
+            splitContainer1.Panel1.Controls.Add(linkLabel1);
             splitContainer1.Panel1.Controls.Add(giaHanBtn);
             splitContainer1.Panel1.Controls.Add(hoSoBtn);
             splitContainer1.Panel1.Controls.Add(hopDongBtn);
@@ -110,9 +112,22 @@
             xuLyHopDong1.TabIndex = 0;
             xuLyHopDong1.Load += xuLyHopDong1_Load;
             // 
+            // linkLabel1
+            // 
+            linkLabel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            linkLabel1.AutoSize = true;
+            linkLabel1.Font = new Font("Cascadia Code SemiBold", 16F, FontStyle.Bold, GraphicsUnit.Point, 163);
+            linkLabel1.Location = new Point(2, 726);
+            linkLabel1.Name = "linkLabel1";
+            linkLabel1.Size = new Size(190, 43);
+            linkLabel1.TabIndex = 6;
+            linkLabel1.TabStop = true;
+            linkLabel1.Text = "Đăng xuất";
+            linkLabel1.LinkClicked += DangXuat_Link_LinkClicked;
+            // 
             // EmployeePage
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1347, 778);
             Controls.Add(splitContainer1);
@@ -123,6 +138,7 @@
             FormClosed += EmployeePage_FormClosed;
             Load += EmployeePage_Load;
             splitContainer1.Panel1.ResumeLayout(false);
+            splitContainer1.Panel1.PerformLayout();
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
@@ -136,5 +152,6 @@
         public Button hoSoBtn;
         public Button hopDongBtn;
         private NhanVien.controls.XuLyHopDong xuLyHopDong1;
+        private LinkLabel linkLabel1;
     }
 }

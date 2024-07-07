@@ -139,7 +139,7 @@ namespace UI_winform
                             Session.Instance.OracleConnection = con;
                             MessageBox.Show("Connect với tư cách là Ứng viên thành công!");
                             this.Hide();
-                            HOMEUV UVHomePage = new HOMEUV(110004);
+                            HOMEUV UVHomePage = new HOMEUV(this);
                             UVHomePage.Show();
                         }
                         else if (result == 3)
@@ -153,7 +153,7 @@ namespace UI_winform
                             Session.Instance.OracleConnection = con;
                             MessageBox.Show("Connect với tư cách là Nhân viên thành công!");
                             this.Hide();
-                            HOMENV NVHomePage = new HOMENV();
+                            EmployeePage NVHomePage = new EmployeePage(this);
                             NVHomePage.Show();
                         }
                     }

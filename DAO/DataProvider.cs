@@ -1,6 +1,7 @@
 ﻿using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,14 @@ namespace UI_winform.DAO
         }
         private DataProvider() { }
 
-        private string _connectionString = @$"DATA SOURCE = localhost:1521/XEPDB1; USER ID=" + "QLHSUT" + ";PASSWORD=" + "123456";
+
+        static string hostname = ConfigurationManager.AppSettings["hostname"] ?? "localhost";
+        static string port = ConfigurationManager.AppSettings["port"] ?? "1521";
+        static string qlhsut = ConfigurationManager.AppSettings["sysdba"] ?? "QLHSUT";
+        static string pwd = ConfigurationManager.AppSettings["pwd"] ?? "123456";
+
+        string _connectionString = @$"DATA SOURCE={hostname}:{port}/XEPDB1;DBA Privilege=SYSDBA; USER ID=" + qlhsut + ";PASSWORD=" + pwd;
+        //private string _connectionString = @$"DATA SOURCE = localhost:1522/XEPDB1; USER ID=" + "QLHSUT" + ";PASSWORD=" + "123456";
 
         public DataTable ExecuteQuery(string query, object[] parameters = null)
         {

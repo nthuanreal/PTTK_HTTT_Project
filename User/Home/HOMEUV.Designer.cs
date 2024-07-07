@@ -148,10 +148,10 @@ namespace UI_winform
             content.Size = new Size(1239, 944);
             content.TabIndex = 1;
             // 
-            // DangXuat_LinkLabel
+            // linkLabel1
             // 
             linkLabel1.ActiveLinkColor = Color.WhiteSmoke;
-            linkLabel1.Anchor = AnchorStyles.Bottom;
+            linkLabel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             linkLabel1.AutoSize = true;
             linkLabel1.BackColor = SystemColors.ActiveBorder;
             linkLabel1.BorderStyle = BorderStyle.Fixed3D;
@@ -165,6 +165,7 @@ namespace UI_winform
             linkLabel1.TabIndex = 4;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Đăng xuất";
+            linkLabel1.LinkClicked += DangXuat_Link_LinkClicked;
             // 
             // HOMEUV
             // 
@@ -178,6 +179,7 @@ namespace UI_winform
             Margin = new Padding(4, 3, 4, 3);
             Name = "HOMEUV";
             Text = "HOMEUV";
+            FormClosed += HOMEUV_FormClosed;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
