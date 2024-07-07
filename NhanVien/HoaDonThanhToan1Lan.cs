@@ -52,6 +52,8 @@ namespace UI_winform.NhanVien
                 YeuCauUngVien_Label.Text = row["YEUCAU_UNGVIEN"].ToString();
                 From_Label.Text = ((DateTime)row["TG_BATDAU"]).ToString("dd-MM-yyyy");
                 To_Label.Text = ((DateTime)row["TG_KETTHUC"]).ToString("dd-MM-yyyy");
+                tinhTrangThanhToan_label.Text = (decimal)row["TRANGTHAI_THANHTOAN"] == 1 ? "Đã thanh toán" : "Chưa thanh toán";
+                xacNhanBtn.Visible = (decimal)row["TRANGTHAI_THANHTOAN"] == 0;
 
             }
             else
@@ -95,82 +97,14 @@ namespace UI_winform.NhanVien
 
         }
 
-        private void Huy_Button_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private string GetCheckedRadioButton(GroupBox groupBox)
-        {
-            foreach (Control control in groupBox.Controls)
-            {
-                if (control is RadioButton radioButton && radioButton.Checked)
-                {
-                    return radioButton.Text;
-                }
-            }
-            return null;
-        }
-
-        private void XacNhan_Button_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string hinhThuc = GetCheckedRadioButton(groupBox1);
-                string sql = $"update qlhsut.qlhsut_phieu_quang_cao\r\nset HINHTHUCTHANHTOAN = N'{hinhThuc}'\r\nwhere mahopdong = {MaHd}";
-                DataProvider.Instance.ExecuteNonQuery(sql);
-                sendEmail();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Lỗi hệ thống");
-            }
-            finally
-            {
-                this.Close();
-            }
-
-        }
-
-        private void sendEmail()
-        {
-            try
-            {
-                string from, to, content;
-                from = "websitepttk@outlook.com";
-                to = "21120360@student.hcmus.edu.vn";
-                content = "Yêu cầu đăng tuyển của quý khách trị giá: " + ThanhTien_Label.Text + " vnđ";
-                MailMessage mail = new MailMessage();
-                mail.To.Add(to);
-                mail.From = new MailAddress(from);
-                mail.Subject = "XÁC NHẬN HỢP ĐỒNG ĐĂNG TUYỂN";
-                mail.Body = content;
-
-                SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
-                smtp.EnableSsl = true;
-                smtp.Port = 587;
-                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-                smtp.Credentials = new NetworkCredential(from, "pttkhttt_PTTKHTTT_NHOM2");
-
-                smtp.Send(mail);
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                string hinhThuc = GetCheckedRadioButton(groupBox1);
-                string sql = $"update QLHSUT.QLHSUT_HOP_DONG_DANG_TUYEN\r\nset tinhtrang = N'Đã duyệt'\r\nwhere MAHOPDONG = {MaHd}";
+                
+                string sql = $"update qlhsut.qlhsut_phieu_quang_cao\r\nset TRANGTHAI_THANHTOAN = 1\r\nwhere mahopdong = {MaHd}";
                 DataProvider.Instance.ExecuteNonQuery(sql);
                 
-                sql = $"update qlhsut.qlhsut_phieu_quang_cao\r\nset HINHTHUCTHANHTOAN = N'{hinhThuc}'\r\nwhere mahopdong = {MaHd}";
-                DataProvider.Instance.ExecuteNonQuery(sql);
-
                 MessageBox.Show("Thành công");
                 this.Close();
             }

@@ -559,7 +559,7 @@
             // 
             panel1.Anchor = AnchorStyles.None;
             panel1.Controls.Add(tableLayoutPanel7);
-            panel1.Location = new Point(168, 110);
+            panel1.Location = new Point(168, 85);
             panel1.Name = "panel1";
             panel1.Size = new Size(694, 663);
             panel1.TabIndex = 19;
@@ -587,6 +587,7 @@
             Controls.Add(guiEmailBtn);
             Controls.Add(Huy_Button);
             Controls.Add(label1);
+            MaximizeBox = false;
             Name = "TaoHoaDonThanhToan";
             Text = "Form1";
             tableLayoutPanel7.ResumeLayout(false);

@@ -48,16 +48,11 @@
             NguoiDaiDien_Label = new Label();
             YeuCauUngVien_Label = new Label();
             ThanhTien_Label = new Label();
-            Huy_Button = new Button();
-            guiEmailBtn = new Button();
             tableLayoutPanel7 = new TableLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel1 = new TableLayoutPanel();
             label18 = new Label();
             label14 = new Label();
-            groupBox1 = new GroupBox();
-            radioButton2 = new RadioButton();
-            radioButton1 = new RadioButton();
             soLuongUngTuyen_label = new Label();
             label13 = new Label();
             moTaCongViec_label = new Label();
@@ -70,10 +65,10 @@
             label15 = new Label();
             panel1 = new Panel();
             xacNhanBtn = new Button();
+            tinhTrangThanhToan_label = new Label();
             tableLayoutPanel7.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
-            groupBox1.SuspendLayout();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -84,9 +79,9 @@
             label1.Font = new Font("Segoe UI", 25F);
             label1.Location = new Point(231, 9);
             label1.Name = "label1";
-            label1.Size = new Size(583, 57);
+            label1.Size = new Size(490, 57);
             label1.TabIndex = 0;
-            label1.Text = "TẠO HÓA ĐƠN THANH TOÁN";
+            label1.Text = "HÓA ĐƠN THANH TOÁN";
             // 
             // label8
             // 
@@ -279,32 +274,6 @@
             ThanhTien_Label.TabIndex = 15;
             ThanhTien_Label.Text = "1.000.000";
             // 
-            // Huy_Button
-            // 
-            Huy_Button.AutoEllipsis = true;
-            Huy_Button.BackColor = Color.FromArgb(255, 128, 128);
-            Huy_Button.Font = new Font("Segoe UI", 10.8F);
-            Huy_Button.Location = new Point(168, 779);
-            Huy_Button.Name = "Huy_Button";
-            Huy_Button.Size = new Size(222, 68);
-            Huy_Button.TabIndex = 16;
-            Huy_Button.Text = "Hủy";
-            Huy_Button.UseVisualStyleBackColor = false;
-            Huy_Button.Click += Huy_Button_Click;
-            // 
-            // guiEmailBtn
-            // 
-            guiEmailBtn.AutoEllipsis = true;
-            guiEmailBtn.BackColor = Color.MediumTurquoise;
-            guiEmailBtn.Font = new Font("Segoe UI", 10.8F);
-            guiEmailBtn.Location = new Point(404, 779);
-            guiEmailBtn.Name = "guiEmailBtn";
-            guiEmailBtn.Size = new Size(222, 68);
-            guiEmailBtn.TabIndex = 17;
-            guiEmailBtn.Text = "Gửi email cho doanh nghiệp";
-            guiEmailBtn.UseVisualStyleBackColor = false;
-            guiEmailBtn.Click += XacNhan_Button_Click;
-            // 
             // tableLayoutPanel7
             // 
             tableLayoutPanel7.ColumnCount = 2;
@@ -391,7 +360,7 @@
             tableLayoutPanel1.Controls.Add(label18, 0, 1);
             tableLayoutPanel1.Controls.Add(label14, 0, 0);
             tableLayoutPanel1.Controls.Add(ThanhTien_Label, 1, 0);
-            tableLayoutPanel1.Controls.Add(groupBox1, 1, 1);
+            tableLayoutPanel1.Controls.Add(tinhTrangThanhToan_label, 1, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(3, 567);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -408,9 +377,9 @@
             label18.AutoSize = true;
             label18.Location = new Point(3, 57);
             label18.Name = "label18";
-            label18.Size = new Size(208, 25);
+            label18.Size = new Size(183, 25);
             label18.TabIndex = 20;
-            label18.Text = "Số đợt thanh toán tối đa";
+            label18.Text = "Tình trạng thanh toán";
             // 
             // label14
             // 
@@ -421,41 +390,6 @@
             label14.Size = new Size(94, 25);
             label14.TabIndex = 12;
             label14.Text = "Thành tiền";
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(radioButton2);
-            groupBox1.Controls.Add(radioButton1);
-            groupBox1.Dock = DockStyle.Fill;
-            groupBox1.Location = new Point(241, 49);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(444, 41);
-            groupBox1.TabIndex = 21;
-            groupBox1.TabStop = false;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Font = new Font("Segoe UI", 10.8F);
-            radioButton2.Location = new Point(293, 12);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(93, 29);
-            radioButton2.TabIndex = 1;
-            radioButton2.Text = "Trả góp";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.Checked = true;
-            radioButton1.Font = new Font("Segoe UI", 10.8F);
-            radioButton1.Location = new Point(10, 12);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(190, 29);
-            radioButton1.TabIndex = 0;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Thanh toán toàn bộ";
-            radioButton1.UseVisualStyleBackColor = true;
             // 
             // soLuongUngTuyen_label
             // 
@@ -569,25 +503,34 @@
             xacNhanBtn.AutoEllipsis = true;
             xacNhanBtn.BackColor = Color.LightGreen;
             xacNhanBtn.Font = new Font("Segoe UI", 10.8F);
-            xacNhanBtn.Location = new Point(640, 779);
+            xacNhanBtn.Location = new Point(412, 779);
             xacNhanBtn.Name = "xacNhanBtn";
             xacNhanBtn.Size = new Size(222, 68);
             xacNhanBtn.TabIndex = 20;
-            xacNhanBtn.Text = "Xác nhận hợp đồng";
+            xacNhanBtn.Text = "Xác nhận đã thanh toán";
             xacNhanBtn.UseVisualStyleBackColor = false;
             xacNhanBtn.Click += button1_Click;
             // 
-            // TaoHoaDonThanhToan
+            // tinhTrangThanhToan_label
+            // 
+            tinhTrangThanhToan_label.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            tinhTrangThanhToan_label.AutoSize = true;
+            tinhTrangThanhToan_label.Location = new Point(241, 46);
+            tinhTrangThanhToan_label.Name = "tinhTrangThanhToan_label";
+            tinhTrangThanhToan_label.Size = new Size(144, 47);
+            tinhTrangThanhToan_label.TabIndex = 21;
+            tinhTrangThanhToan_label.Text = "Chưa thanh toán";
+            tinhTrangThanhToan_label.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // HoaDonThanhToan1Lan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1030, 856);
             Controls.Add(xacNhanBtn);
             Controls.Add(panel1);
-            Controls.Add(guiEmailBtn);
-            Controls.Add(Huy_Button);
             Controls.Add(label1);
-            Name = "TaoHoaDonThanhToan";
+            Name = "HoaDonThanhToan1Lan";
             Text = "Form1";
             tableLayoutPanel7.ResumeLayout(false);
             tableLayoutPanel7.PerformLayout();
@@ -595,8 +538,6 @@
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel1.ResumeLayout(false);
@@ -624,8 +565,6 @@
         private Label NguoiDaiDien_Label;
         private Label YeuCauUngVien_Label;
         private Label ThanhTien_Label;
-        private Button Huy_Button;
-        private Button guiEmailBtn;
         private TableLayoutPanel tableLayoutPanel7;
         private Label label10;
         private Label label11;
@@ -644,9 +583,7 @@
         private Label label17;
         private Label From_Label;
         private Label label15;
-        private GroupBox groupBox1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
         private Button xacNhanBtn;
+        private Label tinhTrangThanhToan_label;
     }
 }

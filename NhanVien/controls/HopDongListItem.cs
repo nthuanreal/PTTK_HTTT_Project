@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UI_winform.DAO;
 using UI_winform.NhanVien;
 
 namespace UI_winform.controls
@@ -26,8 +27,52 @@ namespace UI_winform.controls
 
         private void HopDongListItem_Click(object sender, EventArgs e)
         {
-            PhieuDangKyQuangCao phieuDangKyQuangCao = new PhieuDangKyQuangCao(decimal.Parse(_maHopDong));
-            phieuDangKyQuangCao.ShowDialog();
+            string? tinhTrangHopDong = getTinhTrangHopDong();
+            string? hinhThucThanhToan = getHinhThucThanhToan();
+
+            if (tinhTrangHopDong == null || tinhTrangHopDong == "" || tinhTrangHopDong == "Chưa duyệt")
+            {
+                PhieuDangKyQuangCao phieuDangKyQuangCao = new PhieuDangKyQuangCao(decimal.Parse(_maHopDong));
+                phieuDangKyQuangCao.ShowDialog();
+                return;
+            } else
+            {
+                if (hinhThucThanhToan == null || hinhThucThanhToan == "" || hinhThucThanhToan == "Thanh toán toàn bộ")
+                {
+                    HoaDonThanhToan1Lan hoaDonThanhToan1Lan = new HoaDonThanhToan1Lan(decimal.Parse(_maHopDong));
+                    hoaDonThanhToan1Lan.ShowDialog();
+                    return;
+                } else
+                {
+                    MessageBox.Show("Trả góp");
+                }
+            }
+
+            
+            
+        }
+
+        private string? getTinhTrangHopDong()
+        {
+            string query = $"select * \r\nfrom qlhsut.qlhsut_phieu_quang_cao pqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen dt on hd.madt = dt.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on dt.dn_dangtuyen = dn.madn\r\njoin qlhsut.qlhsut_nguoi_dai_dien ndd on dn.ndd = ndd.mandd\r\nwhere hd.mahopdong = {_maHopDong}";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if (data.Rows.Count == 1)
+            {
+                DataRow row = data.Rows[0];
+                return row["TINHTRANG"].ToString();
+            }
+            return null;
+        }
+        private string? getHinhThucThanhToan()
+        {
+            string query = $"select * \r\nfrom qlhsut.qlhsut_phieu_quang_cao pqc\r\njoin qlhsut.qlhsut_hop_dong_dang_tuyen hd on pqc.mahopdong = hd.mahopdong\r\njoin qlhsut.qlhsut_thong_tin_dang_tuyen dt on hd.madt = dt.madt\r\njoin qlhsut.qlhsut_doanh_nghiep dn on dt.dn_dangtuyen = dn.madn\r\njoin qlhsut.qlhsut_nguoi_dai_dien ndd on dn.ndd = ndd.mandd\r\nwhere hd.mahopdong = {_maHopDong}";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            if (data.Rows.Count == 1)
+            {
+                DataRow row = data.Rows[0];
+                return row["HINHTHUCTHANHTOAN"].ToString();
+            }
+            return null;
         }
 
         [Category("Custom Props")]
