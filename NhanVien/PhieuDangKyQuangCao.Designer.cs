@@ -48,8 +48,7 @@
             label10 = new Label();
             Date_From = new Label();
             label9 = new Label();
-            label11 = new Label();
-            Exit_Button = new Button();
+            Date_To = new Label();
             SuspendLayout();
             // 
             // label2
@@ -126,6 +125,7 @@
             TuChoi_Button.TabIndex = 1;
             TuChoi_Button.Text = "Từ chối";
             TuChoi_Button.UseVisualStyleBackColor = false;
+            TuChoi_Button.Click += TuChoi_Button_Click;
             // 
             // Tao_button
             // 
@@ -136,6 +136,7 @@
             Tao_button.TabIndex = 2;
             Tao_button.Text = "Tạo";
             Tao_button.UseVisualStyleBackColor = false;
+            Tao_button.Click += Tao_button_Click;
             // 
             // Huy_button
             // 
@@ -153,6 +154,7 @@
             TenDoanhNghiep_Textbox.BackColor = SystemColors.Window;
             TenDoanhNghiep_Textbox.Location = new Point(343, 84);
             TenDoanhNghiep_Textbox.Name = "TenDoanhNghiep_Textbox";
+            TenDoanhNghiep_Textbox.ReadOnly = true;
             TenDoanhNghiep_Textbox.Size = new Size(541, 27);
             TenDoanhNghiep_Textbox.TabIndex = 4;
             // 
@@ -162,6 +164,7 @@
             ViTriUngTuyen_Textbox.BackColor = SystemColors.Window;
             ViTriUngTuyen_Textbox.Location = new Point(343, 138);
             ViTriUngTuyen_Textbox.Name = "ViTriUngTuyen_Textbox";
+            ViTriUngTuyen_Textbox.ReadOnly = true;
             ViTriUngTuyen_Textbox.Size = new Size(541, 27);
             ViTriUngTuyen_Textbox.TabIndex = 5;
             ViTriUngTuyen_Textbox.TextChanged += ViTriUngTuyen_Textbox_TextChanged;
@@ -172,6 +175,7 @@
             SoLuongUngTuyen_Textbox.BackColor = SystemColors.Window;
             SoLuongUngTuyen_Textbox.Location = new Point(343, 190);
             SoLuongUngTuyen_Textbox.Name = "SoLuongUngTuyen_Textbox";
+            SoLuongUngTuyen_Textbox.ReadOnly = true;
             SoLuongUngTuyen_Textbox.Size = new Size(541, 27);
             SoLuongUngTuyen_Textbox.TabIndex = 6;
             // 
@@ -181,6 +185,7 @@
             MoTaCongViec_Textbox.BackColor = SystemColors.Window;
             MoTaCongViec_Textbox.Location = new Point(343, 245);
             MoTaCongViec_Textbox.Name = "MoTaCongViec_Textbox";
+            MoTaCongViec_Textbox.ReadOnly = true;
             MoTaCongViec_Textbox.Size = new Size(541, 27);
             MoTaCongViec_Textbox.TabIndex = 7;
             MoTaCongViec_Textbox.TextChanged += MoTaCongViec_Textbox_TextChanged;
@@ -192,6 +197,7 @@
             YeuCauUngVien_Textbox.Location = new Point(343, 305);
             YeuCauUngVien_Textbox.Multiline = true;
             YeuCauUngVien_Textbox.Name = "YeuCauUngVien_Textbox";
+            YeuCauUngVien_Textbox.ReadOnly = true;
             YeuCauUngVien_Textbox.Size = new Size(541, 67);
             YeuCauUngVien_Textbox.TabIndex = 8;
             // 
@@ -200,6 +206,7 @@
             HinhThucDangTuyenDung_Textbox.BackColor = SystemColors.Window;
             HinhThucDangTuyenDung_Textbox.Location = new Point(343, 474);
             HinhThucDangTuyenDung_Textbox.Name = "HinhThucDangTuyenDung_Textbox";
+            HinhThucDangTuyenDung_Textbox.ReadOnly = true;
             HinhThucDangTuyenDung_Textbox.Size = new Size(541, 27);
             HinhThucDangTuyenDung_Textbox.TabIndex = 10;
             HinhThucDangTuyenDung_Textbox.TextChanged += HinhThucDangTuyenDung_Textbox_TextChanged;
@@ -252,24 +259,14 @@
             label9.TabIndex = 15;
             label9.Text = "Đến:";
             // 
-            // label11
+            // Date_To
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(598, 408);
-            label11.Name = "label11";
-            label11.Size = new Size(85, 20);
-            label11.TabIndex = 16;
-            label11.Text = "2024/12/31";
-            // 
-            // Exit_Button
-            // 
-            Exit_Button.BackColor = Color.Red;
-            Exit_Button.Location = new Point(899, 9);
-            Exit_Button.Name = "Exit_Button";
-            Exit_Button.Size = new Size(44, 31);
-            Exit_Button.TabIndex = 17;
-            Exit_Button.Text = "X";
-            Exit_Button.UseVisualStyleBackColor = false;
+            Date_To.AutoSize = true;
+            Date_To.Location = new Point(598, 408);
+            Date_To.Name = "Date_To";
+            Date_To.Size = new Size(85, 20);
+            Date_To.TabIndex = 16;
+            Date_To.Text = "2024/12/31";
             // 
             // PhieuDangKyQuangCao
             // 
@@ -288,9 +285,8 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(Exit_Button);
             Controls.Add(HinhThucDangTuyenDung_Textbox);
-            Controls.Add(label11);
+            Controls.Add(Date_To);
             Controls.Add(label9);
             Controls.Add(Date_From);
             Controls.Add(label10);
@@ -325,7 +321,6 @@
         private Label label10;
         private Label Date_From;
         private Label label9;
-        private Label label11;
-        private Button Exit_Button;
+        private Label Date_To;
     }
 }
