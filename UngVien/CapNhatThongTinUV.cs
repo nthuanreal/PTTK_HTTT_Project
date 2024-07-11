@@ -11,12 +11,15 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using UI_winform.DAO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using UI_winform.User.Login;
+using UI_winform.UngVien;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace UI_winform
 {
     public partial class CapNhatThongTinUV : UserControl
     {
         public int mauv;
+        BLL bll = new BLL();
         public CapNhatThongTinUV(int Mauv)
         {
             InitializeComponent();
@@ -25,11 +28,7 @@ namespace UI_winform
         }
         private void LoadData()
         {
-            string query = "SELECT HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO FROM QLHSUT.QLHSUT_UNG_VIEN WHERE MAUV = :MAUV";
-            object[] parameters = { mauv };
-
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
-
+            DataTable data = bll.getUVByMaUV(mauv);
             if (data.Rows.Count > 0)
             {
                 DataRow row = data.Rows[0];
@@ -51,28 +50,7 @@ namespace UI_winform
         }
 
 
-        private void update_ttuv()
-        {
-            string HOTEN = textBox1.Text;
-            string NGAYSINH = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            string DIACHI = textBox2.Text;
-            string SDT = textBox3.Text;
-            string EMAIL = textBox4.Text;
-            string TRINHDO = comboBox1.Text;
-            string GIOITINH = checkBox1.Checked ? "Nam" : "Nữ";
-            object[] parameters = { HOTEN, NGAYSINH, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO, mauv };
-            string updateQuery = "UPDATE QLHSUT.QLHSUT_UNG_VIEN " +
-                                 "SET HOTEN = :HOTEN, " +
-                                 "NGSINH = TO_DATE(:NGAYSINH, 'YYYY-MM-DD'), " +
-                                 "GIOITINH = :GIOITINH, " +
-                                 "SDT = :SDT, " +
-                                 "DIACHI = :DIACHI, " +
-                                 "EMAIL = :EMAIL, " +
-                                 "TRINHDO = :TRINHDO " +
-                                 "WHERE MAUV = :MAUV";
-            DataProvider.Instance.ExecuteNonQuery(updateQuery, parameters);
-
-        }
+        
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -84,12 +62,17 @@ namespace UI_winform
         {
             try
             {
-                update_ttuv();
+                string HOTEN = textBox1.Text;
+                string NGAYSINH = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                string DIACHI = textBox2.Text;
+                string SDT = textBox3.Text;
+                string EMAIL = textBox4.Text;
+                string TRINHDO = comboBox1.Text;
+                string GIOITINH = checkBox1.Checked ? "Nam" : "Nữ";
+                bll.update_ttuv(HOTEN, NGAYSINH, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO, mauv);
                 MessageBox.Show("Đã cập nhật");
                 LoadData();
-                // TraCuuViTriUngTuyen tcvt = new TraCuuViTriUngTuyen(mauv);
-                //tcvt.Show();
-                //this.Hide();
+                
             }
             catch (Exception ex)
             {

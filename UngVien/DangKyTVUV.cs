@@ -9,12 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI_winform.DAO;
+using UI_winform.UngVien;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace UI_winform
 {
     public partial class DangKyTVUV : Form
     {
+        private BLL bll = new BLL();
         private DataProvider data;
         public DangKyTVUV()
         {
@@ -51,8 +54,24 @@ namespace UI_winform
             {
                 try
                 {
-                    int mauv = insert_data();
-                    createCandidateAcc(mauv);
+                    int MAUV = bll.GetRowCount("QLHSUT.QLHSUT_UNG_VIEN") + 1 + 110000;
+                    String HOTEN = textBox1.Text;
+                    String ngaysinh = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                    String DIACHI = textBox2.Text;
+                    String SDT = textBox3.Text;
+                    String EMAIL = textBox4.Text;
+                    String TRINHDO = comboBox1.Text;
+                    String GIOITINH;
+                    if (checkBox1.Checked)
+                    {
+                        GIOITINH = "Nam";
+                    }
+                    else
+                    {
+                        GIOITINH = "Nữ";
+                    }
+                    bll.insert_data(MAUV, HOTEN, ngaysinh, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO);
+                    bll.createCandidateAcc(MAUV);
                     MessageBox.Show("Đăng ký thành công! Vui lòng kiểm tra email để tiến hành đăng nhập.");
                     this.Close();
                 }
@@ -66,50 +85,7 @@ namespace UI_winform
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin.");
             }
         }
-        private int insert_data()
-        {
-            String HOTEN = textBox1.Text;
-            String ngaysinh = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            String DIACHI = textBox2.Text;
-            String SDT = textBox3.Text;
-            String EMAIL = textBox4.Text;
-            String TRINHDO = comboBox1.Text;
-            String GIOITINH;
-            if (checkBox1.Checked)
-            {
-                GIOITINH = "Nam";
-            }
-            else
-            {
-                GIOITINH = "Nữ";
-            }
-            int MAUV = GetRowCount("QLHSUT.QLHSUT_UNG_VIEN") + 1 + 110000;
-            string query = @"INSERT INTO QLHSUT.QLHSUT_UNG_VIEN
-                    (MAUV, HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO) 
-                    VALUES(:MAUV, :HOTEN, TO_DATE(:NGSINH, 'YYYY-MM-DD'), :GIOITINH, :SDT, :DIACHI, :EMAIL, :TRINHDO)";
-
-            // Parameters for the query
-            object[] parameters = { MAUV, HOTEN, ngaysinh, GIOITINH, SDT, DIACHI, EMAIL, TRINHDO };
-            DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return MAUV;
-        }
-
-        private void createCandidateAcc(int mauv)
-        {
-            string username = mauv.ToString();
-            string sql = $"CREATE USER \"{username}\" IDENTIFIED BY 123456";
-            DataProvider.Instance.ExecuteNonQuery(sql);
-            string grant_sql = $"GRANT CONNECT, RESOURCE, RESTRICTED SESSION TO \"{username}\"";
-            DataProvider.Instance.ExecuteNonQuery(grant_sql);
-            string grant_role = $"GRANT RL_QLHSUT_UNGVIEN TO \"{username}\"";
-            DataProvider.Instance.ExecuteNonQuery(grant_role);
-        }
-
-        public int GetRowCount(string tableName)
-        {
-            string query = $"SELECT COUNT(*) FROM {tableName}";
-            return Convert.ToInt32(DataProvider.Instance.ExecuteQuery(query).Rows[0][0]);
-        }
+        
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {

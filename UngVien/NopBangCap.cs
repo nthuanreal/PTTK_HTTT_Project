@@ -11,12 +11,14 @@ using UI_winform.DAO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using UI_winform.UngVien;
 
 namespace UI_winform
 {
     public partial class NopBangCap : UserControl
     {
         public int mahs, mauv;
+        private BLL bll = new BLL();
         public NopBangCap(int mahs, int mauv)
         {
             this.mahs = mahs;
@@ -28,29 +30,16 @@ namespace UI_winform
         private void load_data()
         {
             textBox1.Text = mahs.ToString();
-            textBox4.Text = (1400001 + GetRowCount("QLHSUT_THONG_TIN_BANG_CAP")).ToString();
+            textBox4.Text = (1400001 + bll.GetRowCount("QLHSUT_THONG_TIN_BANG_CAP")).ToString();
         }
         private void insert_data()
         {
             int mahs = this.mahs;
-            int mabc = 140001 + GetRowCount("QLHSUT_THONG_TIN_BANG_CAP");
+            int mabc = 140001 + bll.GetRowCount("QLHSUT_THONG_TIN_BANG_CAP");
             string tenbc = textBox2.Text;
             string noidung = textBox3.Text;
             string ngayhh = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-
-            object[] parameters = { mahs, mabc, tenbc, ngayhh, noidung };
-
-            string query = @"INSERT INTO QLHSUT.QLHSUT_THONG_TIN_BANG_CAP
-                 (MAHS, MABANGCAP, TENBANGCAP, NGAYHETHAN, ND_BANGCAP)
-                 VALUES(:mahs, :mabc, :tenbc, TO_DATE(:ngayhh, 'YYYY-MM-DD'), :noidung)";
-
-            DataProvider.Instance.ExecuteNonQuery(query, parameters);
-
-        }
-        public int GetRowCount(string tableName)
-        {
-            string query = $"SELECT COUNT(*) FROM {tableName}";
-            return Convert.ToInt32(DataProvider.Instance.ExecuteQuery(query).Rows[0][0]);
+            bll.insertBangCap(mahs, mabc, tenbc, ngayhh, noidung);
         }
 
         private void button1_Click(object sender, EventArgs e)

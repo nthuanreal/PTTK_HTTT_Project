@@ -130,7 +130,6 @@
             MinimumSize = new Size(1244, 986);
             Name = "DanhSachBangCap";
             Size = new Size(1244, 986);
-            Load += DanhSachBangCap_Load;
             panelNavbar.ResumeLayout(false);
             panelNavbar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

@@ -11,12 +11,14 @@ using UI_winform.DAO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using UI_winform.User.Home;
+using UI_winform.UngVien;
 
 namespace UI_winform
 {
     public partial class DanhSachBangCap : UserControl
     {
         public int mauv, mahs;
+        private BLL bll = new BLL();
         public DanhSachBangCap(int maHS, int maUV)
         {
             this.mahs = maHS;
@@ -33,15 +35,9 @@ namespace UI_winform
         }
         private void load_data()
         {
-            object[] parameters = { this.mahs };
-            string query = "select * FROM QLHSUT.QLHSUT_THONG_TIN_BANG_CAP where MAHS = :MAHS";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            dataGridView1.DataSource = data;
+            dataGridView1.DataSource = bll.getBangCap(this.mahs);
         }
 
-        private void DanhSachBangCap_Load(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using UI_winform.DAO;
+using UI_winform.UngVien;
 using UI_winform.User.Home;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
@@ -16,6 +17,7 @@ namespace UI_winform
     public partial class HoSoCuaToi : UserControl
     {
         private int maUV;
+        private BLL bll = new BLL();
         public HoSoCuaToi(int maUV)
         {
             InitializeComponent();
@@ -25,12 +27,8 @@ namespace UI_winform
 
         private void Load_data()
         {
-            //, YEUCAU_UNGVIEN, LUONG
-            string query = "select * FROM QLHSUT.QLHSUT_HO_SO_UNG_TUYEN where MAUV = :mauv";
-            object[] parameters = { maUV };
-
-            DataTable data = DataProvider.Instance.ExecuteQuery(query, parameters);
-            dataGridView1.DataSource = data;
+            
+            dataGridView1.DataSource = bll.getHoSoUT(maUV);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
