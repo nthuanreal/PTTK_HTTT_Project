@@ -223,7 +223,7 @@
             DKDT_Btn.Name = "DKDT_Btn";
             DKDT_Btn.Size = new Size(201, 80);
             DKDT_Btn.TabIndex = 4;
-            DKDT_Btn.Text = "ĐĂNG KÝ ĐĂNG TUYỂN";
+            DKDT_Btn.Text = "ĐĂNG TUYỂN";
             DKDT_Btn.UseVisualStyleBackColor = false;
             DKDT_Btn.Click += DKDT_Btn_Click;
             // 

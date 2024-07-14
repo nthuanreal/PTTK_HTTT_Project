@@ -109,12 +109,20 @@ namespace UI_winform.User.Home
         DangKyDT1 DKDT1;
         private void DKDT_Btn_Click(object sender, EventArgs e)
         {
-            DKDT1 = new DangKyDT1(this);
+            //DKDT1 = new DangKyDT1(this);
+            //splitContainer1.Panel2.Controls.Clear();
+            //splitContainer1.Panel2.Controls.Add(DKDT1);
+            //DKDT1.Dock = DockStyle.Fill;
+            //DKDT1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            //DKDT1.Size = splitContainer1.Panel2.ClientSize;
+            ////setDKTD1Size();
+            ///
+            DSThongTinDangTuyen DSTTDT = new DSThongTinDangTuyen(this);
             splitContainer1.Panel2.Controls.Clear();
-            splitContainer1.Panel2.Controls.Add(DKDT1);
-            DKDT1.Dock = DockStyle.Fill;
-            DKDT1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            DKDT1.Size = splitContainer1.Panel2.ClientSize;
+            splitContainer1.Panel2.Controls.Add(DSTTDT);
+            DSTTDT.Dock = DockStyle.Fill;
+            DSTTDT.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            DSTTDT.Size = splitContainer1.Panel2.ClientSize;
             //setDKTD1Size();
         }
 

@@ -35,6 +35,7 @@
             panel1 = new Panel();
             label1 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
+            label2 = new Label();
             tableLayoutPanel4 = new TableLayoutPanel();
             YCUV_TxtBox = new TextBox();
             MTCV_TxtBox = new TextBox();
@@ -44,8 +45,6 @@
             label3 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label2 = new Label();
-            TTDT_Btn = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             panel1.SuspendLayout();
@@ -81,7 +80,6 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18F));
             tableLayoutPanel3.Controls.Add(Huy_Btn, 1, 1);
             tableLayoutPanel3.Controls.Add(TiepTuc_Btn, 3, 1);
-            tableLayoutPanel3.Controls.Add(TTDT_Btn, 5, 1);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(3, 853);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -159,6 +157,19 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(1388, 748);
             tableLayoutPanel2.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Dock = DockStyle.Top;
+            label2.Font = new Font("Cascadia Code", 20F, FontStyle.Regular, GraphicsUnit.Point, 163);
+            label2.Location = new Point(44, 40);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(1300, 52);
+            label2.TabIndex = 1;
+            label2.Text = "THÔNG TIN ĐĂNG TUYỂN";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel4
             // 
@@ -270,32 +281,6 @@
             label6.TabIndex = 4;
             label6.Text = "Yêu cầu ứng viên:";
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Dock = DockStyle.Top;
-            label2.Font = new Font("Cascadia Code", 20F, FontStyle.Regular, GraphicsUnit.Point, 163);
-            label2.Location = new Point(44, 40);
-            label2.Margin = new Padding(4, 0, 4, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(1300, 52);
-            label2.TabIndex = 1;
-            label2.Text = "THÔNG TIN ĐĂNG TUYỂN";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // TTDT_Btn
-            // 
-            TTDT_Btn.BackColor = Color.LightCoral;
-            TTDT_Btn.Font = new Font("Cascadia Code", 10F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            TTDT_Btn.Location = new Point(1138, 18);
-            TTDT_Btn.Margin = new Padding(0);
-            TTDT_Btn.Name = "TTDT_Btn";
-            TTDT_Btn.Size = new Size(250, 54);
-            TTDT_Btn.TabIndex = 2;
-            TTDT_Btn.Text = "Xem DS đăng tuyển";
-            TTDT_Btn.UseVisualStyleBackColor = false;
-            TTDT_Btn.Click += TTDT_Btn_Click;
-            // 
             // DangKyDT1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
@@ -332,7 +317,6 @@
         private Button TiepTuc_Btn;
         private TextBox YCUV_TxtBox;
         private TextBox MTCV_TxtBox;
-        private Button TTDT_Btn;
         private Label label2;
     }
 }
