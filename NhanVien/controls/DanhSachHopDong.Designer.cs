@@ -54,7 +54,7 @@
             comboBox1.Items.AddRange(new object[] { "Chưa duyệt", "Đã duyệt", "Gia hạn" });
             comboBox1.Location = new Point(969, 84);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(164, 31);
+            comboBox1.Size = new Size(164, 36);
             comboBox1.TabIndex = 31;
             // 
             // label2
@@ -63,13 +63,14 @@
             label2.Font = new Font("Segoe UI", 10.2F);
             label2.Location = new Point(866, 88);
             label2.Name = "label2";
-            label2.Size = new Size(89, 23);
+            label2.Size = new Size(108, 30);
             label2.TabIndex = 30;
             label2.Text = "Tình trạng";
             // 
             // flowLayoutPanel1
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.Location = new Point(9, 53);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(853, 544);
@@ -82,13 +83,13 @@
             label1.Location = new Point(9, 9);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(213, 25);
+            label1.Size = new Size(255, 30);
             label1.TabIndex = 28;
             label1.Text = "DANH SÁCH HỢP ĐỒNG";
             // 
             // DanhSachHopDong
             // 
-            AutoScaleDimensions = new SizeF(9F, 23F);
+            AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(searchBtn);
             Controls.Add(comboBox1);

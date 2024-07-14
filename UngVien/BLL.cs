@@ -77,11 +77,14 @@ namespace UI_winform.UngVien
         }
         public void insertBangCap(int mahs, int mabc, string tenbc, string noidung, string ngayhh)
         {
+            //MessageBox.Show(ngayhh); //  debug line
             object[] parameters = { mahs, mabc, tenbc, ngayhh, noidung };
 
             string query = @"INSERT INTO QLHSUT.QLHSUT_THONG_TIN_BANG_CAP
                  (MAHS, MABANGCAP, TENBANGCAP, NGAYHETHAN, ND_BANGCAP)
-                 VALUES(:mahs, :mabc, :tenbc, TO_DATE(:ngayhh, 'YYYY-MM-DD'), :noidung)";
+                 VALUES(:mahs, :mabc, :tenbc, TO_DATE(:ngayhh, 'yyyy-MM-dd'), :noidung)";
+
+            //MessageBox.Show(query); // debug line
 
             DataProvider.Instance.ExecuteNonQuery(query, parameters);
 

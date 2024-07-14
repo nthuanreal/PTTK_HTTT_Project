@@ -97,7 +97,7 @@ namespace UI_winform.DAO
             }
             catch (Exception ex)
             {
-                throw new Exception("An error occurred while executing the query", ex);
+                throw new Exception("An error occurred while executing the query" + ex.Message);
             }
         }
     }
