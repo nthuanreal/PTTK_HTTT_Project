@@ -30,17 +30,17 @@
         {
             label2 = new Label();
             tableLayoutPanel5 = new TableLayoutPanel();
+            tableLayoutPanel8 = new TableLayoutPanel();
+            TimBtn = new Button();
             TinhTrang_ComBox = new ComboBox();
             label5 = new Label();
             tableLayoutPanel6 = new TableLayoutPanel();
-            tableLayoutPanel8 = new TableLayoutPanel();
-            TimBtn = new Button();
             tableLayoutPanel7 = new TableLayoutPanel();
             tableLayoutPanel4 = new TableLayoutPanel();
             tableLayoutPanel9 = new TableLayoutPanel();
             DangKyTTDT_Btn = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
-            ThanhToanListView = new ListView();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             tableLayoutPanel2 = new TableLayoutPanel();
             panel1 = new Panel();
             label1 = new Label();
@@ -81,6 +81,35 @@
             tableLayoutPanel5.Size = new Size(405, 187);
             tableLayoutPanel5.TabIndex = 1;
             // 
+            // tableLayoutPanel8
+            // 
+            tableLayoutPanel8.ColumnCount = 3;
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            tableLayoutPanel8.Controls.Add(TimBtn, 1, 0);
+            tableLayoutPanel8.Dock = DockStyle.Top;
+            tableLayoutPanel8.Location = new Point(165, 96);
+            tableLayoutPanel8.Name = "tableLayoutPanel8";
+            tableLayoutPanel8.RowCount = 2;
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
+            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
+            tableLayoutPanel8.Size = new Size(237, 71);
+            tableLayoutPanel8.TabIndex = 5;
+            // 
+            // TimBtn
+            // 
+            TimBtn.BackColor = Color.LightCoral;
+            TimBtn.Dock = DockStyle.Fill;
+            TimBtn.Location = new Point(59, 0);
+            TimBtn.Margin = new Padding(0);
+            TimBtn.Name = "TimBtn";
+            TimBtn.Size = new Size(118, 42);
+            TimBtn.TabIndex = 0;
+            TimBtn.Text = "Tìm ";
+            TimBtn.UseVisualStyleBackColor = false;
+            TimBtn.Click += TimBtn_Click;
+            // 
             // TinhTrang_ComBox
             // 
             TinhTrang_ComBox.BackColor = Color.LightCoral;
@@ -115,34 +144,6 @@
             tableLayoutPanel6.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableLayoutPanel6.Size = new Size(405, 194);
             tableLayoutPanel6.TabIndex = 2;
-            // 
-            // tableLayoutPanel8
-            // 
-            tableLayoutPanel8.ColumnCount = 3;
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel8.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableLayoutPanel8.Controls.Add(TimBtn, 1, 0);
-            tableLayoutPanel8.Dock = DockStyle.Top;
-            tableLayoutPanel8.Location = new Point(165, 96);
-            tableLayoutPanel8.Name = "tableLayoutPanel8";
-            tableLayoutPanel8.RowCount = 2;
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 60F));
-            tableLayoutPanel8.RowStyles.Add(new RowStyle(SizeType.Percent, 40F));
-            tableLayoutPanel8.Size = new Size(237, 71);
-            tableLayoutPanel8.TabIndex = 5;
-            // 
-            // TimBtn
-            // 
-            TimBtn.BackColor = Color.LightCoral;
-            TimBtn.Dock = DockStyle.Fill;
-            TimBtn.Location = new Point(59, 0);
-            TimBtn.Margin = new Padding(0);
-            TimBtn.Name = "TimBtn";
-            TimBtn.Size = new Size(118, 42);
-            TimBtn.TabIndex = 0;
-            TimBtn.Text = "Tìm ";
-            TimBtn.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel7
             // 
@@ -213,8 +214,8 @@
             tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tableLayoutPanel3.Controls.Add(ThanhToanListView, 0, 0);
             tableLayoutPanel3.Controls.Add(tableLayoutPanel4, 1, 0);
+            tableLayoutPanel3.Controls.Add(flowLayoutPanel1, 0, 0);
             tableLayoutPanel3.Dock = DockStyle.Fill;
             tableLayoutPanel3.Location = new Point(3, 97);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -224,16 +225,16 @@
             tableLayoutPanel3.Size = new Size(1390, 750);
             tableLayoutPanel3.TabIndex = 9;
             // 
-            // ThanhToanListView
+            // flowLayoutPanel1
             // 
-            ThanhToanListView.Dock = DockStyle.Fill;
-            ThanhToanListView.Location = new Point(3, 3);
-            ThanhToanListView.Name = "ThanhToanListView";
-            ThanhToanListView.Size = new Size(967, 744);
-            ThanhToanListView.TabIndex = 0;
-            ThanhToanListView.UseCompatibleStateImageBehavior = false;
-            ThanhToanListView.ItemActivate += ThanhToanListView_ItemActivate;
-            ThanhToanListView.MouseDoubleClick += ThanhToanListView_MouseDoubleClick;
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            flowLayoutPanel1.Dock = DockStyle.Fill;
+            flowLayoutPanel1.Location = new Point(3, 3);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(967, 744);
+            flowLayoutPanel1.TabIndex = 2;
+            flowLayoutPanel1.MouseDoubleClick += flowLayoutPanel1_MouseDoubleClick;
             // 
             // tableLayoutPanel2
             // 
@@ -317,7 +318,6 @@
         private Label label5;
         private TableLayoutPanel tableLayoutPanel4;
         private TableLayoutPanel tableLayoutPanel3;
-        private ListView ThanhToanListView;
         private TableLayoutPanel tableLayoutPanel2;
         private Panel panel1;
         private Label label1;
@@ -326,5 +326,6 @@
         private Button TimBtn;
         private TableLayoutPanel tableLayoutPanel9;
         private Button DangKyTTDT_Btn;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

@@ -10,27 +10,21 @@ using System.Windows.Forms;
 
 namespace UI_winform.DoanhNghiep.controls
 {
-    public partial class TTDTItem : UserControl
+    public partial class ThongTinDTItem : UserControl
     {
-        public TTDTItem()
+        public ThongTinDTItem()
         {
             InitializeComponent();
         }
 
         PhieuDKDT ttdt = new PhieuDKDT();
-        public TTDTItem(PhieuDKDT ttdt)
+        public ThongTinDTItem(PhieuDKDT ttdt)
         {
             InitializeComponent();
             this.ttdt = ttdt;
-            this.Click += TTDTItem_Click;
         }
 
-        public PhieuDKDT getTTDT()
-        {
-            return this.ttdt;
-        }
-
-        private void TTDTItem_Load(object sender, EventArgs e)
+        private void NewItem_Load(object sender, EventArgs e)
         {
             MDT_TxtBox.Text = ttdt.madt;
             MHD_TxtBox.Text = ttdt.mahopdong;
@@ -45,10 +39,9 @@ namespace UI_winform.DoanhNghiep.controls
             NgayBD_TxtBox.ReadOnly = true;
             NgayKT_TxtBox.ReadOnly = true;
             VTTD_TxtBox.ReadOnly = true;
-
         }
 
-        private void TTDTItem_Click(object sender, EventArgs e)
+        private void NewItem_Click(object sender, EventArgs e)
         {
             ChiTietTTDT chitiet = new ChiTietTTDT(ttdt);
             chitiet.ShowDialog();
