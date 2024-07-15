@@ -49,5 +49,10 @@ namespace UI_winform.NhanVien.controls
             ThongTinDoanhNghep thongTinDoanhNghep = new ThongTinDoanhNghep(_maDn);
             thongTinDoanhNghep.ShowDialog();
         }
+
+        private void AcceptBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

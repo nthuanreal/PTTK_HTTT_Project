@@ -128,7 +128,7 @@ namespace UI_winform.NhanVien
                 string hinhThuc = GetCheckedRadioButton(groupBox1);
                 string sql = $"update qlhsut.qlhsut_phieu_quang_cao\r\nset HINHTHUCTHANHTOAN = N'{hinhThuc}'\r\nwhere mahopdong = {MaHd}";
                 DataProvider.Instance.ExecuteNonQuery(sql);
-                sendEmail();
+                sendEmail(EmailLienHe_Label.Text);
                 this.Close();
             }
             catch (Exception ex)
@@ -138,13 +138,13 @@ namespace UI_winform.NhanVien
 
         }
 
-        private void sendEmail()
+        private void sendEmail(string email)
         {
             try
             {
                 string from, to, content;
                 from = "websitepttk@outlook.com";
-                to = "21120347@student.hcmus.edu.vn";
+                to = email;
                 content = "Yêu cầu đăng tuyển của quý khách trị giá: " + ThanhTien_Label.Text + " vnđ";
                 MailMessage mail = new MailMessage();
                 mail.To.Add(to);

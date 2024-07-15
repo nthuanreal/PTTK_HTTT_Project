@@ -42,7 +42,7 @@
             tenDoanhNghiepTxt.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             tenDoanhNghiepTxt.Location = new Point(155, 10);
             tenDoanhNghiepTxt.Name = "tenDoanhNghiepTxt";
-            tenDoanhNghiepTxt.Size = new Size(153, 25);
+            tenDoanhNghiepTxt.Size = new Size(183, 30);
             tenDoanhNghiepTxt.TabIndex = 0;
             tenDoanhNghiepTxt.Text = "Doanh Nghiệp A";
             // 
@@ -51,7 +51,7 @@
             label2.AutoSize = true;
             label2.Location = new Point(14, 45);
             label2.Name = "label2";
-            label2.Size = new Size(51, 25);
+            label2.Size = new Size(62, 30);
             label2.TabIndex = 1;
             label2.Text = "MST:";
             // 
@@ -60,7 +60,7 @@
             maSoThueTxt.AutoSize = true;
             maSoThueTxt.Location = new Point(71, 45);
             maSoThueTxt.Name = "maSoThueTxt";
-            maSoThueTxt.Size = new Size(112, 25);
+            maSoThueTxt.Size = new Size(133, 30);
             maSoThueTxt.TabIndex = 2;
             maSoThueTxt.Text = "0123456789";
             // 
@@ -74,6 +74,7 @@
             AcceptBtn.TabIndex = 3;
             AcceptBtn.Text = "Duyệt";
             AcceptBtn.UseVisualStyleBackColor = false;
+            AcceptBtn.Click += AcceptBtn_Click;
             // 
             // ignoreBtn
             // 
@@ -91,13 +92,13 @@
             label1.AutoSize = true;
             label1.Location = new Point(14, 10);
             label1.Name = "label1";
-            label1.Size = new Size(125, 25);
+            label1.Size = new Size(149, 30);
             label1.TabIndex = 5;
             label1.Text = "Doanh nghiệp";
             // 
             // TaiKhoanListItem
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(12F, 30F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonFace;
             Controls.Add(label1);

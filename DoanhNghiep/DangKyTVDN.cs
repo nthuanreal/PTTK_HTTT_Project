@@ -1,7 +1,10 @@
 ﻿
+using System.Net.Mail;
+using System.Net;
 using UI_winform.DAO;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace UI_winform
 {
@@ -69,54 +72,69 @@ namespace UI_winform
 
         private int insert_Representative()
         {
-            string HOTEN = textBox1.Text;
-            string NGSINH = dateTimePicker1.Value.ToString("yyyy-MM-dd");
-            string DIACHI = textBox4.Text;
-            string SDT = textBox5.Text;
-            string EMAIL = txtEmail.Text;
-            string GIOITINH;
-            if (checkBox1.Checked || checkBox2.Checked)
+            try
             {
-                if (checkBox1.Checked)
+                string HOTEN = textBox1.Text;
+                string NGSINH = dateTimePicker1.Value.ToString("yyyy-MM-dd");
+                string DIACHI = textBox4.Text;
+                string SDT = textBox5.Text;
+                string EMAIL = txtEmail.Text;
+                string GIOITINH;
+                if (checkBox1.Checked || checkBox2.Checked)
                 {
-                    GIOITINH = "Nam";
+                    if (checkBox1.Checked)
+                    {
+                        GIOITINH = "Nam";
+                    }
+                    else
+                    {
+                        GIOITINH = "Nữ";
+                    }
                 }
                 else
                 {
-                    GIOITINH = "Nữ";
+                    GIOITINH = "Khác";
                 }
-            }
-            else
-            {
-                GIOITINH = "Khác";
-            }
-            int MANDD = GetNewID("QLHSUT.QLHSUT_NGUOI_DAI_DIEN", "MANDD");
-            string query = @"INSERT INTO QLHSUT.QLHSUT_NGUOI_DAI_DIEN
+                int MANDD = GetNewID("QLHSUT.QLHSUT_NGUOI_DAI_DIEN", "MANDD");
+                string query = @"INSERT INTO QLHSUT.QLHSUT_NGUOI_DAI_DIEN
                     (MANDD, HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL) 
                     VALUES(:MANDD, :HOTEN, TO_DATE(:NGSINH, 'yyyy-MM-dd'), :GIOITINH, :SDT, :DIACHI, :EMAIL)";
 
-            // Parameters for the query
-            object[] parameters = { MANDD, HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL };
-            DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return MANDD;
+                // Parameters for the query
+                object[] parameters = { MANDD, HOTEN, NGSINH, GIOITINH, SDT, DIACHI, EMAIL };
+                DataProvider.Instance.ExecuteNonQuery(query, parameters);
+                return MANDD;
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+            }
         }
         private int insert_Company(int NDD)
         {
-            int MADN = GetNewID("QLHSUT.QLHSUT_DOANH_NGHIEP", "MADN");
+            try
+            {
+                int MADN = GetNewID("QLHSUT.QLHSUT_DOANH_NGHIEP", "MADN");
 
-            string TENDN = txtCompanyName.Text;
-            string MASOTHUE = txtTaxID.Text;
-            string DIACHI = txtAddress.Text;
-            string SDT = txtPhone.Text;
-            string EMAIL = txtEmail.Text;
-            string query = @"INSERT INTO QLHSUT.QLHSUT_DOANH_NGHIEP
+                string TENDN = txtCompanyName.Text;
+                string MASOTHUE = txtTaxID.Text;
+                string DIACHI = txtAddress.Text;
+                string SDT = txtPhone.Text;
+                string EMAIL = txtEmail.Text;
+                string query = @"INSERT INTO QLHSUT.QLHSUT_DOANH_NGHIEP
                     (MADN, TENDN, MASOTHUE, NDD, SDT, DIACHI, EMAIL) 
                     VALUES(:MADN, :TENDN, :MASOTHUE, :NDD, :SDT, :DIACHI, :EMAIL)";
 
-            // Parameters for the query
-            object[] parameters = { MADN, TENDN, MASOTHUE, NDD, SDT, DIACHI, EMAIL };
-            DataProvider.Instance.ExecuteNonQuery(query, parameters);
-            return MADN;
+                // Parameters for the query
+                object[] parameters = { MADN, TENDN, MASOTHUE, NDD, SDT, DIACHI, EMAIL };
+                DataProvider.Instance.ExecuteNonQuery(query, parameters);
+                return MADN;
+            } catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return 0;
+
+            }
         }
 
         private void createCompanyAcc(int madn)
@@ -129,6 +147,8 @@ namespace UI_winform
             string grant_role = $"GRANT RL_QLHSUT_DOANHNGHIEP TO \"{username}\"";
             DataProvider.Instance.ExecuteNonQuery(grant_role);
         }
+
+
 
         public int GetNewID(string tableName, string idType)
         {

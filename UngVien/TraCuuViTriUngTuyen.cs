@@ -20,7 +20,7 @@ namespace UI_winform
         {
             this.maUV = maUV;
             InitializeComponent();
-            string query = "select MADT, DN_DANGTUYEN, VITRI_UNGTUYEN, SOLUONG, MOTA FROM QLHSUT.QLHSUT_THONG_TIN_DANG_TUYEN";
+            string query = "select DT.MADT, DT.DN_DANGTUYEN, DT.VITRI_UNGTUYEN, DT.SOLUONG, DT.MOTA \r\nFROM QLHSUT.QLHSUT_THONG_TIN_DANG_TUYEN DT JOIN QLHSUT.qlhsut_hop_dong_dang_tuyen HD on DT.MADT = HD.MADT\r\n    JOIN QLHSUT.qlhsut_phieu_quang_cao PQC ON HD.MAHOPDONG = PQC.MAHOPDONG\r\nwhere PQC.TG_BATDAU <= SYSDATE AND PQC.TG_KETTHUC >= SYSDATE";
             Load_data(query);
         }
 

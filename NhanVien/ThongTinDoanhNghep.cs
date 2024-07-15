@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -78,7 +80,10 @@ namespace UI_winform.NhanVien
             {
                 string sql = $"DELETE FROM qlhsut.qlhsut_doanh_nghiep WHERE MADN = {MaDn}";
                 DataProvider.Instance.ExecuteNonQuery(sql);
-                
+
+                string drop_user = $"DROP USER \"{MaDn}\" CASCADE";
+                DataProvider.Instance.ExecuteNonQuery(drop_user);
+
             }
             catch (Exception ex)
             {
@@ -102,8 +107,8 @@ namespace UI_winform.NhanVien
             {
                 string sql = $"UPDATE qlhsut.qlhsut_doanh_nghiep SET tttaikhoan = 1 where madn = {MaDn}";
                 DataProvider.Instance.ExecuteNonQuery(sql);
-
-                MessageBox.Show("Thành công");
+                sendEmail(MaDn, EmailLienHe);
+                MessageBox.Show("Duyệt thành công");
             }
             catch (Exception ex)
             {
@@ -114,6 +119,36 @@ namespace UI_winform.NhanVien
                 this.Close();
             }
 
+        }
+
+        private void sendEmail(string username, string email)
+        {
+            try
+            {
+                string from, to, content;
+                from = "websitepttk@outlook.com";
+                to = email;
+                content = "Thông tin đăng ký của bạn đã được duyệt. \nBây giờ bạn có thể đăng nhập vào tài khoản doanh nghiệp của mình với: \n"
+                            + "Tên tài khoản: " + username + "\nMật khẩu: 123456"
+                            + "\n *** Khuyến nghị: Bạn nên đổi mật khẩu khi đăng nhập thành công lần đầu tiên.";
+                MailMessage mail = new MailMessage();
+                mail.To.Add(to);
+                mail.From = new MailAddress(from);
+                mail.Subject = "ĐĂNG KÝ THÀNH VIÊN DOANH NGHIỆP THÀNH CÔNG";
+                mail.Body = content;
+
+                SmtpClient smtp = new SmtpClient("smtp-mail.outlook.com");
+                smtp.EnableSsl = true;
+                smtp.Port = 587;
+                smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Credentials = new NetworkCredential(from, "pttkhttt_PTTKHTTT_NHOM2");
+
+                smtp.Send(mail);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         [Category("Custom Props")]
